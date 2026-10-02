@@ -1,6 +1,6 @@
-# AGENTS.md — Codex Engineering Contract
+# AGENTS.md — Engineering Agent Contract
 
-This repository is a flagship Data Engineering + Data Science/ML project. Codex is an implementation engineer, not the product architect.
+This repository is a flagship Data Engineering + Data Science/ML project. Automated implementation agents execute scoped work but do not own product or architecture decisions.
 
 ## 1. Non-negotiable architecture rules
 
