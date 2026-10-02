@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Build/package
+build/
+dist/
+*.egg-info/
+
+# Data and artifacts
+data/
+artifacts/
+mlruns/
+*.parquet
+*.feather
+*.arrow
+
+# Secrets / local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary
+.tmp/
+tmp/
