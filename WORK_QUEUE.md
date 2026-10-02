@@ -6,7 +6,7 @@ Status values: `TODO`, `IN_PROGRESS`, `BLOCKED`, `DONE`.
 
 | ID | Status | Task | Depends on |
 |---|---|---|---|
-| ARCH-00 | TODO | Direct dataset inspection, license verification, canonical schema freeze, SOH reference rule | — |
+| ARCH-00 | BLOCKED | Direct dataset inspection, license verification, canonical schema freeze, SOH reference rule | — |
 | FOUND-01 | BLOCKED | Repository/package/config/test/CI foundation | ARCH-00 |
 | INGEST-01 | BLOCKED | HUST immutable ingestion + provenance | FOUND-01 |
 | INGEST-02 | BLOCKED | Empa/BDF source integration | INGEST-01 |
@@ -24,6 +24,12 @@ Status values: `TODO`, `IN_PROGRESS`, `BLOCKED`, `DONE`.
 | SHOW-01 | BLOCKED | Read-only Battery Intelligence Console | PERF-01 |
 | DEFENSE-01 | BLOCKED | Project defense + runbook/documentation pass | SHOW-01 |
 | AUDIT-01 | BLOCKED | Claims/evidence audit and V1 release gate | DEFENSE-01 |
+
+## ARCH-00 disposition (2026-10-02)
+
+ARCH-00 is **BLOCKED**, not DONE. Exact HUST/Aurora archives and a subset of their internal metadata/schema are verified, but the HUST per-cycle `dq` semantics, Aurora BDF capacity fields, source reference windows, and exact Aurora LFP subset are unresolved. Candidate record licenses and the SINTEF/DLR fixture catalog were verified. See [docs/evidence/ARCH-00.md](docs/evidence/ARCH-00.md) and the four ADR research records under `docs/adr/`.
+
+No downstream task is unblocked. Re-open ARCH-00 only after the exact HUST files and both sources' capacity/cycle semantics can be directly inspected, or after an explicit architecture decision changes scope.
 
 ## Queue rules
 
