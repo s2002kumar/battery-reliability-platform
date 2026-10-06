@@ -2,18 +2,18 @@
 
 ## Current milestone
 
-**Repository Foundation in Progress; Architecture/Data Gate BLOCKED**
+**FOUND-01 DONE; Architecture/Data Gate BLOCKED**
 
 ## Current task
 
-**FOUND-01 — architecture-independent repository foundation**
+**ARCH-01 — resolve ARCH-00 evidence blockers before any ingestion**
 
 ## Product state
 
 - Project direction: LOCKED
 - V1 product boundary: LOCKED
 - ML required in V1: YES
-- Coding implementation: FOUNDATION ONLY; source/domain implementation NOT STARTED
+- Coding implementation: FOUNDATION COMPLETE; source/domain implementation NOT STARTED
 - Resume claims approved: NONE
 
 ## Current blockers
@@ -25,7 +25,7 @@
 
 ## Last decision
 
-On 2026-10-06, ARCH-00 commit `162ad0e963d23e7a65bb2dba718a37f53b674515` was pushed on `docs/ARCH-00-data-architecture` and fast-forwarded into local `main` because remote `main` was its ancestor. GitHub CLI authentication is invalid, so a PR could not be created; the pushed branch remains available for PR creation. ARCH-00 remains BLOCKED. FOUND-01 is in progress on `chore/FOUND-01-repository-foundation`; this foundation work does not authorize ingestion or ML work. See [docs/evidence/ARCH-00.md](docs/evidence/ARCH-00.md).
+On 2026-10-06, ARCH-00 PR [#4](https://github.com/s2002kumar/battery-reliability-platform/pull/4) was squash-merged into `main` at `60937a8dd9d2b13491a3c2a7826f3c618dab7c42`; its research disposition remains BLOCKED. FOUND-01 is implemented on `chore/FOUND-01-repository-foundation`; local gates and GitHub Actions runs [37508586503](https://github.com/s2002kumar/battery-reliability-platform/actions/runs/37508586503) and [37511473205](https://github.com/s2002kumar/battery-reliability-platform/actions/runs/37511473205) pass. FOUND-01 PR [#3](https://github.com/s2002kumar/battery-reliability-platform/pull/3) was created after green CI; its branch must be rebased onto updated `main` and CI rerun before squash merge. No ingestion or ML work is authorized while ARCH-00 remains BLOCKED. See [docs/evidence/ARCH-00.md](docs/evidence/ARCH-00.md) and [docs/evidence/FOUND-01.md](docs/evidence/FOUND-01.md).
 
 ## Update protocol
 

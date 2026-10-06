@@ -7,7 +7,7 @@ Status values: `TODO`, `IN_PROGRESS`, `BLOCKED`, `DONE`.
 | ID | Status | Task | Depends on |
 |---|---|---|---|
 | ARCH-00 | BLOCKED | Direct dataset inspection, license verification, canonical schema freeze, SOH reference rule | — |
-| FOUND-01 | IN_PROGRESS | Repository/package/config/test/CI foundation | — (architecture-independent; ARCH-00 research preserved) |
+| FOUND-01 | DONE | Repository/package/config/test/CI foundation | — (architecture-independent; ARCH-00 research preserved) |
 | INGEST-01 | BLOCKED | HUST immutable ingestion + provenance | FOUND-01, ARCH-00 PASS |
 | INGEST-02 | BLOCKED | Empa/BDF source integration | INGEST-01 |
 | QUAL-01 | BLOCKED | Validation, quarantine, known-bad fixtures | INGEST-02 |
@@ -32,6 +32,8 @@ ARCH-00 is **BLOCKED**, not DONE. Exact HUST/Aurora archives and a subset of the
 No downstream task is unblocked. Re-open ARCH-00 only after the exact HUST files and both sources' capacity/cycle semantics can be directly inspected, or after an explicit architecture decision changes scope.
 
 FOUND-01 is proceeding independently on `chore/FOUND-01-repository-foundation`. Its completion does not change ARCH-00 status or authorize source ingestion.
+
+FOUND-01 implementation and all local/CI acceptance checks pass (`docs/evidence/FOUND-01.md`). PR #3 has passing CI but must be rebased onto updated `main` and rechecked before squash merge. No downstream task is unblocked because ARCH-00 remains BLOCKED.
 
 ## Queue rules
 

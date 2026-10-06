@@ -2,7 +2,7 @@
 
 - **Date:** 2026-10-06
 - **Branch:** `chore/FOUND-01-repository-foundation`
-- **Result:** Local acceptance checks PASS; GitHub Actions branch run pending push.
+- **Result:** Local acceptance checks PASS; both GitHub Actions runs PASS.
 - **Architecture/data gate:** ARCH-00 remains BLOCKED. No source parsing, battery schema mapping, SOH, or ML behavior was added.
 
 ## Tool versions
@@ -62,7 +62,7 @@ Result: PASS. The image ID was `sha256:c04f4e9ab72fa9f52a6786ac0a2d58b9629a41a7f
 
 `.github/workflows/ci.yml` runs on branch pushes and pull requests targeting `main`. It installs pinned uv and Python, syncs with `--locked`, then runs the four quality gates and builds the development/test image. Actions are pinned by immutable commit SHA.
 
-The workflow is configured, but its GitHub Actions result is pending a branch push. GitHub CLI reports an invalid saved authentication token, so PR creation cannot be completed in this session. The branch will be pushed; ARCH-00's already-pushed PR remains uncreated for the same reason.
+GitHub Actions runs [37508586503](https://github.com/s2002kumar/battery-reliability-platform/actions/runs/37508586503) and [37511473205](https://github.com/s2002kumar/battery-reliability-platform/actions/runs/37511473205) completed successfully on the pushed branch. Both runs passed Python setup, locked environment sync, Ruff lint/format, Mypy, pytest, and Docker image build. FOUND-01 PR [#3](https://github.com/s2002kumar/battery-reliability-platform/pull/3) was created with passing CI. ARCH-00 documentation PR [#4](https://github.com/s2002kumar/battery-reliability-platform/pull/4) was squash-merged at `60937a8dd9d2b13491a3c2a7826f3c618dab7c42`.
 
 ## Files introduced or changed
 
@@ -77,7 +77,7 @@ No secrets, `.env` file, real dataset bytes, or battery-specific code were added
 
 ## Limitations
 
-- GitHub Actions has not yet run; the workflow awaits the branch push. A PR cannot be opened while the saved GitHub CLI token is invalid.
+- The FOUND-01 PR needs its branch rebased onto the newly updated `main` before it can be squash-merged. Its earlier green CI runs are recorded above; rerun CI after rebasing.
 - The local uv cache/Python install paths required temporary overrides because the default user paths are restricted in this managed environment.
 - The generic `FileSystem` is an interface only. There is no local provider implementation, S3 support, or storage behavior.
 - ARCH-00 remains BLOCKED, and FOUND-01 does not authorize ingestion or ML implementation.

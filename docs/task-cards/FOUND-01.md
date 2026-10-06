@@ -33,18 +33,18 @@ ARCH-00 is BLOCKED on scientific and source-contract questions. Those blockers d
 
 ## Acceptance criteria
 
-- [ ] A fresh clone can create the environment deterministically using documented `uv` commands and a committed lockfile.
-- [ ] The package imports through the `src/` layout.
-- [ ] The repository is package-first; no notebook-first structure is introduced.
-- [ ] `uv run ruff check .` passes.
-- [ ] `uv run ruff format --check .` passes.
-- [ ] `uv run mypy src` passes with strict, documented settings appropriate to production code.
-- [ ] `uv run pytest` passes without network access.
-- [ ] GitHub Actions runs equivalent checks on supported pushes and pull requests.
-- [ ] The development/test Docker image builds successfully from a fresh checkout context.
-- [ ] No secrets or real dataset bytes are committed.
-- [ ] Generic interfaces contain no guessed battery, BDF, source, capacity, or SOH semantics.
-- [ ] `docs/evidence/FOUND-01.md`, `STATUS.md`, and `WORK_QUEUE.md` accurately record results; FOUND-01 is DONE only if every gate passes.
+- [x] A fresh clone can create the environment deterministically using documented `uv` commands and a committed lockfile.
+- [x] The package imports through the `src/` layout.
+- [x] The repository is package-first; no notebook-first structure is introduced.
+- [x] `uv run ruff check .` passes.
+- [x] `uv run ruff format --check .` passes.
+- [x] `uv run mypy src` passes with strict, documented settings appropriate to production code.
+- [x] `uv run pytest` passes without network access.
+- [x] GitHub Actions runs equivalent checks on supported pushes and pull requests.
+- [x] The development/test Docker image builds successfully from a fresh checkout context.
+- [x] No secrets or real dataset bytes are committed.
+- [x] Generic interfaces contain no guessed battery, BDF, source, capacity, or SOH semantics.
+- [x] `docs/evidence/FOUND-01.md`, `STATUS.md`, and `WORK_QUEUE.md` accurately record results; FOUND-01 is DONE only if every gate passes.
 
 ## Required tests
 
