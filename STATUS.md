@@ -2,18 +2,18 @@
 
 ## Current milestone
 
-**Architecture/Data Gate — BLOCKED**
+**Repository Foundation in Progress; Architecture/Data Gate BLOCKED**
 
 ## Current task
 
-**ARCH-00 — dataset inspection and architecture freeze**
+**FOUND-01 — architecture-independent repository foundation**
 
 ## Product state
 
 - Project direction: LOCKED
 - V1 product boundary: LOCKED
 - ML required in V1: YES
-- Coding implementation: NOT STARTED
+- Coding implementation: FOUNDATION ONLY; source/domain implementation NOT STARTED
 - Resume claims approved: NONE
 
 ## Current blockers
@@ -25,7 +25,7 @@
 
 ## Last decision
 
-On 2026-10-02, ARCH-00 research was documented as a blocked evidence state on branch `docs/ARCH-00-data-architecture`. Dataset records and licenses are recorded, but no exact raw files were retrieved into this repository, no canonical source mapping or SOH target is frozen, and no ingestion/model work is authorized. The commit is the current branch head. See [docs/evidence/ARCH-00.md](docs/evidence/ARCH-00.md).
+On 2026-10-06, ARCH-00 commit `162ad0e963d23e7a65bb2dba718a37f53b674515` was pushed on `docs/ARCH-00-data-architecture` and fast-forwarded into local `main` because remote `main` was its ancestor. GitHub CLI authentication is invalid, so a PR could not be created; the pushed branch remains available for PR creation. ARCH-00 remains BLOCKED. FOUND-01 is in progress on `chore/FOUND-01-repository-foundation`; this foundation work does not authorize ingestion or ML work. See [docs/evidence/ARCH-00.md](docs/evidence/ARCH-00.md).
 
 ## Update protocol
 

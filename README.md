@@ -27,9 +27,9 @@ The first release will:
 
 ## Current status
 
-**Architecture and data-contract freeze.**
+**Architecture/data gate: BLOCKED.** ARCH-00 research is preserved on `docs/ARCH-00-data-architecture`; its unresolved source, schema, license-notice, and SOH reference blockers still prohibit ingestion and ML work. FOUND-01 establishes only architecture-independent repository tooling.
 
-The source files, licenses, canonical mappings, and exact SOH reference-capacity rule are being verified before implementation begins.
+See [STATUS.md](STATUS.md) and [docs/evidence/ARCH-00.md](docs/evidence/ARCH-00.md) for the exact evidence and blockers.
 
 ## Architecture
 
@@ -83,3 +83,19 @@ Python and SQL are the core implementation languages. Local analytical processin
 - [QUALITY_GATES.md](QUALITY_GATES.md) — V1 release criteria
 - [PROJECT_DEFENSE.md](PROJECT_DEFENSE.md) — architecture/tradeoff explanations
 - [CLAIMS_LEDGER.md](CLAIMS_LEDGER.md) — evidence-backed public claims
+
+## Developer setup
+
+Install [uv](https://docs.astral.sh/uv/). The committed `.python-version` pins the interpreter. From the repository root:
+
+```bash
+uv python install
+uv sync --locked --all-groups
+uv run ruff check .
+uv run ruff format --check .
+uv run mypy src
+uv run pytest
+docker build --tag battery-reliability-platform:dev .
+```
+
+`uv.lock` pins the resolved dependency graph. Run project commands through `uv run` so they use the locked environment. The Docker image is for development and tests; its default command runs pytest. No `.env` file is required. Optional runtime settings are `BRIP_ENV` (`development`, `test`, or `production`) and `BRIP_LOG_LEVEL` (a standard Python logging level).
