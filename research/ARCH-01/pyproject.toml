@@ -1,0 +1,12 @@
+[project]
+name = "battery-reliability-arch01-audit"
+version = "0.1.0"
+description = "Isolated, non-production source audit tools for ARCH-01."
+requires-python = "==3.12.*"
+dependencies = [
+    "pandas==2.3.3",
+    "pyarrow==21.0.0",
+]
+
+[tool.uv]
+package = false

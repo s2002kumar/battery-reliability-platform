@@ -1,32 +1,31 @@
 # ADR-003: SOH Reference Capacity and Leakage Policy
 
-- **Status:** BLOCKED; no reference-capacity rule frozen
-- **Date:** 2026-10-02
-- **Scope:** Capacity-based state-of-health target and cell-safe evaluation
+- **Status:** BLOCKED — no reference-capacity rule approved
+- **Date:** 2026-10-06
+- **Scope:** Capacity-based SOH target and cell-safe evaluation
 
 ## Context
 
-The locked target is `SOH = available_discharge_capacity / reference_capacity(cell)`. A physically meaningful denominator must be deterministic, comparable to the numerator, and available without using future observations. A first-cycle denominator can be biased by formation/early-cycle instability.
+The product target is `SOH = available_discharge_capacity / reference_capacity(cell)`. The denominator must use a physically interpretable, deterministic capacity measurement and must not depend on future outcomes. An arbitrary first cycle or nominal rating does not establish a reference measurement.
 
 ## Decision
 
-No denominator rule is approved. Do not use nominal capacity, a single first cycle, maximum observed capacity across the full life, or an arbitrary initial window as a substitute. The HUST native files and capacity protocol have not been verified. The Aurora publication describes three formation cycles; its per-cell BDF cycle indices and exact capacity fields have not been verified from the archive.
+**No deterministic reference-capacity rule is frozen.** Five HUST payloads show `dq` equals max-minus-final `Capacity (mAh)` for every inspected cycle; the first value is 0.233–0.283% above the first-ten median in these selected cells. The author pipeline drops the first nine ordered labels but does not call them formation cycles. The paper describes a 10th-cycle charge-curve feature baseline, not a capacity denominator. Aurora's original paper reports three formation cycles and subsequent aging for its NMC622 case; do not generalize this to LFP. The v1 archive has no explicit capacity field and the observed LFP cycle-count sequence repeatedly returns to zero. These facts do not establish a common, stable, complete-discharge reference window.
 
-The only candidate to evaluate after source inspection is a median over an explicitly documented post-formation reference window of repeated standardized discharge-capacity measurements, if and only if both selected sources contain such measurements under comparable protocols. Otherwise the denominator and possibly the cross-source target require architecture review. This candidate is not a frozen rule.
+Reject nominal/rated capacity, single first-cycle capacity, maximum full-life capacity, and an arbitrary post-formation window. Do not use a proposed median window until primary source/file evidence establishes exact source cycle boundaries, the reference protocol, and repeatability in both sources. If no comparable rule fits both sources, the target or source scope requires an explicit architecture decision.
 
 ## Leakage and grouping policy
 
-- Group every row/file/test from one physical cell using `(source_name, source_record_version, source_native_cell_id)` before splitting.
-- Never random-split repeated cycle rows.
-- Exclude the target capacity, its aliases/derived labels, the reference denominator, precomputed SOH/EOL/RUL, future cycles, full-life statistics, and any cumulative values with unknown reset/future semantics from predictors.
-- Treat cycle count, elapsed age, throughput, source, test protocol, filenames, and cell IDs as metadata by default. A future task may justify an inference-available field only with a defined prediction cutoff and separate leakage review.
-- Version the target definition, reference window, feature set, split manifest, and source manifests.
+- Group all files/tests/cycles for one physical cell by `(source_name, source_record_version, source_native_cell_id)` before splitting.
+- Never randomly split repeated cycle rows.
+- Exclude target capacity and aliases, the denominator, HUST `dq`/`rul` labels, precomputed SOH/EOL/RUL, future cycles, full-life statistics, and accumulators with unknown reset semantics from predictors.
+- Keep cell/source/protocol IDs, filenames, batch, chemistry, cycle age, and throughput as grouping/analysis metadata by default. A future prediction task must establish inference-time availability and perform a separate leakage audit.
+- Version the target rule, reference measurements/window, feature lineage, source manifests, and split manifest.
 
 ## Evidence and blocker
 
-- [HUST Mendeley version 2 record](https://data.mendeley.com/datasets/nsc7hnsg4s/2): 77 LFP/graphite cells, same charge protocol, personalized multistage discharge protocols, 30 °C; exact files and reference-check semantics unavailable in current inspection.
-- [Ma et al. (2022)](https://doi.org/10.1039/D2EE01676A): original study describes capacity as a health output and the 77-cell HUST dataset.
-- [Empa Aurora Zenodo v1](https://zenodo.org/records/15481956) and [original publication](https://doi.org/10.1002/batt.202500155): 199 coin cells, LFP//graphite or NMC//graphite; publication describes three formation cycles and subsequent long-term cycling.
-- [BDF ontology/specification](https://github.com/battery-data-alliance/battery-data-format) distinguishes per-cycle discharge capacity from test-cumulative discharge capacity.
+- HUST exact source and inspection: [Mendeley v2](https://data.mendeley.com/datasets/nsc7hnsg4s/2), author paper [Ma et al. (2022)](https://pubs.rsc.org/en/content/articlehtml/2022/ee/d2ee01676a), and [ARCH-01 evidence](../evidence/ARCH-01.md).
+- Aurora exact source and metadata: [Zenodo v1](https://zenodo.org/records/15481956), original [Aurora paper](https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/batt.202500155), and [ARCH-01 evidence](../evidence/ARCH-01.md).
+- Source mappings/nullability are recorded in [DATA_CONTRACT.md](../../DATA_CONTRACT.md); evaluation restrictions are in [ML_EVALUATION_PLAN.md](../../ML_EVALUATION_PLAN.md).
 
-Exact source columns, capacity roll-up, formation indices, stable-reference observations, and target comparability are not established. ARCH-00 remains BLOCKED until directly verified or explicitly redesigned by the project owner.
+Until the Aurora event boundaries and capacity integration rule and the comparable reference-window semantics are directly verified, no SOH target or cross-source metric is approved. This is an architecture blocker, not an implementation choice.

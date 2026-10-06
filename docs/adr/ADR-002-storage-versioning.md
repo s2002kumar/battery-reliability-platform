@@ -1,30 +1,28 @@
 # ADR-002: Immutable Raw Storage and Analytical Versioning
 
 - **Status:** Proposed for architecture review; implementation deferred
-- **Date:** 2026-10-02
-- **Scope:** V1 data persistence and replay lineage
+- **Date:** 2026-10-06
+- **Scope:** V1 persistence and deterministic replay lineage
 
 ## Context
 
-The product requires immutable source bytes, provenance, deterministic replay, idempotence, and reproducible features. Candidate datasets include multi-gigabyte archives. No source bytes are currently present in the repository.
+V1 requires immutable source bytes, provenance, deterministic replay, idempotence, and reproducible targets/features. The selected HUST and Aurora archives are respectively 1.19 GB and 2.51 GB. They were downloaded and inspected outside Git; no source bytes are in the repository. The candidate SINTEF/DLR fixture files range from about 3 MB to 63 MB.
 
 ## Decision
 
-1. Keep each retrieved source artifact immutable and address it by source record/version plus exact file key and SHA-256. Never rewrite or normalize raw bytes in place.
-2. Store a manifest beside raw artifacts with source URI, source version, retrieval timestamp, exact file name, SHA-256, byte size, adapter/version, and explicit license/attribution/usage notes.
-3. Write canonical and curated outputs as Parquet with explicit schema/version and deterministic partition/manifest rules. Rebuild derived data from immutable raw artifacts.
-4. Version feature and target outputs by source manifest, code version, schema/ontology snapshot, and configuration. A rerun of the same logical inputs must be idempotent.
-5. Do not adopt Delta/table transaction machinery until a concrete concurrency, mutation, or time-travel requirement is demonstrated. Local Parquet plus immutable manifests is the V1 default.
-6. Keep datasets outside Git by default. Any future small fixture commit requires verified redistribution terms, attribution, and a deliberate size/storage decision.
+1. Keep every retrieved artifact immutable and address it by source record/version, exact file key, locally computed SHA-256, and byte size.
+2. Keep a manifest adjacent to each stored artifact with source URI/version, retrieval time UTC, exact file key, hash, size, parser/adapter version, and explicit license/attribution/usage notes.
+3. Store canonical and curated output as Parquet with explicit schema/version and deterministic partition/manifest rules. Rebuild derived data from immutable raw artifacts.
+4. Version target/features by source manifest, code, schema/ontology snapshot, and configuration; reruns of the same logical inputs must be idempotent.
+5. Keep full datasets outside Git. Any future fixture-in-Git choice needs verified per-file rights, attribution, and a separate size/storage decision.
+6. Do not add Delta or table transaction machinery without a demonstrated concurrency, mutation, or time-travel requirement. S3 remains a later deployment profile, not an implementation approval here.
 
-## Consequences
+## Consequences and evidence
 
-This direction supports replay and lineage without adding infrastructure dependencies. It places responsibility on manifests and deterministic writers for snapshot identity. Object-store/S3 behavior remains a later deployment profile; this ADR does not approve cloud implementation.
+The exact archive sizes/checksums support keeping source files outside Git. Manifests plus deterministic Parquet outputs provide a minimal architecture boundary for replay without new runtime infrastructure. The BDF datastore is a reference, not an approval to copy its storage layout. No directory layout, cloud storage, or pipeline implementation is frozen by this ADR.
 
-## Evidence and limits
+- [HUST Mendeley v2 artifact](https://data.mendeley.com/datasets/nsc7hnsg4s/2): local SHA-256 recorded in [ARCH-01 evidence](../evidence/ARCH-01.md).
+- [Aurora Zenodo v1 artifact](https://zenodo.org/records/15481956): archive MD5 matches record; local SHA-256 recorded in [ARCH-01 evidence](../evidence/ARCH-01.md).
+- [BDA/SINTEF/DLR fixture catalog](https://zenodo.org/records/21337233): catalog provides exact file sizes/MD5 and per-file licenses; candidate fixture bytes remain unfetched.
 
-- [PROJECT_SPEC.md](../../PROJECT_SPEC.md) and [ARCHITECTURE.md](../../ARCHITECTURE.md) already establish immutable raw, replay, Parquet, and deferred S3 direction.
-- [BDF datastore conventions](https://github.com/battery-data-alliance/bdf-datastore) distinguish raw and processed files and companion metadata.
-- The reviewed Aurora archive is 2,507,129,091 bytes; the fixture collection contains files from 22.6 kB through 258 MB. This supports keeping full public data out of Git but does not itself choose a local storage location.
-
-This ADR freezes only storage/versioning direction. Directory layout, cloud storage, and pipeline implementation remain deferred.
+This storage/versioning direction is for review. It does not unblock ARCH-00 or ARCH-01 and does not authorize ingestion.

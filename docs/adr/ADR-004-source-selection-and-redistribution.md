@@ -1,28 +1,24 @@
-# ADR-004: Candidate Dataset Selection and Redistribution Policy
+# ADR-004: Dataset Selection and Redistribution
 
-- **Status:** Candidate records verified; exact V1 file subset blocked for HUST/Aurora
-- **Date:** 2026-10-02
-- **Scope:** Public dataset selection, fixture scope, and redistribution
+- **Status:** Candidate record selection verified; source ingestion/redistribution scope BLOCKED
+- **Date:** 2026-10-06
+- **Scope:** V1 public data, legal terms, and robustness fixtures
 
-## Candidate records
+## Selected candidate records
 
-1. **HUST:** Mendeley dataset version 2, DOI `10.17632/nsc7hnsg4s.2`, CC BY 4.0 per the [authoritative record](https://data.mendeley.com/datasets/nsc7hnsg4s/2). Candidate supervised source. Record describes 77 LFP/graphite cells and varying multistage discharge protocols. The `our_data.zip` archive and all 77 member names were inventoried; one pickle member's DataFrame field names and the authors' `dq`/`rul` preprocessing use were inspected. Complete `dq`, cycle, capacity, protocol, and third-party-notice semantics remain unresolved, so selection is not final.
-2. **Empa Aurora:** Zenodo v1, DOI `10.5281/zenodo.15481956`, CC BY 4.0 per [Zenodo record metadata](https://zenodo.org/api/records/15481956). Exact archive `Dataset-rocrate.zip`, 2,507,129,091 bytes, MD5 `eaec9549b74b59d998e5138dab965b5d`; its 199 per-cell metadata/BDF file trios were inventoried and one NMC622 metadata file inspected. Exact chemistry subset, time-series rows, and capacity schema remain unverified.
-3. **Robustness fixtures:** SINTEF Battery Lab Zenodo v0.8.0, DOI `10.5281/zenodo.21337233`, record-level CC BY 4.0 and per-dataset `CC-BY-4.0` in its [machine-readable catalog](https://zenodo.org/api/records/21337233/files/metadata.json/content). Initial proposed subset is four clean DLR Basytec fixtures and two intentionally bad SINTEF fixtures listed in [DATA_SOURCES.md](../../DATA_SOURCES.md). They are not ML-training data.
+1. **HUST supervised-data candidate:** Mendeley v2, DOI `10.17632/nsc7hnsg4s.2`, exact `our_data.zip` artifact. Record declares CC BY 4.0. Archive has 77 pickle members; five complete payloads were inspected. HUST `dq` is supported as per-cycle discharge capacity in those five files, but the remaining files and third-party-rights notice have not been cleared for full-source ingestion/redistribution.
+2. **Empa Aurora BDF/second-source candidate:** Zenodo v1, DOI `10.5281/zenodo.15481956`, exact `Dataset-rocrate.zip`. Record declares CC BY 4.0. Archive includes 199 cells: 135 NMC622, 32 LFP, and 32 whose metadata formula is `Ni0.83Mn0.06Co0.11O2`. The last formula differs from the original paper's stated NMC811 composition; do not relabel it absent clarification. The six-column time series has no capacity field; LFP cycle-count resets block cycle/capacity mapping and SOH target approval.
+3. **BDA/SINTEF/DLR pipeline fixture candidate:** Zenodo v0.8.0, DOI `10.5281/zenodo.21337233`. The official record declares CC BY 4.0 and its metadata catalog gives per-file SPDX CC-BY-4.0. Six exact fixture candidates and bug descriptions are in [DATA_SOURCES.md](../../DATA_SOURCES.md). The bytes have not been fetched, so catalog provenance is not yet a test-result claim.
 
-## Redistribution decision
+## Terms and redistribution decision
 
-The three source records' CC BY 4.0 metadata is verified. The [CC BY 4.0 legal code](https://creativecommons.org/licenses/by/4.0/legalcode.en) permits sharing and adaptation, including commercially, subject to attribution, license link, change indication, and no additional restrictions; retain supplied creator, copyright, and disclaimer notices. It licenses only rights the licensor can grant and does not itself clear other rights. Preserve separate attribution and provenance for each artifact. Do not describe the publisher's general “open” status as license permission. Do not commit full datasets: keep raw downloads external to Git; reconsider only a minimal, approved robustness fixture set with attribution and source checksums.
+- The HUST Mendeley v2 record declares [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en), which requires attribution, license link, and change indication for sharing/adaptation. The authoritative record/API carries a generic notice that additional permission may be necessary for content identified as third-party. The archive contains no per-file rights/attribution manifest. Dataset-level license evidence is recorded, but no claim is made that every embedded item is free of third-party restrictions. Keep raw bytes outside Git and do not redistribute them until any applicable third-party rights are clarified.
+- Aurora Zenodo v1 declares CC BY 4.0. Attribute record creators, cite/version the artifact, include the license and modifications. Do not treat per-cell rated-capacity metadata as measured data or make broader rights claims than the record license.
+- The fixture catalog declares each listed item CC-BY-4.0. Preserve source citations and metadata if later retrieved; do not commit the large files without a separate storage choice.
+- Paper/article licenses do not replace the dataset record licenses. No rights are inferred from public accessibility.
 
-## Source-selection limits
+## Consequences and evidence
 
-- HUST and Aurora are not yet approved as a joint SOH benchmark: exact artifact fields, capacity methods, reference windows, and cell-level subsets remain to be inspected.
-- The only candidate comparison is LFP/graphite against LFP//graphite, reported as a combined source/cell-design/protocol stress test, not isolated source or chemistry transfer. Do not make the comparison if target definitions cannot be aligned.
-- BDA/SINTEF/DLR fixtures are approved for parser/validation testing only after retrieving exact versioned files and preserving their file-level license metadata. The initial named subset has verified catalog classifications; bytes have not been downloaded or hashed locally.
+Keep exact source records pinned, retrieve immutable source artifacts outside Git, and retain locally computed SHA-256 plus provenance/attribution metadata. Do not claim model-data comparability or SOH target support merely because both records are openly licensed or use a BDF-labeled format.
 
-## Evidence
-
-- HUST: [Mendeley record v2](https://data.mendeley.com/datasets/nsc7hnsg4s/2); [original paper DOI](https://doi.org/10.1039/D2EE01676A).
-- Empa Aurora: [Zenodo record v1](https://doi.org/10.5281/zenodo.15481956); [record API JSON/license/file metadata](https://zenodo.org/api/records/15481956); [original paper DOI](https://doi.org/10.1002/batt.202500155).
-- Fixtures: [Zenodo record v0.8.0](https://doi.org/10.5281/zenodo.21337233); [record API JSON](https://zenodo.org/api/records/21337233); [per-file catalog](https://zenodo.org/api/records/21337233/files/metadata.json/content); [README](https://zenodo.org/records/21337233).
-- Canonical terms: [CC BY 4.0 legal code](https://creativecommons.org/licenses/by/4.0/legalcode.en).
+Direct artifact identities, source checksums, exact Aurora chemistry IDs/schema, selected fixture classes, and limitations appear in [ARCH-01 evidence](../evidence/ARCH-01.md) and [DATA_SOURCES.md](../../DATA_SOURCES.md). No production ingestion is authorized by this ADR.

@@ -1,31 +1,32 @@
 # ADR-001: Canonical Schema Boundary and BDF Alignment
 
-- **Status:** Proposed; source mapping not approved (ARCH-00 BLOCKED)
-- **Date:** 2026-10-02
-- **Scope:** Canonical measurement vocabulary boundary before any source adapter is implemented
+- **Status:** Proposed; ARCH-00/ARCH-01 BLOCKED, source mappings are only partially verified
+- **Date:** 2026-10-06
+- **Scope:** Canonical measurement vocabulary before adapters exist
 
 ## Context
 
-V1 needs a stable representation across vendor exports without erasing source semantics. BDF defines common cycler quantities, units, required/recommended/optional conformance, and distinctions among step, cycle, and test cumulative capacities. The draft contract previously used an unqualified `discharge_capacity_ah`, which cannot distinguish these quantities.
+V1 needs common battery measurements without erasing source semantics. The BDF format distinguishes required time/voltage/current from optional cycle, step, cumulative, cycle-capacity, step-capacity, and energy quantities. Source fields named “capacity” or “cycle” do not alone establish these meanings.
 
-## Proposed decision
+## Decision boundary
 
-1. Align canonical time-series measurement meanings and normalized SI units with the pinned Battery Data Alliance BDF ontology/specification.
-2. Keep project provenance, source-scoped cell/test identity, quality, and feature lineage as project-owned fields outside the BDF measurement vocabulary.
-3. Keep separate fields for cycle, step, and test-cumulative charge/discharge capacity. Do not map an ambiguous capacity label to a canonical field.
-4. Preserve BDF current sign (positive charge, negative discharge), source cycle counts, pauses, and source-native IDs. Never silently renumber, reset, or coerce.
-5. Missing optional values remain null/absent. Ambiguous semantics quarantine the affected data with machine-readable reason.
-6. Pin the exact BDF release/ontology snapshot at implementation time; do not depend on mutable `main`.
+1. Align canonical measurement meaning and SI units to a pinned Battery Data Alliance BDF specification/ontology snapshot before implementation.
+2. Preserve raw source names, values, source IDs, order, and sign. Keep project provenance, cell/test identity, quality, and lineage outside the BDF measurement vocabulary.
+3. Use separate canonical fields for test-cumulative, per-cycle, and per-step charge/discharge capacity/energy. No unqualified `discharge_capacity_ah` field.
+4. BDF current is positive for charge and negative for discharge. Preserve that convention; do not reverse signs or reset source counters.
+5. Missing optional source fields remain null/absent. Ambiguous required semantics fail or quarantine with a machine-readable reason.
+6. No adapter is approved by this ADR. Exact HUST/Aurora mappings below are evidence-based candidates only.
 
-## Field boundary
+## Verified source mapping candidates
 
-`test_time_s`, `voltage_v`, and `current_a` are the canonical measurement minimum. `cycle_index`, `step_count`, `step_id`, `step_time_s`, temperature channels, absolute timestamp, and cycle/step/test capacity/energy are optional and nullable only when absent from the source. Derived step/cycle boundaries must include method and version. Full details and nullability are in [DATA_CONTRACT.md](../../DATA_CONTRACT.md).
+- HUST five inspected complete payloads share `Status`, `Cycle number`, `Current (mA)`, `Voltage (V)`, `Capacity (mAh)`, `Time (s)` in every cycle frame. Candidate unit mappings are time→seconds, current mA→A, voltage→V. `dq` matches max-minus-final `Capacity (mAh)` in all 9,453 inspected cycle records; it may be converted mAh→Ah only after the remaining files are audited. `Status` is source-specific and not an approved step ID. See [DATA_CONTRACT.md](../../DATA_CONTRACT.md).
+- Aurora all 199 Parquet files share six columns: `test_time_millisecond`, `current_ampere`, `voltage_volt`, `cycle_dimensionless`, `date_time_millisecond`, `ambient_temperature_celsius`. Time/current/voltage/temperature have explicit unit-bearing names. There is no capacity, energy, step, or status column. Aurora LFP cell `ccid000217` contains 506 returns of `cycle_dimensionless` to zero after increasing; preserve it as source-specific and do not normalize to a canonical cycle index pending authoritative boundary semantics.
+- Aurora CSV/Parquet values matched for four sampled members. Parquet metadata reports no nulls in the common schema for all 199 cells.
 
-## Evidence and unresolved condition
+## Evidence and limits
 
-- [BDF specification repository](https://github.com/battery-data-alliance/battery-data-format) states one cell per time-series file, required time/voltage/current, current sign, and optional cycle/step/capacity fields.
-- [BDF specification README](https://github.com/battery-data-alliance/battery-data-format/blob/main/README.md) distinguishes cumulative test capacities from per-cycle capacities and says source IDs/metadata belong in companion metadata.
-- The inspected HUST `our_data/1-1.pkl` DataFrame exposes `Time (s)`, `Voltage (V)`, `Current (mA)`, `Cycle number`, `Status`, and `Capacity (mAh)`. Unit names do not establish sign, aggregation, cycle, or capacity semantics; no adapter mapping is approved.
-- The Aurora archive inventory and `empa__ccid000001.metadata.json` were inspected, but its `.bdf.csv`/`.bdf.parquet` time-series rows were not parsed. Record-level BDF description is not evidence of the actual capacity fields or null behavior in each member.
+- [BDF specification](https://github.com/battery-data-alliance/battery-data-format) and [ontology](https://github.com/battery-data-alliance/battery-data-format-ontology); pin a release or commit before implementation.
+- [HUST Mendeley v2](https://data.mendeley.com/datasets/nsc7hnsg4s/2), exact archive checksum and direct payload audit in [ARCH-01 evidence](../evidence/ARCH-01.md).
+- [Aurora Zenodo v1](https://zenodo.org/records/15481956) and [original paper](https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/batt.202500155); full inventory/schema/cycle audit in [ARCH-01 evidence](../evidence/ARCH-01.md).
 
-The vocabulary boundary is proposed, but mapping coverage for selected sources has not been demonstrated. Revisit this ADR after exact source artifacts and headers are inspected. No source adapter is authorized by this ADR.
+The BDF-aligned vocabulary is a proposed architecture boundary, not a completed canonical schema contract. HUST source-wide verification and Aurora cycle/capacity semantics block adapter approval. No production code is authorized.
