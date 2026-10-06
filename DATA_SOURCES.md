@@ -1,49 +1,58 @@
-# Data Sources
+# Data Sources — ARCH-00 Research State
 
-No dataset bytes are committed unless redistribution rights are explicitly verified.
+**Gate status: BLOCKED.** Record-level licenses, exact archives, the HUST member inventory/sample schema, and the Aurora archive inventory plus one cell-metadata sample are verified. The complete HUST payload semantics and Aurora BDF row/field semantics remain unverified. Do not begin ingestion or claim a frozen cross-source target until these source-level decisions are resolved.
 
-## V1 candidates
+No source bytes have been downloaded into this repository or committed. Record-level license metadata does not replace recording attribution, license text, provenance, and exact artifact checksums for any later use.
 
-### HUST personalized discharge dataset
+## Selected records under review
 
-Role: primary supervised-ML source candidate.
+### HUST personalized-discharge dataset
 
-Research expectation to verify directly in ARCH-00:
-- LFP/graphite cells;
-- heterogeneous discharge protocols;
-- explicit open license;
-- enough cycle/capacity information for SOH target construction.
+- **Record:** Yuan, Ma, Xu, *The Dataset for: Real-time personalized health status prediction of lithium-ion batteries using deep transfer learning*, Mendeley Data, version 2, DOI [10.17632/nsc7hnsg4s.2](https://doi.org/10.17632/nsc7hnsg4s.2).
+- **Primary description and terms:** [Mendeley Data version 2 record](https://data.mendeley.com/datasets/nsc7hnsg4s/2). It states 77 LFP/graphite cells, nominal 1.1 Ah and 3.3 V, identical charge protocol, distinct multistage discharge protocols, 30 °C, and CC BY 4.0.
+- **Original paper:** [Ma et al., Energy & Environmental Science (2022), DOI 10.1039/D2EE01676A](https://doi.org/10.1039/D2EE01676A). The paper describes A123 APR18650M1A LFP/graphite cells, 77 discharge protocols, over 140,000 charge-discharge cycles, and capacity estimation as an output/label. The paper points to the same Mendeley version.
+- **Terms decision:** dataset record says [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/legalcode.en). The license permits sharing and adaptation, including commercially, subject to attribution, license link, indication of changes, and no extra restrictions; preserve supplied creator/copyright/disclaimer notices. The license only covers rights the licensor can grant, so do not infer clearance of other rights. No permission is inferred from the paper's separate article license. Verify any additional file-specific notices before importing files.
+- **Exact V1 artifact:** `our_data.zip`, 1,188,136,932 bytes, archive SHA-256 `071d24617153693b0d29059568525e620f6af6512acc9d00c98c7adcf15125db`, file ID `5ca0ac3e-d598-4d07-8dcb-879aa047e98b`. These are from the Mendeley public dataset snapshot/API; [API docs](https://data.mendeley.com/api/docs/). ZIP directory inspection found one `our_data/` directory and exactly 77 `.pkl` members. Exact stems by group are `1-{1..8}`, `2-{2..8}`, `3-{1..8}`, `4-{1..8}`, `5-{1..7}`, `6-{1..6,8}`, `7-{1..8}`, `8-{1..8}`, `9-{1..8}`, and `10-{1..8}`; append `.pkl` under `our_data/` (for example, `our_data/1-1.pkl`). No source bytes were added to the repository; one compressed member was fetched via HTTP byte range to inspect its serialization/schema.
+- **Observed file schema:** sampled `our_data/1-1.pkl` is a protocol-4 pickle whose outer object is keyed by `1-1`; the author preprocessing code expects nested `rul`, `dq`, and `data` entries. The observed `data` object is a pandas DataFrame with `Status`, `Cycle number`, `Current (mA)`, `Voltage (V)`, `Capacity (mAh)`, and `Time (s)`. Example status values include constant-current charge, constant-current/constant-voltage charge, and `Constant current discharge_0` through `_3`. The exact payload structures/values of all 77 files have not been validated.
+- **Capacity and cycle semantics:** the original authors' [preprocessing code](https://raw.githubusercontent.com/HAIRLAB/Health_status_prediction/main/common.py) uses each cell's `dq[cycle]` as a capacity label and uses `rul` as an RUL label; it also uses `data[cycle]` charge rows to form voltage/capacity features. This supports an available per-cycle capacity target candidate but does not define our SOH denominator. The code begins from `list(A_dq.keys())[9:]` in its HUST path; it does not document that omission as a formation rule. Do not infer cycle-zero mapping or treat `Capacity (mAh)` in the time-series rows as the discharge target without validation.
+- **Terms caveat:** the Mendeley record labels the dataset CC BY 4.0 and its API description warns that further permission may be required for content identified as belonging to third parties. No such per-member notices have been checked; inspect before redistributing any content.
+- **Still blocked:** confirm the `dq` definition/unit and its relation to a complete discharge cycle for every payload, validate cycle ordering and source current sign, locate formation/early unstable cycles and any standardized reference-capacity measurements, and check third-party notices. Do not invent a SOH denominator.
 
-### Empa Aurora battery dataset
+### Empa Aurora dataset
 
-Role: standards-aligned second source and cross-source/domain-shift stress evaluation candidate.
+- **Record:** Svaluto-Ferro et al., *Dataset for publication “Toward an Autonomous Robotic Battery Materials Research Platform…”*, Zenodo version v1, DOI [10.5281/zenodo.15481956](https://doi.org/10.5281/zenodo.15481956).
+- **Record files:** exact downloadable artifact `Dataset-rocrate.zip`, 2,507,129,091 bytes, record MD5 `eaec9549b74b59d998e5138dab965b5d`. This is the exact archive selected for review; no archive bytes have been copied into the repository.
+- **Contents directly checked:** HTTP-range ZIP-directory inspection found 797 entries: 199 cell directories, each with one `empa__ccid000XXX.metadata.json`, one `.bdf.csv`, and one `.bdf.parquet`, plus `ro-crate-metadata.json`. Cell IDs are in the record's `ccid000001`–`ccid000249` namespace with gaps; the record IDs are not a contiguous cell count. A sampled internal file `empa__ccid000001.metadata.json` is 55,780 uncompressed bytes and JSON-LD with `@context`/`@graph`; it identifies a coin cell, product IDs, creator/date/manufacturer, positive/negative electrode composition and measured properties, rated-capacity metadata, and a generated cycling protocol. That sample is NMC622//graphite (positive-electrode formula LiNi0.6Co0.2Mn0.2O2; negative graphite). The BDF CSV/Parquet member row schemas have not yet been read.
+- **Record-level population:** 199 coin cells with NMC//graphite or LFP//graphite. Exact chemistry counts and LFP cell IDs require reading each per-cell metadata file and remain unresolved.
+- **Terms decision:** the authoritative [Zenodo record API JSON](https://zenodo.org/api/records/15481956) declares `cc-by-4.0`; see [CC BY 4.0 legal code](https://creativecommons.org/licenses/by/4.0/legalcode.en). Sharing/adaptation is permitted subject to attribution, license link, change indication, and no extra restrictions, only for rights the licensor can grant. Archive-level MD5 is not a substitute for per-file SHA-256 computed at ingestion.
+- **Original study:** [Svaluto-Ferro et al., Batteries & Supercaps (2025), DOI 10.1002/batt.202500155](https://doi.org/10.1002/batt.202500155). It describes CR2032 coin cells, graphite anodes, LFP and NMC622/NMC811 cathodes, 25 °C testing, three formation cycles at 0.1 mA cm-2 followed by long-term cycling at 1.0 mA cm-2. Protocol metadata is cell-specific. Formation-cycle source indices must be read from the files/metadata; do not equate them to a hard-coded BDF `cycle_count` value.
+- **Capacity signal:** BDF defines optional cycle-discharge capacity semantics; the source archive is confirmed to contain BDF files, and the sample cell metadata contains protocol/rated-capacity information. This supports a *candidate* capacity target, not a verified Aurora source mapping: BDF headers/rows, cycle count values, actual cycle-capacity fields, and the chemistry-specific protocol population have not been read.
 
-Research expectation to verify directly in ARCH-00:
-- BDF-compatible exports;
-- rich metadata;
-- multiple chemistries / materially different domain;
-- compatible capacity/SOH information.
+### BDA/SINTEF/DLR robustness fixtures
 
-### BDA / SINTEF / DLR robustness fixtures
+- **Record:** SINTEF Battery Lab, *Battery Datasets for Testing Data Pipelines and Workflow Automation*, Zenodo version 0.8.0, DOI [10.5281/zenodo.21337233](https://doi.org/10.5281/zenodo.21337233).
+- **Record terms:** [Zenodo record API JSON](https://zenodo.org/api/records/21337233) declares `cc-by-4.0`. The record's machine-readable [metadata catalog](https://zenodo.org/api/records/21337233/files/metadata.json/content) declares per-dataset licenses as SPDX `CC-BY-4.0`, source citations, sizes, and parser IDs. Apply [CC BY 4.0 legal terms](https://creativecommons.org/licenses/by/4.0/legalcode.en), including attribution, license link, and change indication. The record [README](https://zenodo.org/records/21337233) says bug-containing files are intentional robustness examples.
+- **Raw-fixture policy:** use only the listed version-0.8.0 files below, retain upstream bytes unchanged, attribute contributors, and keep fixture provenance/license metadata beside them. They are robustness/conformance inputs, not SOH training observations. Do not commit them until a separate fixture-size/storage decision is approved.
 
-Role: parser, validation, and robustness tests across cycler formats and known-bad examples.
+| Purpose | Exact file | Bytes | Record MD5 | Verified content / issue |
+|---|---|---:|---|---|
+| Clean Basytec parser fixture | `DLR__LiGrHydra0b__20221114__GITT__25degC__Basytec.txt` | 62,380,666 | `26eb1804d891c87bff7af244927be602` | DLR, Li-graphite half-cell, GITT; no listed bug |
+| Clean Basytec parser fixture | `DLR__LiGrHydra0b__20230131__POCV__25degC__Basytec.txt` | 9,257,892 | `9e5b47be4a13c71a66d20714d3e016b6` | DLR, Li-graphite half-cell, POCV; no listed bug |
+| Clean Basytec chemistry fixture | `DLR__LiLNMOHydra0b__20221125__POCV__25degC__Basytec.txt` | 4,060,881 | `5e6bd90f2f01b777fe871e7f867d3ee0` | DLR, Li-LNMO half-cell, POCV; no listed bug |
+| Clean Basytec chemistry fixture | `DLR__LiLNMOHydra0b__20221130__GITT__25degC__Basytec.txt` | 63,013,852 | `4c72b750dead3747e9bfe82413ecc9cd` | DLR, Li-LNMO half-cell, GITT; no listed bug |
+| Intentional bad-data fixture | `SINTEF__NaCR32140-MP10-04__20250825__CCCV-0p02C__25degC__BioLogic__OutlierBug.mpt` | 53,617,142 | `627f276281d2de9ad3ffe9494c7b115d` | Na-ion full cell; voltage/current outliers and corrupted vendor energy accumulators |
+| Intentional bad-data fixture | `SINTEF__SLPBA842124HV__20241023__Rate__25degC__Neware__TimeBug.csv` | 3,151,396 | `e2075f6ffd08ea0d9f1e686cebbf2d1e` | Li-ion full cell; non-monotonic total time |
 
-Only files with explicit compatible licensing may be stored as repository fixtures.
+The record also lists an FZJ Digatron time-unit defect and other ordinary clean files. They are not selected in the initial fixture subset above; all candidate fixture records remain licensed CC BY 4.0 at record and per-file catalog level. If broader parser coverage is later requested, select exact files from the catalog and revise this table before ingesting them.
 
-## Source registration requirements
+## Provenance fields for each retrieved artifact
 
-Each registered artifact must record:
+Record `source_name`, canonical record URL/DOI and version, exact source file key, retrieval timestamp (UTC), SHA-256 of downloaded bytes, byte size, adapter name/version, license identifier and attribution text, and any source-specific interpretation. Store upstream MD5 only as a reference-record checksum; do not treat it as a cryptographic integrity hash for our ingestion manifest.
 
-- source_name
-- source_uri
-- source_version
-- retrieved_at
-- license_or_terms
-- sha256
-- byte_size
-- adapter_name
-- adapter_version
+## Verified decision state
 
-## ARCH-00 exit condition
-
-This document is frozen only after exact source records/files, license terms, target availability, field mappings, and redistribution policy are directly verified and recorded with citations/links.
+- HUST is the supervised-data candidate, but exact artifacts/schema/reference-test semantics are **not verified**.
+- Aurora is the BDF-format and potential second-source candidate. The archive inventory and one NMC622 metadata sample were inspected, but no BDF time-series rows or full chemistry inventory were inspected.
+- The six named SINTEF/DLR fixtures above have record/catalog license metadata and explicit bug classifications. Their bytes have not been fetched or hashed locally.
+- Redistribution terms are verified as CC BY 4.0 at source-record/catalog level for these three records. The repository currently stores none of their data bytes.
+- ARCH-00 cannot pass while HUST `dq` semantics/reference cycles, Aurora BDF capacity fields/reference cycles, and the exact Aurora LFP subset remain unverified.
