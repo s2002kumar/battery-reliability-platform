@@ -1,0 +1,199 @@
+{
+  "archive": {
+    "observed_md5": "eaec9549b74b59d998e5138dab965b5d",
+    "record_md5": "eaec9549b74b59d998e5138dab965b5d",
+    "sha256": "61f66d309462c5bcbb00ddfef0d141ad836f811f2b78d07457aadc4a3e7baff7",
+    "size_bytes": 2507129091
+  },
+  "cells": [
+    {
+      "cell_id": "ccid000217",
+      "current_voltage_by_initial_cycle": [
+        {
+          "current_max_milliamp": 1.5400974079966545,
+          "current_min_milliamp": -1.5401603886857629,
+          "cycle_dimensionless": 0,
+          "row_count": 2839,
+          "voltage_max_v": 3.2084999084472656,
+          "voltage_min_v": 0.41519999504089355
+        },
+        {
+          "current_max_milliamp": 0.1540167722851038,
+          "current_min_milliamp": -0.15402259305119514,
+          "cycle_dimensionless": 1,
+          "row_count": 7008,
+          "voltage_max_v": 3.6501998901367188,
+          "voltage_min_v": 1.5351999998092651
+        },
+        {
+          "current_max_milliamp": 0.15401786367874593,
+          "current_min_milliamp": -0.15402173448819667,
+          "cycle_dimensionless": 2,
+          "row_count": 6572,
+          "voltage_max_v": 3.6500000953674316,
+          "voltage_min_v": 2.504499912261963
+        },
+        {
+          "current_max_milliamp": 0.15401847485918552,
+          "current_min_milliamp": -0.1540197990834713,
+          "cycle_dimensionless": 3,
+          "row_count": 6491,
+          "voltage_max_v": 3.6501998901367188,
+          "voltage_min_v": 2.5009000301361084
+        },
+        {
+          "current_max_milliamp": 1.5401870477944613,
+          "current_min_milliamp": -1.5401373384520411,
+          "cycle_dimensionless": 4,
+          "row_count": 699,
+          "voltage_max_v": 3.650099992752075,
+          "voltage_min_v": 2.5253000259399414
+        },
+        {
+          "current_max_milliamp": 1.5401688870042562,
+          "current_min_milliamp": -1.5401482814922929,
+          "cycle_dimensionless": 5,
+          "row_count": 685,
+          "voltage_max_v": 3.6501998901367188,
+          "voltage_min_v": 2.5280001163482666
+        },
+        {
+          "current_max_milliamp": 1.5401918208226562,
+          "current_min_milliamp": -1.5401579439640045,
+          "cycle_dimensionless": 6,
+          "row_count": 683,
+          "voltage_max_v": 3.650099992752075,
+          "voltage_min_v": 2.544300079345703
+        }
+      ],
+      "cycle_decrease_count": 506,
+      "cycle_max": 1003,
+      "cycle_min": 0,
+      "cycle_transition_count": 2014,
+      "first_24_cycle_values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "return_to_zero_count": 506,
+      "row_count": 591533,
+      "test_time_decrease_count": 0
+    },
+    {
+      "cell_id": "ccid000249",
+      "current_voltage_by_initial_cycle": [
+        {
+          "current_max_milliamp": 0.15401870768982917,
+          "current_min_milliamp": -1.5401155687868595,
+          "cycle_dimensionless": 0,
+          "row_count": 2811,
+          "voltage_max_v": 2.504199981689453,
+          "voltage_min_v": 0.2922999858856201
+        },
+        {
+          "current_max_milliamp": 0.15401786367874593,
+          "current_min_milliamp": -0.1540103548904881,
+          "cycle_dimensionless": 1,
+          "row_count": 7113,
+          "voltage_max_v": 3.6503000259399414,
+          "voltage_min_v": 1.5033999681472778
+        },
+        {
+          "current_max_milliamp": 0.15401883865706623,
+          "current_min_milliamp": -0.15400926349684596,
+          "cycle_dimensionless": 2,
+          "row_count": 6702,
+          "voltage_max_v": 3.6503000259399414,
+          "voltage_min_v": 2.5
+        },
+        {
+          "current_max_milliamp": 0.15401920245494694,
+          "current_min_milliamp": -0.15400926349684596,
+          "cycle_dimensionless": 3,
+          "row_count": 6633,
+          "voltage_max_v": 3.6503000259399414,
+          "voltage_min_v": 2.500699996948242
+        },
+        {
+          "current_max_milliamp": 1.5401579439640045,
+          "current_min_milliamp": -1.5400889096781611,
+          "cycle_dimensionless": 4,
+          "row_count": 714,
+          "voltage_max_v": 3.6503000259399414,
+          "voltage_min_v": 2.5364999771118164
+        },
+        {
+          "current_max_milliamp": 1.5401265118271112,
+          "current_min_milliamp": -1.5401095151901245,
+          "cycle_dimensionless": 5,
+          "row_count": 702,
+          "voltage_max_v": 3.6503000259399414,
+          "voltage_min_v": 2.4995999336242676
+        },
+        {
+          "current_max_milliamp": 1.5401361742988229,
+          "current_min_milliamp": -1.5400998527184129,
+          "cycle_dimensionless": 6,
+          "row_count": 698,
+          "voltage_max_v": 3.6503000259399414,
+          "voltage_min_v": 2.521399974822998
+        }
+      ],
+      "cycle_decrease_count": 500,
+      "cycle_max": 1003,
+      "cycle_min": 0,
+      "cycle_transition_count": 2003,
+      "first_24_cycle_values": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "return_to_zero_count": 500,
+      "row_count": 630711,
+      "test_time_decrease_count": 0
+    }
+  ],
+  "pyarrow_version": "21.0.0"
+}

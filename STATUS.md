@@ -2,11 +2,11 @@
 
 ## Current milestone
 
-**FOUND-01 DONE; Architecture/Data Gate BLOCKED**
+**ARCH-00 / ARCH-01 data and ML architecture gate: PASS; architecture review required before ingestion.**
 
 ## Current task
 
-**ARCH-01 — resolve ARCH-00 evidence blockers before any ingestion**
+**ARCH-01 — direct source inspection and blocker-resolution decision completed.** Research and architecture documents only; no ingestion, feature, or model implementation was started.
 
 ## Product state
 
@@ -16,24 +16,20 @@
 - Coding implementation: FOUNDATION COMPLETE; source/domain implementation NOT STARTED
 - Resume claims approved: NONE
 
-## Current blockers
+## Verified decisions and limitations
 
-1. **HUST semantics blocker:** exact Mendeley v2 archive (`our_data.zip`), SHA-256, all 77 pickle member names, and one cell's serialized DataFrame schema were verified. The exact `dq` meaning/units and mapping to complete discharge cycles across all payloads, current sign, formation/early-cycle semantics, and source third-party notices remain unverified.
-2. **Aurora data blocker:** Zenodo v1 record/license/archive checksum, 199 cell folders and each file-pattern trio, plus one JSON-LD cell metadata file were verified. The chemistry-specific cell IDs/counts, BDF CSV/Parquet row fields, cycle-index values, and capacity-field semantics have not been extracted from time-series members.
-3. **Target blocker:** no common deterministic reference-capacity rule can be selected until exact source capacity fields and post-formation/reference-test semantics are verified. The first cycle is specifically not accepted as a denominator by assumption.
-4. **Cross-source blocker:** only an LFP/graphite subset comparison is a candidate. It would combine source, format/design, temperature, and protocol shifts. The exact Aurora LFP subset and comparable capacity target have not been established.
+1. **HUST:** exact Mendeley v2 archive has 77 pickle members. All 77 payloads were safely deserialized for filename/cell identity, `data`/`dq`/`rul` key-set/order alignment, and early-window label stability. Seven named representative/edge payloads received full frame-level inspection across 13,517 cycles and 8,641,884 rows; `dq` matches max-minus-final `Capacity (mAh)` within 2.28e-13 mAh. Across 77 cells, first-three `dq` windows have a maximum range of 0.724% of the median (median 0.154%). Frame-level schema/null coverage remains seven payloads; ingestion must validate every member and quarantine deviations.
+2. **Aurora:** all 199 metadata records and Parquet schemas are inventoried; the exact SOH subset is 32 LFP/graphite cells. Their metadata directly specifies three low-rate cycles followed by 1,000 aging cycles. All 32 time series yield 1,003 substantive current-integrated discharge events aligned to that protocol. Preserve the raw resetting `cycle_dimensionless`; derive an auditable event ordinal and capacity. Three cells have one event each outside the 0.08 V cutoff diagnostic; quarantine those events. The separate 32 formula records `Ni0.83Mn0.06Co0.11O2` still differ from the paper's stated NMC811 formula; they are outside the selected SOH subset and remain unreclassified.
+3. **SOH:** use the median capacity of the first three complete discharges in each cell's sustained aging protocol. HUST uses `dq` keys 1–3; Aurora LFP uses the first three aging events after its metadata-declared three-cycle low-rate phase. Exclude reference cycles from scored targets. This is a within-cell normalized target, not absolute cross-source capacity.
+4. **Evaluation:** approve grouped held-out-cell evaluation and a bounded exploratory zero-shot HUST→Aurora LFP combined-domain-shift test after ingestion/evaluation tasks pass. This simultaneously shifts lab/source, cylindrical vs coin-cell design, temperature, batch, and protocol; it does not isolate any one cause. Also retain HUST unseen-protocol holdout. Full leakage and grouping policy is in `ML_EVALUATION_PLAN.md`.
+5. **Rights/fixtures:** HUST Mendeley v2 and Aurora Zenodo v1 explicitly declare CC BY 4.0. HUST's exact archive has no identified third-party component; record-level redistribution is permitted for licensed material with attribution, license link, and change notice. SINTEF/DLR fixture candidates have record/catalog-level CC BY terms and exact bug classifications; local fixture bytes remain to be verified before making parser test claims.
 
 ## Last decision
 
-On 2026-10-06, ARCH-00 PR [#4](https://github.com/s2002kumar/battery-reliability-platform/pull/4) was squash-merged into `main` at `60937a8dd9d2b13491a3c2a7826f3c618dab7c42`; its research disposition remains BLOCKED. FOUND-01 is implemented on `chore/FOUND-01-repository-foundation`; local gates and GitHub Actions runs [37508586503](https://github.com/s2002kumar/battery-reliability-platform/actions/runs/37508586503) and [37511473205](https://github.com/s2002kumar/battery-reliability-platform/actions/runs/37511473205) pass. FOUND-01 PR [#3](https://github.com/s2002kumar/battery-reliability-platform/pull/3) was created after green CI; its branch must be rebased onto updated `main` and CI rerun before squash merge. No ingestion or ML work is authorized while ARCH-00 remains BLOCKED. See [docs/evidence/ARCH-00.md](docs/evidence/ARCH-00.md) and [docs/evidence/FOUND-01.md](docs/evidence/FOUND-01.md).
+ARCH-00 and ARCH-01 pass their research/architecture gates based on the exact archive checksums, primary terms, direct data inspection, reproducible audit scripts, and documented limitations. See [ARCH-00 evidence](docs/evidence/ARCH-00.md), [ARCH-01 evidence](docs/evidence/ARCH-01.md), ADR-001 through ADR-004, and the source/contract/evaluation documents. This does not itself authorize INGEST-01: the required architecture review and scoped implementation task card remain prerequisites.
+
+FOUND-01 is DONE and merged to `main` in PR [#3](https://github.com/s2002kumar/battery-reliability-platform/pull/3) at `4784bd6fc54b87fff73f825b2ab946e2c7774657`. ARCH-00 research is merged in PR [#4](https://github.com/s2002kumar/battery-reliability-platform/pull/4) at `60937a8dd9d2b13491a3c2a7826f3c618dab7c42`. ARCH-01 research is isolated on `docs/ARCH-01-blocker-resolution` and recorded in its task commit.
 
 ## Update protocol
 
-Every completed task must append:
-- task ID;
-- date;
-- commit/PR;
-- tests run;
-- evidence path;
-- known limitations;
-- newly unblocked task(s).
+Every completed or blocked task must record its task ID, date, commit/PR, checks, evidence path, limitations, and newly unblocked task(s). A blocked task unblocks nothing.

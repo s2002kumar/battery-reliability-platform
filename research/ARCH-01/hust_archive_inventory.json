@@ -1,0 +1,1657 @@
+{
+  "archive": "C:\\Users\\s23ku\\AppData\\Local\\Temp\\ARCH01-our_data.zip",
+  "archive_bytes": 1188136932,
+  "archive_sha256": "071d24617153693b0d29059568525e620f6af6512acc9d00c98c7adcf15125db",
+  "non_directory_member_count": 77,
+  "member_inventory": [
+    {
+      "name": "our_data/1-1.pkl",
+      "compressed_bytes": 17309189,
+      "uncompressed_bytes": 53553885,
+      "crc32": "1141ccc3"
+    },
+    {
+      "name": "our_data/1-2.pkl",
+      "compressed_bytes": 26465614,
+      "uncompressed_bytes": 88277079,
+      "crc32": "1f96c5e8"
+    },
+    {
+      "name": "our_data/1-3.pkl",
+      "compressed_bytes": 16584872,
+      "uncompressed_bytes": 57386031,
+      "crc32": "0063baa6"
+    },
+    {
+      "name": "our_data/1-4.pkl",
+      "compressed_bytes": 12851046,
+      "uncompressed_bytes": 45359349,
+      "crc32": "4fbd73b3"
+    },
+    {
+      "name": "our_data/1-5.pkl",
+      "compressed_bytes": 15708660,
+      "uncompressed_bytes": 58293447,
+      "crc32": "f845ea6a"
+    },
+    {
+      "name": "our_data/1-6.pkl",
+      "compressed_bytes": 11531117,
+      "uncompressed_bytes": 37837770,
+      "crc32": "2d141e56"
+    },
+    {
+      "name": "our_data/1-7.pkl",
+      "compressed_bytes": 12643743,
+      "uncompressed_bytes": 48766119,
+      "crc32": "8ea0f430"
+    },
+    {
+      "name": "our_data/1-8.pkl",
+      "compressed_bytes": 16534420,
+      "uncompressed_bytes": 64277382,
+      "crc32": "2cc073d1"
+    },
+    {
+      "name": "our_data/10-1.pkl",
+      "compressed_bytes": 11364923,
+      "uncompressed_bytes": 45067561,
+      "crc32": "e678575f"
+    },
+    {
+      "name": "our_data/10-2.pkl",
+      "compressed_bytes": 11379347,
+      "uncompressed_bytes": 44034424,
+      "crc32": "34b475a4"
+    },
+    {
+      "name": "our_data/10-3.pkl",
+      "compressed_bytes": 12229784,
+      "uncompressed_bytes": 46403656,
+      "crc32": "e4da2230"
+    },
+    {
+      "name": "our_data/10-4.pkl",
+      "compressed_bytes": 19415071,
+      "uncompressed_bytes": 62687977,
+      "crc32": "a9c58627"
+    },
+    {
+      "name": "our_data/10-5.pkl",
+      "compressed_bytes": 17979714,
+      "uncompressed_bytes": 62100715,
+      "crc32": "0c2ef308"
+    },
+    {
+      "name": "our_data/10-6.pkl",
+      "compressed_bytes": 21869447,
+      "uncompressed_bytes": 72938470,
+      "crc32": "c5bdd4ea"
+    },
+    {
+      "name": "our_data/10-7.pkl",
+      "compressed_bytes": 16153489,
+      "uncompressed_bytes": 55462822,
+      "crc32": "6d661f10"
+    },
+    {
+      "name": "our_data/10-8.pkl",
+      "compressed_bytes": 14079428,
+      "uncompressed_bytes": 47141296,
+      "crc32": "974c63b2"
+    },
+    {
+      "name": "our_data/2-2.pkl",
+      "compressed_bytes": 17725536,
+      "uncompressed_bytes": 72468021,
+      "crc32": "1f431936"
+    },
+    {
+      "name": "our_data/2-3.pkl",
+      "compressed_bytes": 15800798,
+      "uncompressed_bytes": 54662280,
+      "crc32": "9e9dd337"
+    },
+    {
+      "name": "our_data/2-4.pkl",
+      "compressed_bytes": 10719526,
+      "uncompressed_bytes": 41683974,
+      "crc32": "63666c85"
+    },
+    {
+      "name": "our_data/2-5.pkl",
+      "compressed_bytes": 9460792,
+      "uncompressed_bytes": 36734361,
+      "crc32": "160ea26b"
+    },
+    {
+      "name": "our_data/2-6.pkl",
+      "compressed_bytes": 10228166,
+      "uncompressed_bytes": 40868952,
+      "crc32": "a74de71a"
+    },
+    {
+      "name": "our_data/2-7.pkl",
+      "compressed_bytes": 14492515,
+      "uncompressed_bytes": 55935489,
+      "crc32": "06397b66"
+    },
+    {
+      "name": "our_data/2-8.pkl",
+      "compressed_bytes": 11821956,
+      "uncompressed_bytes": 44391066,
+      "crc32": "dcde1125"
+    },
+    {
+      "name": "our_data/3-1.pkl",
+      "compressed_bytes": 13086974,
+      "uncompressed_bytes": 52017495,
+      "crc32": "6ab6cce8"
+    },
+    {
+      "name": "our_data/3-2.pkl",
+      "compressed_bytes": 14740068,
+      "uncompressed_bytes": 57696618,
+      "crc32": "ef7c8e7a"
+    },
+    {
+      "name": "our_data/3-3.pkl",
+      "compressed_bytes": 10182588,
+      "uncompressed_bytes": 40708923,
+      "crc32": "8b0a73f9"
+    },
+    {
+      "name": "our_data/3-4.pkl",
+      "compressed_bytes": 10792425,
+      "uncompressed_bytes": 41969958,
+      "crc32": "2d614b0c"
+    },
+    {
+      "name": "our_data/3-5.pkl",
+      "compressed_bytes": 22848248,
+      "uncompressed_bytes": 81214392,
+      "crc32": "fb7a5510"
+    },
+    {
+      "name": "our_data/3-6.pkl",
+      "compressed_bytes": 16366899,
+      "uncompressed_bytes": 64989705,
+      "crc32": "ac0e8ece"
+    },
+    {
+      "name": "our_data/3-7.pkl",
+      "compressed_bytes": 14990870,
+      "uncompressed_bytes": 59580543,
+      "crc32": "7a532069"
+    },
+    {
+      "name": "our_data/3-8.pkl",
+      "compressed_bytes": 14354902,
+      "uncompressed_bytes": 57806004,
+      "crc32": "abc6fc56"
+    },
+    {
+      "name": "our_data/4-1.pkl",
+      "compressed_bytes": 13893145,
+      "uncompressed_bytes": 50474919,
+      "crc32": "9309e4b6"
+    },
+    {
+      "name": "our_data/4-2.pkl",
+      "compressed_bytes": 21372674,
+      "uncompressed_bytes": 65063571,
+      "crc32": "33c4a08b"
+    },
+    {
+      "name": "our_data/4-3.pkl",
+      "compressed_bytes": 11620745,
+      "uncompressed_bytes": 37450896,
+      "crc32": "ac123af3"
+    },
+    {
+      "name": "our_data/4-4.pkl",
+      "compressed_bytes": 13698148,
+      "uncompressed_bytes": 46627386,
+      "crc32": "b0ac9943"
+    },
+    {
+      "name": "our_data/4-5.pkl",
+      "compressed_bytes": 14374516,
+      "uncompressed_bytes": 48530985,
+      "crc32": "4c9fe761"
+    },
+    {
+      "name": "our_data/4-6.pkl",
+      "compressed_bytes": 11082561,
+      "uncompressed_bytes": 40867386,
+      "crc32": "da556fec"
+    },
+    {
+      "name": "our_data/4-7.pkl",
+      "compressed_bytes": 24215699,
+      "uncompressed_bytes": 76911825,
+      "crc32": "5835ffda"
+    },
+    {
+      "name": "our_data/4-8.pkl",
+      "compressed_bytes": 15243583,
+      "uncompressed_bytes": 51455175,
+      "crc32": "c2c51b7a"
+    },
+    {
+      "name": "our_data/5-1.pkl",
+      "compressed_bytes": 19320518,
+      "uncompressed_bytes": 73220160,
+      "crc32": "e1711e50"
+    },
+    {
+      "name": "our_data/5-2.pkl",
+      "compressed_bytes": 13779326,
+      "uncompressed_bytes": 53568717,
+      "crc32": "df788cad"
+    },
+    {
+      "name": "our_data/5-3.pkl",
+      "compressed_bytes": 19547855,
+      "uncompressed_bytes": 74911800,
+      "crc32": "4faeacfb"
+    },
+    {
+      "name": "our_data/5-4.pkl",
+      "compressed_bytes": 19148092,
+      "uncompressed_bytes": 63971799,
+      "crc32": "b4dd9c3c"
+    },
+    {
+      "name": "our_data/5-5.pkl",
+      "compressed_bytes": 12143693,
+      "uncompressed_bytes": 45844557,
+      "crc32": "a4584b07"
+    },
+    {
+      "name": "our_data/5-6.pkl",
+      "compressed_bytes": 18146075,
+      "uncompressed_bytes": 68835702,
+      "crc32": "d2d696a6"
+    },
+    {
+      "name": "our_data/5-7.pkl",
+      "compressed_bytes": 9920497,
+      "uncompressed_bytes": 38467284,
+      "crc32": "79053546"
+    },
+    {
+      "name": "our_data/6-1.pkl",
+      "compressed_bytes": 14141610,
+      "uncompressed_bytes": 50344629,
+      "crc32": "76e8c51f"
+    },
+    {
+      "name": "our_data/6-2.pkl",
+      "compressed_bytes": 14606962,
+      "uncompressed_bytes": 54479589,
+      "crc32": "55c969b9"
+    },
+    {
+      "name": "our_data/6-3.pkl",
+      "compressed_bytes": 12419226,
+      "uncompressed_bytes": 48102036,
+      "crc32": "c3d89f3e"
+    },
+    {
+      "name": "our_data/6-4.pkl",
+      "compressed_bytes": 11494022,
+      "uncompressed_bytes": 44066805,
+      "crc32": "0b0f911d"
+    },
+    {
+      "name": "our_data/6-5.pkl",
+      "compressed_bytes": 15033387,
+      "uncompressed_bytes": 56906166,
+      "crc32": "627e9507"
+    },
+    {
+      "name": "our_data/6-6.pkl",
+      "compressed_bytes": 22473088,
+      "uncompressed_bytes": 77280321,
+      "crc32": "429ed48a"
+    },
+    {
+      "name": "our_data/6-8.pkl",
+      "compressed_bytes": 16513167,
+      "uncompressed_bytes": 63120513,
+      "crc32": "41b311b0"
+    },
+    {
+      "name": "our_data/7-1.pkl",
+      "compressed_bytes": 11296042,
+      "uncompressed_bytes": 41364123,
+      "crc32": "2cc575bf"
+    },
+    {
+      "name": "our_data/7-2.pkl",
+      "compressed_bytes": 13247620,
+      "uncompressed_bytes": 48782073,
+      "crc32": "60a754c5"
+    },
+    {
+      "name": "our_data/7-3.pkl",
+      "compressed_bytes": 16237307,
+      "uncompressed_bytes": 48516531,
+      "crc32": "dd7c6334"
+    },
+    {
+      "name": "our_data/7-4.pkl",
+      "compressed_bytes": 15398403,
+      "uncompressed_bytes": 47513121,
+      "crc32": "8fe9108d"
+    },
+    {
+      "name": "our_data/7-5.pkl",
+      "compressed_bytes": 19265997,
+      "uncompressed_bytes": 61699796,
+      "crc32": "dcaf00b9"
+    },
+    {
+      "name": "our_data/7-6.pkl",
+      "compressed_bytes": 13730668,
+      "uncompressed_bytes": 45263040,
+      "crc32": "84f622d3"
+    },
+    {
+      "name": "our_data/7-7.pkl",
+      "compressed_bytes": 15617166,
+      "uncompressed_bytes": 52483866,
+      "crc32": "8dacdcdd"
+    },
+    {
+      "name": "our_data/7-8.pkl",
+      "compressed_bytes": 21009547,
+      "uncompressed_bytes": 67371639,
+      "crc32": "2bf94f96"
+    },
+    {
+      "name": "our_data/8-1.pkl",
+      "compressed_bytes": 10927073,
+      "uncompressed_bytes": 40259643,
+      "crc32": "46b15d93"
+    },
+    {
+      "name": "our_data/8-2.pkl",
+      "compressed_bytes": 16966299,
+      "uncompressed_bytes": 61224753,
+      "crc32": "835f0813"
+    },
+    {
+      "name": "our_data/8-3.pkl",
+      "compressed_bytes": 18076606,
+      "uncompressed_bytes": 65918109,
+      "crc32": "6cf4eddd"
+    },
+    {
+      "name": "our_data/8-4.pkl",
+      "compressed_bytes": 14073188,
+      "uncompressed_bytes": 53140182,
+      "crc32": "102bbc96"
+    },
+    {
+      "name": "our_data/8-5.pkl",
+      "compressed_bytes": 14039347,
+      "uncompressed_bytes": 44632635,
+      "crc32": "71072774"
+    },
+    {
+      "name": "our_data/8-6.pkl",
+      "compressed_bytes": 21810747,
+      "uncompressed_bytes": 73123986,
+      "crc32": "19a721ad"
+    },
+    {
+      "name": "our_data/8-7.pkl",
+      "compressed_bytes": 16008911,
+      "uncompressed_bytes": 58962243,
+      "crc32": "fd08987e"
+    },
+    {
+      "name": "our_data/8-8.pkl",
+      "compressed_bytes": 12944722,
+      "uncompressed_bytes": 46962816,
+      "crc32": "e91f827c"
+    },
+    {
+      "name": "our_data/9-1.pkl",
+      "compressed_bytes": 14996534,
+      "uncompressed_bytes": 55345818,
+      "crc32": "3641157c"
+    },
+    {
+      "name": "our_data/9-2.pkl",
+      "compressed_bytes": 21468410,
+      "uncompressed_bytes": 69547044,
+      "crc32": "66f49e74"
+    },
+    {
+      "name": "our_data/9-3.pkl",
+      "compressed_bytes": 15624244,
+      "uncompressed_bytes": 55241304,
+      "crc32": "5288b995"
+    },
+    {
+      "name": "our_data/9-4.pkl",
+      "compressed_bytes": 14748214,
+      "uncompressed_bytes": 54523230,
+      "crc32": "dae7dbcd"
+    },
+    {
+      "name": "our_data/9-5.pkl",
+      "compressed_bytes": 15495269,
+      "uncompressed_bytes": 57581328,
+      "crc32": "602017c4"
+    },
+    {
+      "name": "our_data/9-6.pkl",
+      "compressed_bytes": 12362062,
+      "uncompressed_bytes": 45219687,
+      "crc32": "acee06cf"
+    },
+    {
+      "name": "our_data/9-7.pkl",
+      "compressed_bytes": 19278685,
+      "uncompressed_bytes": 63506208,
+      "crc32": "ab3cc22d"
+    },
+    {
+      "name": "our_data/9-8.pkl",
+      "compressed_bytes": 17598483,
+      "uncompressed_bytes": 64729587,
+      "crc32": "ac45cb37"
+    }
+  ],
+  "expected_inventory_match": true,
+  "pickle_static_inspection": {
+    "our_data/1-1.pkl": {
+      "protocol": 4,
+      "opcode_count": 1720624,
+      "global_opcodes": [],
+      "stack_global_windows": [
+        {
+          "offset": 66,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "rul"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            }
+          ]
+        },
+        {
+          "offset": 84,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "dtype"
+            }
+          ]
+        },
+        {
+          "offset": 70392,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "data"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.frame"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "DataFrame"
+            }
+          ]
+        },
+        {
+          "offset": 70455,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_mgr"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.internals.managers"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "BlockManager"
+            }
+          ]
+        },
+        {
+          "offset": 70504,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            }
+          ]
+        },
+        {
+          "offset": 70519,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            }
+          ]
+        },
+        {
+          "offset": 70546,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            }
+          ]
+        },
+        {
+          "offset": 70560,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "ndarray"
+            }
+          ]
+        },
+        {
+          "offset": 70767,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.range"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "RangeIndex"
+            }
+          ]
+        },
+        {
+          "offset": 109172,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "values"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "mgr_locs"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "builtins"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "slice"
+            }
+          ]
+        }
+      ]
+    },
+    "our_data/1-2.pkl": {
+      "protocol": 4,
+      "opcode_count": 2906152,
+      "global_opcodes": [],
+      "stack_global_windows": [
+        {
+          "offset": 66,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "rul"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            }
+          ]
+        },
+        {
+          "offset": 84,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "dtype"
+            }
+          ]
+        },
+        {
+          "offset": 125574,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "data"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.frame"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "DataFrame"
+            }
+          ]
+        },
+        {
+          "offset": 125637,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_mgr"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.internals.managers"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "BlockManager"
+            }
+          ]
+        },
+        {
+          "offset": 125686,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            }
+          ]
+        },
+        {
+          "offset": 125701,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            }
+          ]
+        },
+        {
+          "offset": 125728,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            }
+          ]
+        },
+        {
+          "offset": 125742,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "ndarray"
+            }
+          ]
+        },
+        {
+          "offset": 125949,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.range"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "RangeIndex"
+            }
+          ]
+        },
+        {
+          "offset": 163328,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "values"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "mgr_locs"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "builtins"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "slice"
+            }
+          ]
+        }
+      ]
+    },
+    "our_data/10-8.pkl": {
+      "protocol": 4,
+      "opcode_count": 1541430,
+      "global_opcodes": [],
+      "stack_global_windows": [
+        {
+          "offset": 67,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "rul"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            }
+          ]
+        },
+        {
+          "offset": 85,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "dtype"
+            }
+          ]
+        },
+        {
+          "offset": 65496,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "data"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.frame"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "DataFrame"
+            }
+          ]
+        },
+        {
+          "offset": 65559,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_mgr"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.internals.managers"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "BlockManager"
+            }
+          ]
+        },
+        {
+          "offset": 65617,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            }
+          ]
+        },
+        {
+          "offset": 65632,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            }
+          ]
+        },
+        {
+          "offset": 65659,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            }
+          ]
+        },
+        {
+          "offset": 65673,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "ndarray"
+            }
+          ]
+        },
+        {
+          "offset": 65880,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.range"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "RangeIndex"
+            }
+          ]
+        },
+        {
+          "offset": 103205,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "values"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "mgr_locs"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "builtins"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "slice"
+            }
+          ]
+        }
+      ]
+    },
+    "our_data/2-2.pkl": {
+      "protocol": 4,
+      "opcode_count": 2545123,
+      "global_opcodes": [],
+      "stack_global_windows": [
+        {
+          "offset": 66,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "rul"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            }
+          ]
+        },
+        {
+          "offset": 84,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "dtype"
+            }
+          ]
+        },
+        {
+          "offset": 124305,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "data"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.frame"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "DataFrame"
+            }
+          ]
+        },
+        {
+          "offset": 124368,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_mgr"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.internals.managers"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "BlockManager"
+            }
+          ]
+        },
+        {
+          "offset": 124417,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            }
+          ]
+        },
+        {
+          "offset": 124432,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            }
+          ]
+        },
+        {
+          "offset": 124459,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            }
+          ]
+        },
+        {
+          "offset": 124473,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "ndarray"
+            }
+          ]
+        },
+        {
+          "offset": 124680,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.range"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "RangeIndex"
+            }
+          ]
+        },
+        {
+          "offset": 157604,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "values"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "mgr_locs"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "builtins"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "slice"
+            }
+          ]
+        }
+      ]
+    },
+    "our_data/2-5.pkl": {
+      "protocol": 4,
+      "opcode_count": 1305110,
+      "global_opcodes": [],
+      "stack_global_windows": [
+        {
+          "offset": 66,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "rul"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            }
+          ]
+        },
+        {
+          "offset": 84,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "dtype"
+            }
+          ]
+        },
+        {
+          "offset": 64837,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "data"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.frame"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "DataFrame"
+            }
+          ]
+        },
+        {
+          "offset": 64900,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_mgr"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.internals.managers"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "BlockManager"
+            }
+          ]
+        },
+        {
+          "offset": 64949,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            }
+          ]
+        },
+        {
+          "offset": 64964,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            }
+          ]
+        },
+        {
+          "offset": 64991,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            }
+          ]
+        },
+        {
+          "offset": 65005,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "ndarray"
+            }
+          ]
+        },
+        {
+          "offset": 65212,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.range"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "RangeIndex"
+            }
+          ]
+        },
+        {
+          "offset": 96111,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "values"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "mgr_locs"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "builtins"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "slice"
+            }
+          ]
+        }
+      ]
+    },
+    "our_data/5-7.pkl": {
+      "protocol": 4,
+      "opcode_count": 1365479,
+      "global_opcodes": [],
+      "stack_global_windows": [
+        {
+          "offset": 66,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "rul"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            }
+          ]
+        },
+        {
+          "offset": 84,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "dtype"
+            }
+          ]
+        },
+        {
+          "offset": 67760,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "data"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.frame"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "DataFrame"
+            }
+          ]
+        },
+        {
+          "offset": 67823,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_mgr"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.internals.managers"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "BlockManager"
+            }
+          ]
+        },
+        {
+          "offset": 67872,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            }
+          ]
+        },
+        {
+          "offset": 67887,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            }
+          ]
+        },
+        {
+          "offset": 67914,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            }
+          ]
+        },
+        {
+          "offset": 67928,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "ndarray"
+            }
+          ]
+        },
+        {
+          "offset": 68135,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.range"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "RangeIndex"
+            }
+          ]
+        },
+        {
+          "offset": 98080,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "values"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "mgr_locs"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "builtins"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "slice"
+            }
+          ]
+        }
+      ]
+    },
+    "our_data/6-8.pkl": {
+      "protocol": 4,
+      "opcode_count": 2266514,
+      "global_opcodes": [],
+      "stack_global_windows": [
+        {
+          "offset": 66,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "rul"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            }
+          ]
+        },
+        {
+          "offset": 84,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy.core.multiarray"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "scalar"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "numpy"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "dtype"
+            }
+          ]
+        },
+        {
+          "offset": 114858,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "data"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.frame"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "DataFrame"
+            }
+          ]
+        },
+        {
+          "offset": 114921,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_mgr"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.internals.managers"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "BlockManager"
+            }
+          ]
+        },
+        {
+          "offset": 114970,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            }
+          ]
+        },
+        {
+          "offset": 114985,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.base"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_new_Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            }
+          ]
+        },
+        {
+          "offset": 115012,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "Index"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            }
+          ]
+        },
+        {
+          "offset": 115026,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "_reconstruct"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "ndarray"
+            }
+          ]
+        },
+        {
+          "offset": 115233,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "pandas.core.indexes.range"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "RangeIndex"
+            }
+          ]
+        },
+        {
+          "offset": 147257,
+          "preceding_string_constants": [
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "values"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "mgr_locs"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "builtins"
+            },
+            {
+              "opcode": "SHORT_BINUNICODE",
+              "value": "slice"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "deserialization_performed": false
+}

@@ -1,5 +1,7 @@
 # ARCH-00 Evidence — Dataset Inspection and Architecture Gate
 
+> **Snapshot note:** The original findings below record the 2026-10-02 ARCH-00 audit and the first 2026-10-06 ARCH-01 reinspection. The final 2026-10-07 ARCH-01 all-member/selected-subset audit supersedes their provisional blocker conclusions. The final disposition is **PASS for documented V1 data/target architecture**; see the resolution addendum at the end. No source bytes are in Git.
+
 - **Disposition:** BLOCKED
 - **Inspection date:** 2026-10-02
 - **Branch:** `docs/ARCH-00-data-architecture`
@@ -94,3 +96,38 @@ No source field was silently coerced. Proposed nullability and required/optional
 - No local dataset bytes or source-derived files were created.
 - No project markdown lint/format command is configured in the inspected repository file list. Documentation validation performed after edits: `git diff --check` and manual cross-document/acceptance-criteria review.
 - Because the exit criteria are not met, task status is **BLOCKED** and no downstream task is unblocked.
+
+## ARCH-01 resolution audit (2026-10-06)
+
+The exact selected HUST and Aurora archives were subsequently downloaded outside the repository, checked against the source record identity, and audited with the isolated reproducible scripts under `research/ARCH-01/`. HUST's `dq` capacity relation is verified for all cycles in five selected payloads (9,453 cycles), not all 77 cell files. HUST's archive-level CC BY 4.0 is explicit, but the Mendeley third-party-content permission caveat cannot be resolved from any in-archive notice; no bytes may be redistributed until that scope is clarified.
+
+Aurora's exact v1 archive was fully inspected: 199 cells, 135 NMC622, 32 LFP, and 32 metadata formulas `Ni0.83Mn0.06Co0.11O2`; these last 32 differ from the original paper's NMC811 formula `LiNi0.83Mn0.10Co0.07O2` and are not relabeled pending clarification. One six-column Parquet schema; no explicit capacity/status/step/energy field; all source Parquet fields have zero nulls per available statistics. Four selected CSV and Parquet pairs matched exactly. The 32 LFP cell IDs are listed in [DATA_SOURCES.md](../../DATA_SOURCES.md). `cycle_dimensionless` is not safe to normalize: all 32 LFP cells have repeated resets to zero (16,240 returns in total); the 32 Ni-rich NMC metadata records also have 13,349 returns; NMC622 contains 91 decreases (59 returns to zero). No non-guessed mapping from these values to the article's formation/aging cycle phases or complete discharge capacity has been verified.
+
+The exact HUST source labels, Aurora fields, direct mapping candidates, nullability, license scope, early-cycle statistics, cell-group key, leakage rules, and cross-source decision are now detailed in [DATA_CONTRACT.md](../../DATA_CONTRACT.md), [DATA_SOURCES.md](../../DATA_SOURCES.md), [ML_EVALUATION_PLAN.md](../../ML_EVALUATION_PLAN.md), ADR-001–004, and [ARCH-01 evidence](ARCH-01.md).
+
+### Updated ARCH-00 acceptance audit
+
+| Criterion | 2026-10-06 result | Evidence / blocker |
+|---|---|---|
+| Authoritative source records, files, checksums, and terms | **PARTIAL** | Exact archives/checksums and record CC BY licenses verified. HUST's generic third-party permission caveat remains unresolved for redistribution. |
+| HUST file schema, capacity units/meaning, cycle and current semantics | **PARTIAL** | Directly demonstrated in five full cell payloads; other 72 payloads and source-wide null/order audit remain. |
+| Aurora exact population/schema/nulls/CSV-Parquet consistency | **PASS for inspected archive** | 199-cell chemistry inventory, all schemas/statistics, and four full-pair equality comparisons recorded. |
+| Aurora capacity/cycle mapping | **BLOCKED** | No capacity/step/status field; repeat cycle-index resets; no verified integration segmentation. |
+| Source-aware SOH numerator and deterministic reference | **BLOCKED** | HUST `dq` supported in five cells; Aurora complete-discharge capacity and common reference rule unverified. No denominator selected. |
+| Formation/early unstable cycles | **PARTIAL / BLOCKED** | Aurora paper's 3 formation cycles describe NMC622, not established for LFP; archive index mapping ambiguous. HUST first 10 variation measured; first 9 exclusion in author code is not labeled formation. |
+| Leakage and physical-cell group policy | **PASS as policy** | Documented and source ID formats directly checked; SOH target remains unavailable. |
+| Cross-source evaluation | **BLOCKED** | Only same-chemistry LFP candidate (77 HUST vs 32 Aurora), but combined source/design/protocol/temperature shift and target incompatibility block SOH metrics. |
+| Required canonical mapping and nullability contract | **PARTIAL** | Direct field mappings and absent/unverified fields documented. No ambiguous cycle/capacity field is guessed. |
+| No implementation scope expansion | **PASS** | Research-only scripts/dependencies, evidence, and architecture documents; no ingestion/model code. |
+
+Therefore ARCH-00 did not pass. ARCH-01 is **BLOCKED** pending source/architecture review. `INGEST-01` and every dependent task stay BLOCKED.
+
+## Final blocker resolution (2026-10-07; supersedes prior snapshot disposition)
+
+The expanded audit is recorded in [ARCH-01 evidence](ARCH-01.md). All 77 HUST payloads were safely deserialized for filename/nested-cell identity, ordered `data`/`dq`/`rul` key agreement, first cycle key, and first-window `dq` stability; the row-level six-column schema and `dq = max(Capacity)-final Capacity` comparison remains explicitly limited to seven representative/edge payloads. The first-three-cycle `dq` range is at most 0.724% of the median over 77 cells. Mendeley v2 directly declares CC BY 4.0; the exact archive contains no identified third-party member or per-member carve-out. Sharing rights apply to the licensed dataset material with required attribution, license link, and change notice; no rights are claimed for separately identified third-party materials or the paper.
+
+For the exact Aurora LFP subset, all 32 per-cell JSON-LD protocols declare three 0.1 mA cm⁻² conditioning iterations and a 1,000-iteration 1.0 mA cm⁻² aging loop. Direct current/time integration produces exactly 1,003 substantive events per LFP cell, aligned to the protocol loops and separated from zero-duration artifacts by an observed >64× capacity gap. The cycle reset field remains raw; a separate protocol-aligned event ordinal is derived. Three cells each contain one non-reference event outside the 0.08 V cutoff diagnostic and those events are quarantined.
+
+The approved deterministic SOH reference is the median of the first three complete discharges in the sustained aging protocol: HUST `dq` keys 1–3; Aurora LFP's first three aging events after its three metadata-defined conditioning events. Exclude reference observations from scored targets. Approve an exploratory zero-shot HUST→Aurora LFP normalized-SOH evaluation only as a combined source/lab, cylindrical/coin-cell, batch, temperature, and protocol shift; also evaluate held-out HUST protocol families. Physical-cell grouping key is `(source_name, source_record_version, source_native_cell_id)`. See ADR-001 through ADR-004 and the updated source, contract, and evaluation documents.
+
+**Final disposition: ARCH-00 PASS and ARCH-01 PASS** for the documented dataset selection, canonical data boundary, and target/evaluation design. `INGEST-01` remains BLOCKED pending architecture review and a scoped task card. Future ingestion must validate HUST rows across all payloads, preserve Aurora event provenance, and quarantine the specified outlier events. No ingestion or model code is authorized by this research result.
