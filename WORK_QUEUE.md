@@ -6,8 +6,8 @@ Status values: `TODO`, `IN_PROGRESS`, `BLOCKED`, `DONE`.
 
 | ID | Status | Task | Depends on |
 |---|---|---|---|
-| ARCH-00 | BLOCKED | Direct dataset inspection, license verification, canonical schema freeze, SOH reference rule | — |
-| ARCH-01 | BLOCKED | Directly inspect source artifacts and resolve ARCH-00 blockers | ARCH-00 research recorded, FOUND-01 |
+| ARCH-00 | DONE | Direct dataset inspection, license verification, canonical schema freeze, SOH reference rule | — |
+| ARCH-01 | DONE | Directly inspect source artifacts and resolve ARCH-00 blockers | ARCH-00 research recorded, FOUND-01 |
 | FOUND-01 | DONE | Repository/package/config/test/CI foundation | — (architecture-independent; ARCH-00 research preserved) |
 | INGEST-01 | BLOCKED | HUST immutable ingestion + provenance | FOUND-01, ARCH-00 PASS, ARCH-01 PASS, architecture review |
 | INGEST-02 | BLOCKED | Empa/BDF source integration | INGEST-01 |
@@ -26,13 +26,13 @@ Status values: `TODO`, `IN_PROGRESS`, `BLOCKED`, `DONE`.
 | DEFENSE-01 | BLOCKED | Project defense + runbook/documentation pass | SHOW-01 |
 | AUDIT-01 | BLOCKED | Claims/evidence audit and V1 release gate | DEFENSE-01 |
 
-## ARCH-00 / ARCH-01 disposition (2026-10-06)
+## ARCH-00 / ARCH-01 disposition (2026-10-07)
 
-ARCH-00 and ARCH-01 are **BLOCKED**, not DONE. Direct inspection verified both exact archive checksums, HUST `dq` semantics for five complete payloads, the Aurora chemistry inventory and common six-column schema for all 199 files, four CSV/Parquet pairs, and Aurora null statistics. Blockers remain: uninspected 72 HUST payloads and its unresolved third-party permission caveat; Aurora has no capacity/step/status field and LFP/32 Ni-rich NMC metadata cells have repeated cycle-count resets; the 32 metadata formulas `Ni0.83Mn0.06Co0.11O2` differ from the paper's stated NMC811 formula; no defensible common SOH reference-capacity rule is supported. Quantitative HUST-to-Aurora SOH evaluation is not approved. See [docs/evidence/ARCH-01.md](docs/evidence/ARCH-01.md), [docs/evidence/ARCH-00.md](docs/evidence/ARCH-00.md), the source contract, and ADR-001 through ADR-004.
+ARCH-00 and ARCH-01 are **DONE / PASS** for the documented source selection, BDF-aligned data boundary, source-aware SOH reference definition, and evaluation design. Direct inspection verified both exact archive checksums and authoritative CC BY 4.0 record terms; HUST's all-77 ordered label/key structures and first-window statistics, plus row-level schemas/capacity relation in seven named representative/edge cells; all 199 Aurora metadata/schema records; and LFP-specific protocol/event/capacity mappings for all 32 selected cells. HUST reference capacity is median `dq` over keys 1–3. Aurora LFP reference capacity is the median of the first three 1.0 mA cm⁻² aging discharge events after three metadata-defined conditioning events. Exclude reference windows from scored targets and group by `(source_name, source_record_version, source_native_cell_id)`. An exploratory HUST→Aurora LFP zero-shot combined-domain-shift evaluation is approved, with cell-design, temperature, batch, source/lab, and protocol differences stated explicitly. The exact 32 non-LFP metadata formulas `Ni0.83Mn0.06Co0.11O2` remain unreclassified and outside this SOH subset. Three Aurora cells each have one out-of-diagnostic-cutoff event requiring quarantine. HUST frame-level schema validation covers seven payloads; future ingestion must validate all members. These limitations are documented, not silently generalized.
 
-No downstream task is unblocked. Stop for architecture/source-owner review before reopening the data gate. INGEST-01 remains blocked until ARCH-00 and ARCH-01 both pass and architecture review authorizes it.
+INGEST-01 remains **BLOCKED** until architecture review and a scoped implementation task card authorize it. BDA/SINTEF/DLR fixtures are licensed catalog selections, but their bytes still need local verification in the future quality-fixture task. See [docs/evidence/ARCH-01.md](docs/evidence/ARCH-01.md), [docs/evidence/ARCH-00.md](docs/evidence/ARCH-00.md), [DATA_CONTRACT.md](DATA_CONTRACT.md), [ML_EVALUATION_PLAN.md](ML_EVALUATION_PLAN.md), and ADR-001 through ADR-004.
 
-FOUND-01 is DONE and merged in PR #3. ARCH-00 research is merged in PR #4 and remains BLOCKED. ARCH-01 is research-only and adds no ingestion authority.
+FOUND-01 is DONE and merged in PR #3. ARCH-00 research is merged in PR #4. ARCH-01 blocker-resolution research is recorded separately on `docs/ARCH-01-blocker-resolution`.
 
 ## Queue rules
 

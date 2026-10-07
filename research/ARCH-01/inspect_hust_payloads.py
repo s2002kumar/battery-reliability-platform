@@ -167,12 +167,26 @@ def inspect_cycle_data(value: Any) -> dict[str, Any]:
     total_rows = 0
     null_counts: dict[str, int] = {}
     current_ranges: dict[str, dict[str, float]] = {}
+    cycle_key_matches = 0
+    cycle_key_mismatches = 0
     for key, frame in frames:
         if not isinstance(frame, pd.DataFrame):
             raise TypeError(
                 f"Expected a DataFrame for cycle key {key!r}; observed {type(frame).__name__}"
             )
         frame_summary = inspect_frame(frame)
+        observed_cycle = frame_summary.get("cycle_number")
+        if (
+            key is not None
+            and observed_cycle is not None
+            and observed_cycle["count"] == 1
+            and observed_cycle["min"] == scalar(key)
+            and observed_cycle["max"] == scalar(key)
+            and observed_cycle["null_rows"] == 0
+        ):
+            cycle_key_matches += 1
+        else:
+            cycle_key_mismatches += 1
         total_rows += len(frame)
         for name, count in frame_summary["null_counts"].items():
             null_counts[name] = null_counts.get(name, 0) + count
@@ -211,6 +225,10 @@ def inspect_cycle_data(value: Any) -> dict[str, Any]:
         "column_schema_counts": schema_counts,
         "null_counts": null_counts,
         "current_ranges_mA_by_status": current_ranges,
+        "cycle_key_semantics": {
+            "matching_frames": cycle_key_matches,
+            "mismatching_or_unverifiable_frames": cycle_key_mismatches,
+        },
         "entries": cycle_summaries,
     }
 
@@ -289,6 +307,7 @@ def main() -> None:
                 "column_schema_counts": data_summary["column_schema_counts"],
                 "null_counts": data_summary["null_counts"],
                 "current_ranges_mA_by_status": data_summary["current_ranges_mA_by_status"],
+                "cycle_key_semantics": data_summary["cycle_key_semantics"],
                 "status_values": sorted(
                     {
                         status

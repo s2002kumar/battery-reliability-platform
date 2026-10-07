@@ -1,6 +1,6 @@
-# Data Contract — Verified Boundary, ARCH-01 BLOCKED
+# Data Contract — Verified BDF-Aligned Boundary, ARCH-00/ARCH-01 PASS
 
-This document records the canonical boundary and source mappings verified to date. **It is not authorization for ingestion and is not frozen for SOH targets.** Aurora has no explicit capacity field and its observed LFP cycle index resets to zero repeatedly. HUST capacity semantics match in five cells, but the other 72 payloads and third-party-rights caveat remain unreviewed. Preserve native fields and fail/quarantine ambiguous rows; do not silently map them.
+This document records the canonical boundary and source mappings verified for the selected HUST archive and Aurora LFP subset. **SOH architecture is approved; production ingestion still requires architecture review and its own task card.** Aurora lacks a source-reported capacity field and its native cycle counter resets, but direct LFP metadata and traces support a protocol-aligned derived discharge event/capacity. HUST's 77 payload key/label structures and first-window statistics were audited; seven representative/edge payloads (13,517 cycles) received full frame-level schema and `dq` comparisons. The Mendeley record grants CC BY 4.0 rights for licensed material, subject to any separately identified third-party content. Preserve native fields and quarantine ambiguous or out-of-protocol rows; do not silently coerce them.
 
 ## Identity and provenance
 
@@ -27,13 +27,13 @@ Keep time, current, and voltage distinct and unit-normalized. BDF's current conv
 | `current_a` | Required for measurement rows | Current in amperes; positive charges, negative discharges. |
 | `unix_time_s` | Optional, nullable | UTC Unix time in seconds only where source epoch/unit/timezone are documented. |
 | `ambient_temperature_c` | Optional, nullable | Ambient temperature; do not substitute surface or internal sensor channels. |
-| `cycle_index` | Optional, nullable | Source cycle field only if monotonicity and cycle semantics are validated. Preserve native index, do not renumber. |
+| `cycle_index` | Optional, nullable, derived | Emit only for a source field with validated cycle semantics or a separately documented, versioned event derivation. Preserve the raw source index even when a derived logical cycle ordinal is available. |
 | `step_count`, `step_id`, `step_record_index`, `step_time_s` | Optional, nullable/derived | Distinct meanings. A source field named `step` or a cycle-count reset is not automatically one of these. Derived indexes need method/version. |
-| `cycle_charging_capacity_ah`, `cycle_discharging_capacity_ah` | Optional, nullable, source-validated | Complete per-cycle capacity in Ah; never substitute test-cumulative or step capacity. Not currently approved for Aurora. |
+| `cycle_charging_capacity_ah`, `cycle_discharging_capacity_ah` | Optional, nullable, source-validated or derived | Complete per-cycle capacity in Ah; never substitute test-cumulative or step capacity. Aurora LFP discharge capacity is a versioned current/time integration; HUST discharge capacity is the source `dq` measurement. |
 | `charging_capacity_ah`, `discharging_capacity_ah` | Optional, nullable, source-validated | Test-cumulative capacities, distinct from per-cycle and per-step values. |
 | Step charge/discharge capacity and energy | Optional, nullable, source-validated | Preserve step-specific quantities separately; energy is never a capacity substitute. |
 | `record_index` | Derived, optional | Stable source row order only; retain derivation method/version. |
-| SOH and `reference_capacity_ah` | Derived, **unavailable/unfrozen** | Do not emit until ADR-003's target/reference blocker is resolved. Denominator is not a predictor. |
+| SOH and `reference_capacity_ah` | Derived, approved definition | Use ADR-003's source-aware median of the first three complete discharge capacities in the sustained aging protocol. Preserve capacity lineage; denominator is target metadata, never a predictor. |
 
 Missing optional values remain null/absent, never zero. If a required measurement is null or an optional field's meaning is ambiguous, reject/quarantine with a machine-readable reason and source locator. Do not coerce suspect data.
 
@@ -43,16 +43,16 @@ Missing optional values remain null/absent, never zero. If a required measuremen
 
 | Source field | Canonical disposition | Evidence and boundary |
 |---|---|---|
-| `Time (s)` | Candidate direct `test_time_s` | Present in all cycles of five safely inspected cell payloads; source unit is explicit in field name. Full 77-file null/order audit remains outstanding. |
-| `Current (mA)` | Candidate `current_a = value / 1000` | Positive charge and negative discharge observed by `Status` in five cells. Do not erase the original field. |
-| `Voltage (V)` | Candidate direct `voltage_v` | Exact name/unit in five cells; source-wide null audit outstanding. |
-| `Cycle number` | Preserve source value; candidate `cycle_index` only after source-wide validation | Equals the containing `data` map key in the five selected payloads. It starts at 1 in those payloads. |
+| `Time (s)` | Candidate direct `test_time_s` | Present in all cycles of seven safely inspected cell payloads; source unit is explicit in field name. Full 77-file null/order audit remains outstanding. |
+| `Current (mA)` | Candidate `current_a = value / 1000` | Positive charge and negative discharge observed by `Status` in seven cells. Do not erase the original field. |
+| `Voltage (V)` | Candidate direct `voltage_v` | Exact name/unit in seven cells; source-wide null audit outstanding. |
+| `Cycle number` | Preserve source value; map to `cycle_index` | Equals the containing `data` map key in all 13,517 frames across seven representative/edge payloads. Across all 77 payloads, `data`, `dq`, and `rul` key sets/order match and start at key 1; frame-level validation coverage is seven payloads. |
 | `Status` | Source-specific step/protocol label | Six observed CC/CV/numbered discharge values; no mapping to canonical `step_count` or `step_id` is established. |
 | `Capacity (mAh)` | Preserve as raw source-specific signal | Value rises through charge and falls during discharge; not itself complete discharge capacity. |
-| `dq` | Candidate `cycle_discharging_capacity_ah = dq / 1000` | All cycles in five selected payloads match `max(Capacity) - final Capacity` within `2.28e-13 mAh`. Source-wide verification and reference rule remain open. |
+| `dq` | `cycle_discharging_capacity_ah = dq / 1000` | In all 13,517 cycles in seven representative/edge payloads, `dq` matches `max(Capacity) - final Capacity` within `2.28e-13 mAh`. All 77 payload label maps align with cycle maps. Treat `dq` as target-only; never a predictor. |
 | `rul` | Source target/derived label; forbidden as predictor | Author preprocessing code uses it as RUL label. |
 
-Five sampled cell payloads have the same six-column schema across every cycle. Their complete frame null counts and remaining 72 files are not approved as source-wide nullable evidence; see reproducible inventory and findings in `research/ARCH-01/` and [evidence](docs/evidence/ARCH-01.md). No cycle is designated “formation” by the inspected payload or author code. The author code dropping its first nine ordered `dq` keys is evidence of preprocessing choice, not proof those cycles are formation or a reference measurement.
+Seven sampled cell payloads have the same six-column schema across every cycle; all observed fields are non-null in these seven. The other 70 payloads were deserialized for key/label-order and early-window audit but their DataFrame rows were not individually inspected; adapter validation must enforce the six-column sample schema and quarantine deviations. Across all 77 cells, first-three `dq` windows have a maximum range of 0.724% of the median and median range of 0.154%, supporting the operational baseline defined in ADR-003. No cycle is designated “formation” by the inspected payload or author code. The author code dropping its first nine ordered `dq` keys is evidence of preprocessing choice, not proof those cycles are formation.
 
 ### Empa Aurora Zenodo v1
 
@@ -63,8 +63,8 @@ Five sampled cell payloads have the same six-column schema across every cycle. T
 | `voltage_volt` (float64) | `voltage_v` | Volt explicit; all 199 Parquet stats available with no reported nulls. |
 | `date_time_millisecond` (int64) | `unix_time_s = value / 1000` | Millisecond Unix timestamps are observed; preserve original integer too. Validate UTC epoch semantics before emitting the canonical timestamp. |
 | `ambient_temperature_celsius` (float64) | `ambient_temperature_c` | Celsius explicit; all 199 files' statistics report 25.0, no nulls. |
-| `cycle_dimensionless` (int64) | Preserve source-specific; **do not map to `cycle_index` yet** | All files start at zero; LFP `ccid000217` returns to zero 506 times after increasing, producing interleaved/reset values. There are no status/step/capacity fields to resolve the boundaries. |
-| No capacity or energy field | Unavailable | No per-cycle, per-step, or test-cumulative capacity/energy field occurs in the inspected common schema. Rated capacity in JSON-LD is metadata, not a measured cycle capacity. Current integration is only a candidate derivation; cycle segmentation/complete-discharge semantics are unresolved. |
+| `cycle_dimensionless` (int64) | Preserve source-specific; do not map directly | Values start at zero and reset; in `ccid000217` it returns to zero 506 times after increasing. Preserve exact native values. A separate logical cycle ordinal is derived from ordered substantive discharge events and exact per-cell protocol metadata; record derivation/version and source locator. |
+| No capacity or energy field | Derived discharge capacity, source-validated | Integrate absolute `current_ampere` over `test_time_millisecond` by trapezoid for each substantive negative-current discharge event. A fixed 0.1 mAh cut falls in the observed >64× gap between zero-duration artifacts (max 0.00428 mAh) and discharge events (min 0.2757 mAh); all 32 LFP files yield 1,003 events, matching three conditioning plus 1,000 aging iterations. Record the derived Ah value separately from rated-capacity metadata. Quarantine event quality failures; three cells each have one event outside the 0.08 V cutoff diagnostic. |
 
 All 199 Parquet files expose the same six-field schema and report zero nulls in the inspected Parquet statistics. Exact CSV/Parquet schema and values matched for four records across the observed chemistries. The BDF specification uses a distinct ontology for cycle, step, cumulative, capacity, and energy quantities; a source name containing “cycle” alone does not prove the event boundary.
 
@@ -74,7 +74,7 @@ Chemistry/electrode formula, cell format, manufacturer, rated capacity, assembly
 
 ## SOH target and leakage state
 
-Concept remains `SOH = available_capacity / reference_capacity`, but **neither numerator mapping across both selected sources nor denominator is frozen**. HUST `dq` is an evidenced cycle-capacity label in five files. Aurora requires integration from current/time, but its cycle-index reset and missing step/status signals prevent an evidenced complete-discharge grouping rule. Do not use nominal capacity or assume cycle 1/first cycle is a valid reference.
+`SOH = available_discharge_capacity / reference_capacity` is approved as a source-aware, within-cell target. In both sources, reference capacity is the median of the first three complete discharge capacities in the sustained aging protocol: HUST keys 1–3; Aurora LFP the first three events after its metadata-defined three-event low-rate phase. Exclude baseline observations from scored targets. HUST capacity is `dq`; Aurora capacity is a reproducible integrated derivation. See [ADR-003](docs/adr/ADR-003-soh-reference-and-leakage.md) and the complete [evaluation plan](ML_EVALUATION_PLAN.md). This normalized target does not make absolute capacities comparable across sources.
 
 Always exclude the current target capacity and aliases, SOH/EOL/RUL labels, denominator, future cycles, full-life summaries, and unknown-reset cumulative measures from predictors. Keep cell/source/file/test/protocol IDs as grouping/stratification metadata, not model inputs by default. Cycle number, elapsed age, and throughput need a declared prediction-time cutoff and a separate leakage review before feature approval.
 

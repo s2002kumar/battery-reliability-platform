@@ -1,6 +1,6 @@
 # ARCH-00 Evidence — Dataset Inspection and Architecture Gate
 
-> **Snapshot note:** The original findings below record the 2026-10-02 ARCH-00 audit. The 2026-10-06 ARCH-01 direct archive reinspection supersedes its “not yet inspected” statements. See the dated ARCH-01 audit appended at the end; ARCH-00 remains **BLOCKED**, and no source bytes are in Git.
+> **Snapshot note:** The original findings below record the 2026-10-02 ARCH-00 audit and the first 2026-10-06 ARCH-01 reinspection. The final 2026-10-07 ARCH-01 all-member/selected-subset audit supersedes their provisional blocker conclusions. The final disposition is **PASS for documented V1 data/target architecture**; see the resolution addendum at the end. No source bytes are in Git.
 
 - **Disposition:** BLOCKED
 - **Inspection date:** 2026-10-02
@@ -121,3 +121,13 @@ The exact HUST source labels, Aurora fields, direct mapping candidates, nullabil
 | No implementation scope expansion | **PASS** | Research-only scripts/dependencies, evidence, and architecture documents; no ingestion/model code. |
 
 Therefore ARCH-00 did not pass. ARCH-01 is **BLOCKED** pending source/architecture review. `INGEST-01` and every dependent task stay BLOCKED.
+
+## Final blocker resolution (2026-10-07; supersedes prior snapshot disposition)
+
+The expanded audit is recorded in [ARCH-01 evidence](ARCH-01.md). All 77 HUST payloads were safely deserialized for filename/nested-cell identity, ordered `data`/`dq`/`rul` key agreement, first cycle key, and first-window `dq` stability; the row-level six-column schema and `dq = max(Capacity)-final Capacity` comparison remains explicitly limited to seven representative/edge payloads. The first-three-cycle `dq` range is at most 0.724% of the median over 77 cells. Mendeley v2 directly declares CC BY 4.0; the exact archive contains no identified third-party member or per-member carve-out. Sharing rights apply to the licensed dataset material with required attribution, license link, and change notice; no rights are claimed for separately identified third-party materials or the paper.
+
+For the exact Aurora LFP subset, all 32 per-cell JSON-LD protocols declare three 0.1 mA cm⁻² conditioning iterations and a 1,000-iteration 1.0 mA cm⁻² aging loop. Direct current/time integration produces exactly 1,003 substantive events per LFP cell, aligned to the protocol loops and separated from zero-duration artifacts by an observed >64× capacity gap. The cycle reset field remains raw; a separate protocol-aligned event ordinal is derived. Three cells each contain one non-reference event outside the 0.08 V cutoff diagnostic and those events are quarantined.
+
+The approved deterministic SOH reference is the median of the first three complete discharges in the sustained aging protocol: HUST `dq` keys 1–3; Aurora LFP's first three aging events after its three metadata-defined conditioning events. Exclude reference observations from scored targets. Approve an exploratory zero-shot HUST→Aurora LFP normalized-SOH evaluation only as a combined source/lab, cylindrical/coin-cell, batch, temperature, and protocol shift; also evaluate held-out HUST protocol families. Physical-cell grouping key is `(source_name, source_record_version, source_native_cell_id)`. See ADR-001 through ADR-004 and the updated source, contract, and evaluation documents.
+
+**Final disposition: ARCH-00 PASS and ARCH-01 PASS** for the documented dataset selection, canonical data boundary, and target/evaluation design. `INGEST-01` remains BLOCKED pending architecture review and a scoped task card. Future ingestion must validate HUST rows across all payloads, preserve Aurora event provenance, and quarantine the specified outlier events. No ingestion or model code is authorized by this research result.

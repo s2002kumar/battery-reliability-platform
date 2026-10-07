@@ -1,9 +1,10 @@
 # ARCH-01 Evidence — Direct Source and SOH Blocker Audit
 
-- **Disposition:** BLOCKED; no source ingestion or ML work is authorized.
-- **Research date:** 2026-10-06.
+- **Disposition:** PASS for the documented source selection, canonical data boundary, SOH target, and evaluation design; ingestion/model implementation still require architecture review and their task cards.
+- **Research date:** 2026-10-06 to 2026-10-07 (supplemental HUST/license audit).
 - **Branch:** `docs/ARCH-01-blocker-resolution`.
-- **Purpose:** Resolve the source-level uncertainties in ARCH-00 using the exact archives and authoritative records, without committing dataset bytes.
+- **Commit reference:** the dedicated ARCH-01 research commit on this branch (reported with its SHA in the completion summary).
+- **Purpose:** Resolve the source-level uncertainties in ARCH-00 using the exact archives and authoritative records, without committing dataset bytes. Earlier audit observations below are preserved; the supplemental all-cell LFP and HUST label audits supersede their provisional blocker conclusions.
 
 ## Primary records, selected artifacts, and rights
 
@@ -12,7 +13,7 @@
 - Record: [Mendeley Data v2, DOI 10.17632/nsc7hnsg4s.2](https://data.mendeley.com/datasets/nsc7hnsg4s/2); source metadata [API](https://data.mendeley.com/public-api/datasets/nsc7hnsg4s).
 - Exact file: `our_data.zip`; file id `5ca0ac3e-d598-4d07-8dcb-879aa047e98b`; 1,188,136,932 bytes; expected and locally verified SHA-256 `071d24617153693b0d29059568525e620f6af6512acc9d00c98c7adcf15125db`.
 - Primary article: Ma et al., [Energy & Environmental Science (2022), DOI 10.1039/D2EE01676A](https://pubs.rsc.org/en/content/articlehtml/2022/ee/d2ee01676a). The article describes 77 A123 APR18650M1A LFP/graphite cylindrical cells, nominal 1.1 Ah/3.3 V, 30 °C, common fast charging, and personalized multistage discharges; it treats capacity as a health output.
-- The dataset record declares CC BY 4.0; see the [legal code](https://creativecommons.org/licenses/by/4.0/legalcode.en). Attribution, license link, and change indication apply. Mendeley also warns that additional permission may be required for content identified as third-party. ZIP inventory has no embedded README or rights manifest. This research cannot identify any third-party-marked member or prove their absence. **No redistribution of HUST bytes is approved pending clarification of any applicable third-party rights.** The RSC article license is separate.
+- The dataset record declares CC BY 4.0; see the [legal code](https://creativecommons.org/licenses/by/4.0/legalcode.en). Attribution, license link, and change indication apply. Mendeley notes that further permission may be required for content identified as third-party. The supplemental 2026-10-07 archive review found only the 77 data pickle members and no identified third-party component or per-member carve-out. Record-level redistribution is permitted under CC BY 4.0 for the licensed dataset material; the license cannot grant rights to any separately identified third-party content. The RSC article license is separate.
 
 ### Empa Aurora
 
@@ -31,15 +32,17 @@ Archives were saved outside the repository under `%TEMP%` on 2026-10-06. The iso
 ```powershell
 uv --cache-dir "$env:TEMP\brip-uv-cache" run --offline --project research/ARCH-01 --locked python research/ARCH-01/inspect_hust_archive.py "$env:TEMP\ARCH01-our_data.zip" research/ARCH-01/hust_archive_inventory.json
 uv --cache-dir "$env:TEMP\brip-uv-cache" run --offline --project research/ARCH-01 --locked python research/ARCH-01/inspect_hust_payloads.py "$env:TEMP\ARCH01-our_data.zip" research/ARCH-01/hust_payload_inspection.json
+uv --cache-dir "$env:TEMP\brip-uv-cache" run --offline --project research/ARCH-01 --locked python research/ARCH-01/inspect_hust_payloads.py "$env:TEMP\ARCH01-our_data.zip" research/ARCH-01/hust_seven_payload_audit.json --members our_data/1-1.pkl our_data/2-2.pkl our_data/5-7.pkl our_data/6-8.pkl our_data/10-8.pkl our_data/2-5.pkl our_data/1-2.pkl
+uv --cache-dir "$env:TEMP\brip-uv-cache" run --offline --project research/ARCH-01 --locked python research/ARCH-01/summarize_hust_reference_sensitivity.py research/ARCH-01/hust_reference_sensitivity.json research/ARCH-01/hust_seven_payload_audit.json
 uv --cache-dir "$env:TEMP\brip-uv-cache" run --offline --project research/ARCH-01 --locked python research/ARCH-01/inspect_aurora_archive.py "$env:TEMP\ARCH01-Dataset-rocrate.zip" --output research/ARCH-01/aurora_archive_inventory.json
 uv --cache-dir "$env:TEMP\brip-uv-cache" run --offline --project research/ARCH-01 --locked python research/ARCH-01/inspect_aurora_lfp_cycles.py "$env:TEMP\ARCH01-Dataset-rocrate.zip" --output research/ARCH-01/aurora_lfp_cycle_profiles.json
 ```
 
 `inspect_hust_archive.py` validates the pinned archive hash, exact 77 member paths and representative static pickle globals without executing payloads. `inspect_hust_payloads.py` validates that same hash and only unpickles with a strict allowlist for the observed NumPy/pandas globals. `inspect_aurora_archive.py` validates source size/MD5, exact archive member set/count, all per-cell metadata, all Parquet schemas/row counts/statistical nulls, and CSV/Parquet equality for selected chemistry representatives. `inspect_aurora_lfp_cycles.py` validates the same archive identity and summarizes the first seven cycle values, current/voltage ranges and cycle/time counter transitions for two exact LFP members without writing source rows. Each script asserts expected archive identity/structure and writes deterministic JSON.
 
-## Direct HUST findings
+## Initial direct HUST findings (five-payload audit phase; expanded below)
 
-The archive has exactly 77 `.pkl` member paths under `our_data/`, matching the full enumerated inventory in `research/ARCH-01/hust_archive_inventory.json`. Static opcode inspection found pickle protocol 4 and the allowlisted standard NumPy/pandas classes used by the selected payloads. The five deserialized payloads are boundary/representative cells `1-1`, `2-2`, `5-7`, `6-8`, and `10-8`.
+The archive has exactly 77 `.pkl` member paths under `our_data/`, matching the full enumerated inventory in `research/ARCH-01/hust_archive_inventory.json`. Static opcode inspection found pickle protocol 4 and the allowlisted standard NumPy/pandas classes used by the selected payloads. The initial five deserialized payloads were representative cells `1-1`, `2-2`, `5-7`, `6-8`, and `10-8`; minimum/maximum-size members were later inspected as described below.
 
 | Member / payload key | Cycle entries | Rows | `dq` ↔ capacity comparison |
 |---|---:|---:|---|
@@ -51,9 +54,30 @@ The archive has exactly 77 `.pkl` member paths under `our_data/`, matching the f
 
 All 9,453 inspected cycle frames had the same six-column schema: `Status`, `Cycle number`, `Current (mA)`, `Voltage (V)`, `Capacity (mAh)`, `Time (s)`. All six fields have zero nulls in the five inspected payloads. `data` is cycle-keyed; frame `Cycle number` equals its containing key in these samples. The six observed status values are CC charge, CC-CV charge, and CC discharge steps `_0` through `_3`. Current sign agrees with charge/discharge status. `dq[cycle]` matches `max(Capacity (mAh)) - final Capacity (mAh)`, establishing an empirical complete-cycle discharge-capacity relation and mAh scale for these five payloads. It does not justify mapping the row-level `Capacity (mAh)` itself to cycle capacity.
 
-For each of the five cells, first-cycle `dq` is 0.233–0.283% greater than the median of cycles 1–10; observed values decline across those first ten. The original author code at [HAIRLAB/Health_status_prediction](https://github.com/HAIRLAB/Health_status_prediction/blob/main/common.py), pinned to inspected commit `8e9073edbc54c2620b5356e601a5d48abf70573d`, uses `dq` as capacity labels, `rul` as an RUL label, and slices away the first nine ordered keys. It does not identify those nine cycles as formation or a standardized capacity-reference test. The paper's 10th-cycle baseline applies to charge-curve features, not the SOH denominator. Remaining blockers: the 72 uninspected payloads, source-wide null/order semantics, and the Mendeley third-party caveat.
+For each of the initial five cells, first-cycle `dq` is 0.233–0.283% greater than the median of cycles 1–10; observed values decline across those first ten. The original author code at [HAIRLAB/Health_status_prediction](https://github.com/HAIRLAB/Health_status_prediction/blob/main/common.py), pinned to inspected commit `8e9073edbc54c2620b5356e601a5d48abf70573d`, uses `dq` as capacity labels, `rul` as an RUL label, and slices away the first nine ordered keys. It does not identify those nine cycles as formation or a standardized capacity-reference test. The paper's 10th-cycle baseline applies to charge-curve features, not the SOH denominator. Supplemental seven-cell comparisons are below; 70 payloads remain un-deserialized and source-wide null/order semantics are not established.
 
-## Direct Aurora findings
+## Supplemental HUST sample and rights audit (2026-10-07; seven row-inspected payloads)
+
+The initial five-cell audit was expanded to seven payloads chosen to cover the initial representative set plus the smallest and largest uncompressed ZIP members: `our_data/2-5.pkl` (36,734,361 uncompressed bytes) and `our_data/1-2.pkl` (88,277,079 bytes). The source inventory still enumerates all 77 exact `.pkl` members; the other 70 payloads have not been deserialized. All pickle loads use the inspector's strict NumPy/pandas/builtins allowlist.
+
+| Payload | Cycle frames and matched `dq` labels | Rows | Cycle key == frame number | Maximum `dq` relation error |
+|---|---:|---:|---:|---:|
+| `1-1` | 1,504 | 1,163,166 | 1,504 / 1,504 | `2.28e-13 mAh` |
+| `2-2` | 2,651 | 1,563,012 | 2,651 / 2,651 | `2.28e-13 mAh` |
+| `5-7` | 1,448 | 828,946 | 1,448 / 1,448 | `2.28e-13 mAh` |
+| `6-8` | 2,450 | 1,358,891 | 2,450 / 2,450 | `2.28e-13 mAh` |
+| `10-8` | 1,400 | 1,022,531 | 1,400 / 1,400 | `2.28e-13 mAh` |
+| `2-5` (smallest member) | 1,386 | 791,546 | 1,386 / 1,386 | `2.28e-13 mAh` |
+| `1-2` (largest member) | 2,678 | 1,913,792 | 2,678 / 2,678 | `2.28e-13 mAh` |
+| **Total** | **13,517** | **8,641,884** | **13,517 / 13,517** | **maximum** `2.28e-13 mAh` |
+
+Every frame in the seven payloads has the same six columns and zero nulls in those columns. Each frame's `Cycle number` equals its containing `data` map key, and the `dq` key count matches the cycle-frame count. `dq` matches `max(Capacity (mAh)) - final Capacity (mAh)` for every matched cycle. This strengthens, but does not establish, source-wide behavior for the 70 uninspected payloads.
+
+Early-window comparison was computed from ordered numeric `dq` labels. First valid cycle is key 1 for all seven samples. Across seven cells, first-cycle deviation from the median over the first 3 cycles ranges 0.000% to +0.103%; for first 5, −0.059% to +0.200%; first 10, −0.403% to +0.283%; first 30, −1.330% to +0.554%. The smallest payload (`2-5`) changes direction relative to the other six as windows widen. Window ranges also increase: maximum within-window range is 0.200%, 0.373%, 0.894%, and 1.822% of that window's median for windows 3, 5, 10, and 30 respectively. These data do not establish a common formation phase or stable reference rule. The author code's omission of nine early labels remains a preprocessing convention, not a source-declared formation test.
+
+The exact [Mendeley v2 page](https://data.mendeley.com/datasets/nsc7hnsg4s/2) displays CC BY 4.0. The [license legal code](https://creativecommons.org/licenses/by/4.0/legalcode.en) explicitly grants reproduction and sharing of the licensed material (including database contents) subject to attribution, license reference, and modification notice. It grants only rights the licensor can grant; Mendeley notes that further permission can be required for content identified as third-party. The archive comprises the 77 data pickle members and has no per-member rights manifest or third-party item identified. Therefore record-level redistribution is permitted under CC BY 4.0 for the licensed dataset material; no conclusion is made about separately identified third-party material or the separately licensed paper. The Mendeley FAQ notes CC BY 4.0 is the interface default but can be changed; this record specifically displays CC BY 4.0. No source bytes are committed here.
+
+## Initial direct Aurora findings (before the all-32 LFP audit below)
 
 The full archive has 797 ZIP entries: 199 cell directories × (`.metadata.json`, `.bdf.csv`, `.bdf.parquet`) plus `ro-crate-metadata.json`. All per-cell JSON-LD metadata records were parsed. The positive-electrode formulas and negative electrode metadata produce this exact archive inventory:
 
@@ -71,7 +95,7 @@ All records include `cycle_dimensionless` starting at zero; the exact maximum va
 
 ## SOH, formation, leakage, grouping, and cross-source decision
 
-- **Numerator:** HUST `dq` is a supported per-cycle discharge-capacity candidate in five files. Aurora has no source-reported capacity value; current/time integration needs an unambiguous complete-discharge grouping that is not established from its LFP BDF rows.
+- **Numerator:** HUST `dq` is supported as a per-cycle discharge-capacity value in seven inspected files. Aurora has no source-reported capacity value; current/time integration needs an unambiguous complete-discharge grouping that is not established from its LFP BDF rows.
 - **Reference capacity:** none selected. Do not use nominal/rated capacity, one first cycle, full-life maximum, or an arbitrary post-formation window. HUST has no verified formation/reference-cycle declaration; Aurora's three literature-described formation cycles apply to its NMC622 case, not by assumption to LFP. Candidate early-window statistics do not establish stable-reference capacity semantics.
 - **Early cycles:** HUST first vs cycles 1–10 median results are shown above. The Aurora NMC622 formation sequence is not assigned to LFP; the LFP row samples show a current-level change across cycle values 1–3 and 4 onward, but unresolved reset semantics prevent an approved phase mapping.
 - **Leakage:** exclude the target and aliases (`dq`, current target capacity), denominator, `rul`, precomputed SOH/EOL, future-cycle measurements, full-life summaries, and cumulative values with unknown reset semantics. Keep identifiers/source/protocol/batch and age proxies out of predictors absent a defined prediction cutoff and independent review.
@@ -82,22 +106,57 @@ All records include `cycle_dimensionless` starting at zero; the exact maximum va
 
 The BDF specification's required concepts are elapsed time, voltage, and current; current is positive on charge and negative on discharge. Candidate Aurora mappings are `test_time_millisecond / 1000 → test_time_s`, `current_ampere → current_a`, `voltage_volt → voltage_v`, `date_time_millisecond / 1000 → unix_time_s` (retain original and confirm epoch/UTC interpretation), and `ambient_temperature_celsius → ambient_temperature_c`. Preserve `cycle_dimensionless` source-specifically; do not normalize its resets to a canonical cycle index. HUST candidates are `Time (s) → test_time_s`, `Current (mA) / 1000 → current_a`, `Voltage (V) → voltage_v`; candidate `dq / 1000 → cycle_discharging_capacity_ah` only within inspected samples and not yet adapter-approved source-wide. Retain `Status`, native IDs, and raw capacity fields source-specifically. Required/optional/nullable/derived/unavailable mappings and non-coercion rules are in [DATA_CONTRACT.md](../../DATA_CONTRACT.md).
 
+## Supplemental all-member HUST and all-LFP Aurora audit (2026-10-07)
+
+The following audits supersede provisional target/cycle blockers in the earlier evidence sections. Earlier source observations remain valid where they describe coverage limits; in particular, HUST row-level frame inspection covers seven payloads, while the new all-77 audit covers label/key structure and early-window statistics.
+
+### HUST all-77 label audit
+
+`audit_hust_reference_windows_all.py` safely deserialized each of the exact 77 allowlisted payloads after checking the pinned archive SHA-256 and exact ZIP member inventory. For all 77: the nested cell key matches the filename; `data`, `dq`, and `rul` key sets and insertion order match; the first cycle key is 1; and `dq` keys are strictly increasing. It computes first-1/3/5/10/30 label-window summaries for every cell. This does not inspect every frame/schema: seven representative/edge payloads remain the complete row-level inspection sample (13,517 cycles, 8,641,884 rows), with zero nulls and `dq = max(Capacity (mAh)) - final Capacity (mAh)` within 2.28e-13 mAh.
+
+Across the 77 cell-level label series, the first-three-cycle window has a minimum/median/maximum within-window range of 0.054% / 0.154% / 0.724% of the window median. First-cycle deviation from the first-three median is −0.314% / +0.101% / +0.619% (min/median/max). For 5/10/30-cycle windows, maximum within-window ranges are 0.830% / 1.289% / 1.961%. This supports a stable, causal operational baseline but does not make HUST's first cycles a source-declared formation test. Do not interpret the author's omission of nine labels as formation.
+
+### Aurora LFP protocol and discharge-capacity audit
+
+`audit_aurora_lfp_protocol_alignment.py` inspected all 32 selected LFP metadata records and their Parquet time series. All 32 metadata protocols have one identical signature: three iterations at 0.1 mA cm⁻² followed by a 1,000-iteration 1.0 mA cm⁻² aging loop. The protocol includes charge to 3.65 V, CV hold to 0.05 mA cm⁻², discharge to 2.5 V, and an initial six-hour rest. This directly establishes an LFP-specific conditioning/aging phase split; it does not rely on generalizing the paper's NMC622 paragraph.
+
+Capacity is not a source column. The reproducible derivation integrates `abs(current_ampere)` by trapezoid over `test_time_millisecond` for ordered contiguous negative-current runs. Zero-duration/singleton artifacts are strongly separated: the largest run below 0.1 mAh is 0.004278 mAh; the smallest run at/above 0.1 mAh is 0.275733 mAh, a factor of 64.46. The 0.1 mAh cut is interior to this observed gap and returns exactly 1,003 events in every LFP cell, matching the 3 + 1,000 protocol iteration counts. Preserve the source `cycle_dimensionless` reset values; the derived event ordinal is separate, auditable, and versioned.
+
+The first three 0.1 mA cm⁻² discharge capacities vary by 2.026% / 3.082% / 6.749% (minimum/median/maximum range as a percent of the three-value median). These conditioning capacities are rate-distinct and are not the aging reference. The first aging event is 2.331%–5.171% below the median conditioning capacity. Among the first three 1.0 mA cm⁻² aging capacities, the range is 0.386% / 0.669% / 1.374% of the median (min/median/max); the first aging capacity differs from its first-three median by 0.123% / 0.342% / 0.916%. All 192 reference events (three conditioning + three aging events across 32 cells) end within 0.08 V of the protocol's 2.5 V cutoff. In 29/32 cells, all 1,003 substantial events fall within that cutoff diagnostic; each of `ccid000217`, `ccid000231`, and `ccid000247` has one other aging event outside it. Quarantine those three individual events and retain the otherwise quality-passing capacity observations.
+
+### Final SOH reference, leakage, and cross-source decision
+
+ADR-003 freezes this source-aware deterministic operational rule: `reference_capacity(cell) = median(first three complete discharge-capacity observations in the sustained-aging protocol)`. HUST uses `dq` keys 1–3; Aurora LFP skips its metadata-defined three low-rate conditioning events and uses the next three 1.0 mA cm⁻² discharge events. Do not score baseline observations. This reference is available before every scored target and does not use future or full-life information. HUST's early cycles are not labeled formation; its inclusion is an operational baseline choice supported by the all-77 stability audit. The SOH is a normalized within-cell trajectory, not absolute cross-source capacity.
+
+Approve exploratory zero-shot HUST→Aurora evaluation on LFP/graphite only: 77 A123 cylindrical cells vs the exact 32 Aurora CR2032 coin cells, using each source's verified within-cell reference rule. Describe it as a **combined** source/lab, cell-design, batch/construction, temperature (30 vs 25 °C), and discharge-protocol shift; do not attribute the result to an isolated source or chemistry effect. Also reserve whole HUST personalized-protocol families for a grouped within-source domain-shift evaluation. Use physical-cell group key `(source_name, source_record_version, source_native_cell_id)`. Exclude target capacity/aliases, reference denominator, `dq`/`rul`, future cycles, full-life statistics, uncertain accumulators, and unapproved IDs/protocol/age proxies from model features.
+
+### Reproducible commands and output hashes
+
+```powershell
+uv --cache-dir "$env:TEMP\brip-uv-cache" run --offline --project research/ARCH-01 --locked python research/ARCH-01/audit_hust_reference_windows_all.py "$env:TEMP\ARCH01-our_data.zip" research/ARCH-01/hust_all77_reference_window_audit.json
+uv --cache-dir "$env:TEMP\brip-uv-cache" run --offline --project research/ARCH-01 --locked python research/ARCH-01/audit_aurora_lfp_protocol_alignment.py "$env:TEMP\ARCH01-Dataset-rocrate.zip" research/ARCH-01/aurora_lfp_protocol_alignment.json
+```
+
+- `hust_all77_reference_window_audit.json` SHA-256: `060455e2e6f73bbea9f6130455c46e4827b49978e41857c576d597ff76e5e403`.
+- `aurora_lfp_protocol_alignment.json` SHA-256: `f807203e507db629587fbf3badf5e12242b4d314302dfc156321e1471833f603`.
+- Re-running both scripts against the same exact archives produced byte-identical JSON hashes. Research scripts are outside the production package and source bytes remain outside Git.
+
 ## ARCH-00 / ARCH-01 acceptance audit
 
 | Criterion | Result | Exact disposition |
 |---|---|---|
-| Exact selected source artifacts, members, checksums, record licenses | **PARTIAL** | Both archive identities/checksums verified. HUST record says CC BY 4.0 but third-party applicability/rights are not resolvable from archive. |
-| HUST schema, `dq`, units, cycle/step/current semantics | **PARTIAL** | Direct and exact for five full cell payloads; other 72 and source-wide null/order audit remain. |
-| Aurora 199-cell chemistry inventory, schemas, nulls, formats | **PASS for inspected v1 archive** | Exact 135/32/32 inventory, common six-field schema, no reported nulls, 4 direct CSV/Parquet value comparisons. |
-| Aurora cycle/capacity fields and semantics | **BLOCKED** | No capacity/step/status field; LFP cycle counter resets; no evidenced non-guessed complete-discharge roll-up. |
-| SOH numerator/reference definition | **BLOCKED** | HUST candidate supported in five files; no Aurora numerator mapping and no defensible common deterministic reference rule. |
-| Formation/reference window | **BLOCKED** | Aurora paper's first-three formation cycles describe NMC622, not established for LFP; archive cycle indexes ambiguous. HUST has no source-declared formation/reference window. |
-| Leakage/grouping | **PASS as evaluation policy** | Risks and source-namespaced physical-cell group key documented; target itself remains unavailable. |
-| Cross-source evaluation | **BLOCKED / constrained candidate** | No SOH metrics approved. Only future same-chemistry LFP exploratory combined-shift design can be reconsidered after target alignment. |
-| Source-specific required/optional/nullable/derived/unavailable contract | **PARTIAL** | Direct measured fields and unknowns recorded; ambiguous mappings explicitly stay source-specific. |
+| Exact selected source artifacts, members, checksums, record licenses | **PASS** | Both archive identities/checksums and CC BY 4.0 records verified. HUST record-level sharing applies to licensed material; no third-party component is identified in the exact archive. |
+| HUST schema, `dq`, units, cycle/step/current semantics | **PASS with stated row coverage** | All 77 payload label/key structures and window summaries verified; seven full payloads (13,517 cycles) have frame schema, null, current/status, and `dq` formula comparison. Ingestion must validate every member. |
+| Aurora 199-cell chemistry inventory, schemas, nulls, formats | **PASS** | Exact 135/32/32 inventory, common six-field schema, no reported nulls, and four direct CSV/Parquet value comparisons. |
+| Aurora selected LFP cycle/capacity fields and semantics | **PASS with event quarantine** | Exact LFP-specific protocol metadata and 1,003 integrated discharge events per cell verified for all 32 cells; preserve native resets and quarantine three cutoff-diagnostic outlier events. |
+| SOH numerator/reference definition | **PASS for selected subsets** | HUST `dq` in row-inspected payloads and Aurora protocol-aligned integrated capacity; first-three sustained-protocol median is source-aware and causal. |
+| Formation/reference window | **PASS with source distinction** | Aurora's LFP metadata declares three low-rate conditioning events; HUST has no labeled formation phase and uses keys 1–3 as an operational reference. |
+| Leakage/grouping | **PASS** | Target/feature exclusions and source-namespaced physical-cell group key are explicit. |
+| Cross-source evaluation | **PASS as bounded combined-shift stress test** | Same-chemistry LFP only; explicitly reports simultaneous source/lab, design, batch, temperature, and protocol shifts. |
+| Source-specific required/optional/nullable/derived/unavailable contract | **PASS for selected V1 scope** | Direct, derived, source-specific, and unavailable fields are distinguished; ambiguous fields remain raw/nullable. |
 | No production pipeline/ML work | **PASS** | Research scripts, dependency lock, documentation, and audit outputs only. |
 
-Because blockers remain, **ARCH-00 and ARCH-01 are BLOCKED**. No downstream task is unblocked. Continue only with an architecture/source-owner review of the third-party notice, remaining HUST payloads, and Aurora cycle/capacity semantics. Do not begin INGEST-01.
+**ARCH-00 and ARCH-01 are PASS** for the documented data selection and target design. This resolves the research gate but does not authorize implementation: stop for architecture review, then create/approve a scoped INGEST-01 task card. No ingestion, features, or ML code is included in this commit. Remaining limitations—seven HUST row-inspected payloads, three quarantined Aurora outlier events, four CSV/Parquet pair comparisons, catalog-only fixture verification, and the unreconciled non-LFP formula—are listed in scope and must remain visible during implementation.
 
 ## Validation and output integrity
 
@@ -109,5 +168,7 @@ Research output JSON SHA-256 values were identical on repeat runs of each script
 | `research/ARCH-01/hust_payload_inspection.json` | `b64c8ca35ca0374f21b8ae914e27df57e80128eacdffa65e8a256902bd00ccf2` |
 | `research/ARCH-01/aurora_archive_inventory.json` | `2df94438ebc1f5a4ce8c2efe5f7ded934f99225ee5a2132bbd958f6618b43d62` |
 | `research/ARCH-01/aurora_lfp_cycle_profiles.json` | `1e289b6080c2073d4f15cf1e1111e799579dcd03efd3bb19f464d29925958908` |
+| `research/ARCH-01/hust_seven_payload_audit.json` | `24f8c9ea747c5de08d36009449a1a8eec96a166ca1be02695630153015edbba4` |
+| `research/ARCH-01/hust_reference_sensitivity.json` | `0b642e2eef93c2825cc5c35a9bb0da0d125b3721079521012af332a9d55f3361` |
 
-Validation completed: `uv --cache-dir "$env:TEMP\brip-uv-cache" lock --check --project research/ARCH-01`; all four research scripts ran with `uv --cache-dir "$env:TEMP\brip-uv-cache" run --offline --project research/ARCH-01 --locked ...`; Ruff check and format check pass for `research/ARCH-01`; a relative-link audit checked 12 edited Markdown files and found zero broken local links; `git diff --check` and final manual acceptance/cross-document review are recorded in the commit log. A project Markdown lint command is not configured. Audit scripts contain archive identity/member/schema/equality assertions; no production test suite was needed or changed. No ingestion, feature/model, or application code was added.
+Validation completed: `uv --cache-dir "$env:TEMP\brip-uv-cache" lock --check --project research/ARCH-01`; archive/member, selected payload, all-77 HUST label/reference, all-199 Aurora inventory, representative Aurora cycle, and all-32 Aurora LFP protocol/capacity audit scripts ran with the locked offline research environment; Ruff check and format check pass for `research/ARCH-01`; a relative-link audit checked all 11 changed Markdown files and found zero broken local links; `git diff --check` and final manual acceptance/cross-document review are recorded in the commit log. The two final audit outputs were repeated byte-identically (hashes above). A project Markdown lint command is not configured. No production test suite was needed or changed. No ingestion, feature/model, or application code was added.

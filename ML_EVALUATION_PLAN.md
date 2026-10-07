@@ -1,6 +1,6 @@
-# ML Evaluation Plan — ARCH-01 BLOCKED
+# ML Evaluation Plan — ARCH-00/ARCH-01 Architecture Gate
 
-**No SOH target, denominator, or HUST→Aurora SOH metric is approved.** HUST `dq` is supported as a cycle discharge-capacity label in five inspected cells; Aurora contains current/time/voltage but no capacity field, and its LFP `cycle_dimensionless` stream resets to zero repeatedly. A deterministic complete-discharge grouping and common reference-capacity rule cannot currently be established without guessing. Do not build target/feature tables or train models.
+**SOH target and evaluation contract are approved for the selected HUST and Aurora LFP subsets.** This approves target design only; it does not authorize model implementation before the dependent ingestion and feature tasks are complete. Source-specific coverage and the known Aurora event-quality exclusions are documented below and in [ARCH-01 evidence](docs/evidence/ARCH-01.md).
 
 ## Target and reference capacity
 
@@ -8,43 +8,44 @@ Conceptual target:
 
 `SOH(cell, cycle) = available_discharge_capacity(cell, cycle) / reference_capacity(cell)`
 
-The numerator must be a complete-cycle discharge capacity, in a source-verified unit and under an identified protocol. HUST's source label `dq` matched `max(Capacity (mAh)) - final Capacity (mAh)` for all cycles in five inspected cells, within `2.28e-13 mAh`; that is strong source-specific evidence but not yet a 77-file audit. Aurora has no explicit capacity field; numerically integrating its negative current over time could estimate capacity only after complete discharge segments and cycle boundaries are unambiguously identified. Its observed LFP cycle count resets repeatedly to zero, and the BDF schema has no step/status/capacity column to distinguish those segments.
+The target is a within-cell normalized trajectory under an identified sustained discharge protocol. It is not an absolute-capacity comparison across different cell designs or test rates.
 
-**Final ARCH-01 reference decision: no deterministic `reference_capacity` rule is frozen.** Do not use nominal/rated capacity, a single first cycle, maximum over full life, or a guessed first-N/post-formation window. Five HUST samples show the first `dq` is 0.233–0.283% above the median of cycles 1–10 and each selected series declines during those first ten cycles. HUST author preprocessing omits the first nine ordered `dq` labels without documenting that as formation. The Aurora paper's three formation cycles at 0.1 mA cm⁻² followed by aging at 1.0 mA cm⁻² are documented for its NMC622 case; do not generalize that phase count to LFP. The paper's LFP discussion gives a 3.65 V upper cutoff. Direct LFP sample rows show a current change between cycles 1–3 and 4 onward, but do not resolve the archive's repeated BDF cycle-index resets or create an explicit capacity field. A robust reference window is not selected because neither a matching HUST reference test/window nor an Aurora unambiguous archive cycle/capacity mapping has been verified.
+**Deterministic reference rule:** for each cell, take the median of the first three complete discharge-capacity observations in its sustained aging protocol. Exclude the baseline observations from scored targets; score only subsequent aging cycles.
 
-This is an explicit target blocker, not a deferred modeling detail. Reopen only with source-owner clarification or direct evidence that establishes both sources' complete-cycle capacity measurements, formation/cycle mapping, and a reproducible comparable reference rule. A source-aware denominator may be reconsidered only if its meaning still matches the locked product definition.
+- **HUST:** `available_discharge_capacity = dq` in mAh. Use the first three ordered recorded discharge labels, keys 1–3; the selected dataset does not identify an earlier separate formation phase. `reference_capacity = median(dq[1], dq[2], dq[3])`. Exclude cycles 1–3 from scored targets. The 77-file audit confirms `data`, `dq`, and `rul` key sets and order agree, begin at 1, and remain monotonic. The three-cycle window range is at most 0.724% of its median (median across cells 0.154%). Frame-level `dq = max(Capacity (mAh)) - final Capacity (mAh)` is directly verified across all cycles in seven representative/edge payloads; see coverage limits in the evidence.
+- **Aurora LFP:** derive capacity as trapezoidal integration of absolute discharge current over elapsed time for each protocol-aligned substantive discharge event. Direct JSON-LD metadata specifies three 0.1 mA cm⁻² formation/conditioning iterations followed by a 1,000-iteration 1.0 mA cm⁻² aging loop. Each of 32 LFP traces has 1,003 substantive discharge events. The first three sustained-aging events (after the first three conditioning events) form the reference median; do not use rated-capacity metadata as measured capacity. Exclude both the three conditioning events and three baseline events from scored targets. Preserve raw `cycle_dimensionless` reset values and use a separately recorded derived event ordinal.
 
-## Split identity
+Across the 32 Aurora cells, the first three aging-event capacity ranges are 0.386%–1.374% of each cell's median (median 0.669%). The observed capacity gap separates zero-duration current artifacts (largest 0.00428 mAh) from substantive events (smallest 0.2757 mAh); the audit's 0.1 mAh cut lies between these populations and identifies exactly 1,003 events per cell, matching the metadata loop count. Twenty-nine cells have all substantive events ending within 0.08 V of the specified 2.5 V cutoff; three cells each have one event outside this diagnostic. Those events require explicit quality disposition/quarantine; the baseline events themselves align with the lower cutoff.
 
-Group all rows, tests, and files for a physical cell by `(source_name, source_record_version, source_native_cell_id)`. HUST's nested cell key (e.g., `1-1`) and Aurora's `ccid000XXX` IDs are namespaced separately; never join them. Split by cell before fitting or preprocessing. A source-native ID missing or ambiguous for a partition excludes that partition from cell-level evaluation.
+HUST's first-three recorded cycles are operational reference observations, not a claim that the source calls them formation or a standardized capacity test. Do not use HUST's author-code omission of nine labels as a formation rule. Do not substitute a first-cycle value, nominal/rated capacity, full-life maximum, or future-derived statistic.
 
-Record seed, split assignments, source manifests, and exact target/feature/config versions. Do not randomly split cycle rows. Preserve source, chemistry, cell design, protocol, temperature, and batch as metadata for grouped stratification/error analysis rather than predictors by default.
+## Split identity and leakage controls
 
-## Leakage controls
+Group all rows/tests/cycles for a physical cell by `(source_name, source_record_version, source_native_cell_id)`. HUST uses its nested key (for example, `1-1`); Aurora uses `ccid000XXX`; namespace identifiers by source. Split by cell before fitting or preprocessing. Never randomly split cycle rows.
 
-Before any feature set is approved, declare the prediction cutoff and exclude or prove time-safe:
+Before features are approved, declare a prediction cutoff and exclude or prove time-safe:
 
-1. The target-cycle discharge capacity and all aliases/aggregations of it.
-2. SOH, RUL, end-of-life, health grade, or labels computed from present/future capacity trajectories.
-3. Future-cycle samples, windows that cross the cutoff, and full-life statistics.
-4. `reference_capacity` when used to construct the target; it is target metadata, never a feature.
-5. `rul` and `dq` target/label aliases in HUST payloads.
-6. Cumulative capacity/energy whose reset or measurement window is unknown.
-7. Cell IDs, filenames, source, protocol, batch, or chemistry as inputs unless a separate deployment question explicitly justifies them; retain them for grouping and analysis.
-8. Cycle count, time, throughput, and any age proxy unless available at the defined inference time and independently checked for target/future derivation.
+1. Target-cycle capacity and all aliases/aggregations, including HUST `dq` and Aurora integrated event capacity.
+2. `SOH`, `reference_capacity`, `rul`, end-of-life, health grades, and labels based on present/future capacity trajectories.
+3. Future-cycle samples, windows crossing the cutoff, and full-life statistics.
+4. Cumulative capacity/energy with unknown event/reset semantics.
+5. Cell IDs, filenames, source, protocol, batch, chemistry, and product metadata as predictors unless a later deployment decision explicitly approves use; retain them for grouping and error analysis.
+6. Cycle count, elapsed age, throughput, and other age proxies unless they are available at inference time and independently reviewed.
 
-No column is leakage-safe solely because its name differs from the target. Feature lineage must trace to raw/canonical records and a prediction-time cutoff.
+Record seed, split assignments, source manifests, target/reference rule version, feature lineage, and exact code/config/environment versions. No feature is leakage-safe solely because its name differs from the target.
 
-## Cross-source evaluation decision
+## Cross-source/domain-shift design
 
-**HUST→Aurora quantitative SOH evaluation is blocked.** Both contain LFP/graphite candidates, but no comparable normalized target is currently established. Aurora's exact archive LFP subset is 32 cells: `ccid000217`–`ccid000247` excluding `ccid000248`, plus `ccid000249`. Its paper reports an LFP batch of 36; the archive contains 32 records in that chemistry. HUST is 77 commercial cylindrical A123 LFP/graphite cells at 30 °C with per-cell personalized multistage discharges. Aurora uses CR2032 coin cells and 25 °C. The Aurora paper's three formation cycles followed by aging at 1.0 mA cm⁻² describe its NMC622 case; do not assign that exact protocol to LFP. The LFP paper discussion specifies a 3.65 V upper cutoff; archived LFP JSON-LD has per-cell protocols and row samples show a current-level change between cycle values 1–3 and 4 onward, while the cycle field resets remain unresolved. A future aligned LFP experiment would be a combined source/lab, cell-design, temperature, electrode-batch, and protocol shift, not an isolated source or chemistry effect. Do not pool all chemistries or call it a like-for-like benchmark.
+**Approve an exploratory, zero-shot HUST→Aurora LFP stress evaluation after the data quality and ingestion gates pass.** Select HUST's 77 A123 LFP/graphite cylindrical cells and Aurora's exact 32 LFP/graphite coin-cell records (`ccid000217`–`ccid000247` excluding `ccid000248`, plus `ccid000249`). The shared chemistry and source-specific within-cell reference rule make normalized SOH trajectories interpretable for a bounded stress test.
 
-After target blockers are resolved, a potential design is HUST cell-grouped in-domain evaluation plus a separately reported zero-shot Aurora LFP stress test, stratified by verified protocol/temperature and labeled exploratory. If target semantics/reference windows remain incompatible, omit cross-source SOH metrics; only parser/data-quality robustness can be compared across those data, not model accuracy.
+This is a **combined domain shift**, not an isolated source or chemistry effect: it simultaneously changes laboratory/source, cylindrical A123 versus CR2032 coin-cell design, electrode batch/construction, temperature (30 °C versus 25 °C), and discharge protocol (personalized HUST profiles versus Aurora's fixed 1.0 mA cm⁻² aging loop). Train on grouped HUST cells and evaluate Aurora cells zero-shot; report the result as exploratory, with the listed covariates and per-source metrics. Do not pool the different Aurora chemistries, compare absolute capacities, or call this a like-for-like benchmark.
+
+Within HUST, also reserve complete personalized discharge-protocol families for a grouped held-out-protocol analysis. Keep all cells and cycles for each physical cell together. Report this separately from grouped within-protocol held-out-cell metrics; protocol-family identity must be validated before split construction.
 
 ## Evaluation after architecture review unblocks modeling
 
-- Deterministic physical-cell grouped train/validation/test splits; no cell may cross partitions.
-- Naive/reference, linear, boosted-tree and, when scale justifies, uncertainty-aware baselines.
-- Metrics and error analysis by source, chemistry, cell design, protocol, temperature, and relevant batch.
-- Versioned source manifests, target rule, reference window, feature lineage, split manifest, model/config, and environment.
+- Naive/reference, linear, boosted-tree, and uncertainty-aware baselines when scale justifies it.
+- Deterministic physical-cell grouped train/validation/test splits and the separate zero-shot Aurora LFP evaluation above.
+- Metrics and error analysis by source, chemistry, cell design, protocol, temperature, and batch.
+- Versioned source manifests, target/reference definition, feature lineage, split manifest, model/config, and environment.
 - Reproducible results and leakage audit under `docs/evidence/` before any public performance claim.

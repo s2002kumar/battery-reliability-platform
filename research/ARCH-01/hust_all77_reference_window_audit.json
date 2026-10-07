@@ -1,0 +1,4920 @@
+{
+  "all_data_dq_key_orders_match": true,
+  "all_data_dq_key_sets_match": true,
+  "all_data_rul_key_orders_match": true,
+  "all_data_rul_key_sets_match": true,
+  "all_dq_keys_monotonic": true,
+  "all_first_cycle_keys_are_one": true,
+  "all_payload_keys_match_member_names": true,
+  "archive_bytes": 1188136932,
+  "archive_sha256": "071d24617153693b0d29059568525e620f6af6512acc9d00c98c7adcf15125db",
+  "early_window_aggregates": {
+    "10": {
+      "cell_count": 77,
+      "first_cycle_vs_window_median_percent": {
+        "max": 0.5304413540982084,
+        "median": 0.20257379787213656,
+        "min": -0.8533441618212413
+      },
+      "within_window_range_percent_of_median": {
+        "max": 1.2890843777471013,
+        "median": 0.4488224380541872,
+        "min": 0.26007436002715567
+      }
+    },
+    "3": {
+      "cell_count": 77,
+      "first_cycle_vs_window_median_percent": {
+        "max": 0.6185023610235852,
+        "median": 0.10060739696132008,
+        "min": -0.31370717850913615
+      },
+      "within_window_range_percent_of_median": {
+        "max": 0.723560871899863,
+        "median": 0.15380230704980266,
+        "min": 0.053579090787081764
+      }
+    },
+    "30": {
+      "cell_count": 77,
+      "first_cycle_vs_window_median_percent": {
+        "max": 0.9205505289091189,
+        "median": 0.36704481133613265,
+        "min": -1.5330177095711095
+      },
+      "within_window_range_percent_of_median": {
+        "max": 1.9605964041227397,
+        "median": 0.8120027095357395,
+        "min": 0.5238870620104268
+      }
+    },
+    "5": {
+      "cell_count": 77,
+      "first_cycle_vs_window_median_percent": {
+        "max": 0.462094721869116,
+        "median": 0.12588178863430732,
+        "min": -0.46914319576098384
+      },
+      "within_window_range_percent_of_median": {
+        "max": 0.8303903701387086,
+        "median": 0.2602624509648346,
+        "min": 0.15483959525971017
+      }
+    }
+  },
+  "interpretation": "This audit checks label/map key coverage and early-window sensitivity across all members. It does not inspect every DataFrame row or establish that an early window is a source-declared formation test.",
+  "member_count": 77,
+  "members": [
+    {
+      "cycle_frame_count": 1504,
+      "cycle_key_bounds": [
+        1,
+        1504
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1174.2992,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2568600585283987,
+          "median_mAh": 1171.2906222222223,
+          "range_mAh": 4.251533333333327,
+          "range_percent_of_median": 0.36297851725877717
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10060739696132008,
+          "median_mAh": 1173.1189555555557,
+          "range_mAh": 1.7925555555555093,
+          "range_percent_of_median": 0.15280253950944012
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.46978428142418754,
+          "median_mAh": 1168.8083222222222,
+          "range_mAh": 7.4335777777776,
+          "range_percent_of_median": 0.6359963080725117
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15288233666299228,
+          "median_mAh": 1172.5066444444444,
+          "range_mAh": 3.004666666666708,
+          "range_percent_of_median": 0.25626009719461973
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1504
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1504,
+      "first_cycle_key": 1,
+      "member": "our_data/1-1.pkl",
+      "payload_cell_key": "1-1",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1504
+      ],
+      "rul_label_count": 1504
+    },
+    {
+      "cycle_frame_count": 2678,
+      "cycle_key_bounds": [
+        1,
+        2678
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1205.5822,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2743399097645312,
+          "median_mAh": 1202.2838555555554,
+          "range_mAh": 4.858422222222316,
+          "range_percent_of_median": 0.4040994312426594
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.09860740359805671,
+          "median_mAh": 1204.3945777777776,
+          "range_mAh": 2.4043777777778814,
+          "range_percent_of_median": 0.19963372653289313
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.507777226443307,
+          "median_mAh": 1199.4914555555556,
+          "range_mAh": 8.659111111111088,
+          "range_percent_of_median": 0.7218985238290455
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.1998356131047271,
+          "median_mAh": 1203.1778222222222,
+          "range_mAh": 2.996444444444478,
+          "range_percent_of_median": 0.24904418857307084
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2678
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2678,
+      "first_cycle_key": 1,
+      "member": "our_data/1-2.pkl",
+      "payload_cell_key": "1-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2678
+      ],
+      "rul_label_count": 2678
+    },
+    {
+      "cycle_frame_count": 1858,
+      "cycle_key_bounds": [
+        1,
+        1858
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1165.8128888888891,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.185182683583023,
+          "median_mAh": 1167.9757777777777,
+          "range_mAh": 12.218111111111057,
+          "range_percent_of_median": 1.0460928508601064
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.15601607480465443,
+          "median_mAh": 1163.9968666666666,
+          "range_mAh": 3.0420666666668694,
+          "range_percent_of_median": 0.2613466370728664
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.2162751698024605,
+          "median_mAh": 1180.1669666666667,
+          "range_mAh": 23.13831111111108,
+          "range_percent_of_median": 1.9605964041227397
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.05057875495097956,
+          "median_mAh": 1165.2235333333333,
+          "range_mAh": 4.291377777777598,
+          "range_percent_of_median": 0.36828794261486747
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1858
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1858,
+      "first_cycle_key": 1,
+      "member": "our_data/1-3.pkl",
+      "payload_cell_key": "1-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1858
+      ],
+      "rul_label_count": 1858
+    },
+    {
+      "cycle_frame_count": 1500,
+      "cycle_key_bounds": [
+        1,
+        1500
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1166.2135333333335,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.1595879452001339,
+          "median_mAh": 1168.0776444444446,
+          "range_mAh": 10.68795555555539,
+          "range_percent_of_median": 0.9150038618056717
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.18187880716169091,
+          "median_mAh": 1164.096288888889,
+          "range_mAh": 2.729400000000169,
+          "range_percent_of_median": 0.2344651405602656
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.1131057804832332,
+          "median_mAh": 1179.3408444444444,
+          "range_mAh": 21.594866666666576,
+          "range_percent_of_median": 1.83109630845011
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.07644806817455299,
+          "median_mAh": 1165.3226666666667,
+          "range_mAh": 3.676888888888925,
+          "range_percent_of_median": 0.3155253900112008
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1500
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1500,
+      "first_cycle_key": 1,
+      "member": "our_data/1-4.pkl",
+      "payload_cell_key": "1-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1500
+      ],
+      "rul_label_count": 1500
+    },
+    {
+      "cycle_frame_count": 1971,
+      "cycle_key_bounds": [
+        1,
+        1971
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1159.0106666666666,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.18761130770663,
+          "median_mAh": 1161.189188888889,
+          "range_mAh": 11.001222222222168,
+          "range_percent_of_median": 0.9474099765559257
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.15601188441777575,
+          "median_mAh": 1157.2052888888888,
+          "range_mAh": 2.4216222222221404,
+          "range_percent_of_median": 0.20926470397895466
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.1983812823661444,
+          "median_mAh": 1173.0684999999999,
+          "range_mAh": 21.96233333333339,
+          "range_percent_of_median": 1.8722123502023449
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.050513006657997954,
+          "median_mAh": 1158.425511111111,
+          "range_mAh": 3.6820222222222583,
+          "range_percent_of_median": 0.3178471284433838
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1971
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1971,
+      "first_cycle_key": 1,
+      "member": "our_data/1-5.pkl",
+      "payload_cell_key": "1-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1971
+      ],
+      "rul_label_count": 1971
+    },
+    {
+      "cycle_frame_count": 1143,
+      "cycle_key_bounds": [
+        1,
+        1143
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1203.7505999999998,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.5304413540982084,
+          "median_mAh": 1197.3991,
+          "range_mAh": 9.134599999999864,
+          "range_percent_of_median": 0.762870124088106
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.2001569683753288,
+          "median_mAh": 1201.3460222222222,
+          "range_mAh": 4.224711111110992,
+          "range_percent_of_median": 0.35166480206062684
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.9205505289091189,
+          "median_mAh": 1192.7705444444443,
+          "range_mAh": 15.959466666666458,
+          "range_percent_of_median": 1.3380164978922986
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.3521984102422589,
+          "median_mAh": 1199.5258888888889,
+          "range_mAh": 6.037488888888674,
+          "range_percent_of_median": 0.50332293323666
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1143
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1143,
+      "first_cycle_key": 1,
+      "member": "our_data/1-6.pkl",
+      "payload_cell_key": "1-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1143
+      ],
+      "rul_label_count": 1143
+    },
+    {
+      "cycle_frame_count": 1678,
+      "cycle_key_bounds": [
+        1,
+        1678
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1185.9846,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2809509632465685,
+          "median_mAh": 1182.6618999999998,
+          "range_mAh": 4.257466666666687,
+          "range_percent_of_median": 0.359990176961538
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10134055947978649,
+          "median_mAh": 1184.7839333333334,
+          "range_mAh": 1.804533333333211,
+          "range_percent_of_median": 0.15230906518594003
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4910095530965313,
+          "median_mAh": 1180.1897555555556,
+          "range_mAh": 7.962022222222231,
+          "range_percent_of_median": 0.6746391573678959
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15238673442737205,
+          "median_mAh": 1184.1800666666668,
+          "range_mAh": 3.017377777777938,
+          "range_percent_of_median": 0.2548073441458541
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1678
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1678,
+      "first_cycle_key": 1,
+      "member": "our_data/1-7.pkl",
+      "payload_cell_key": "1-7",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1678
+      ],
+      "rul_label_count": 1678
+    },
+    {
+      "cycle_frame_count": 2285,
+      "cycle_key_bounds": [
+        1,
+        2285
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1191.1483333333333,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.27975868804348986,
+          "median_mAh": 1187.825288888889,
+          "range_mAh": 4.8725555555554365,
+          "range_percent_of_median": 0.41020810056277757
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10060356536749915,
+          "median_mAh": 1189.9512,
+          "range_mAh": 1.8027999999999338,
+          "range_percent_of_median": 0.1515020111749065
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5159419584330339,
+          "median_mAh": 1185.0342444444445,
+          "range_mAh": 8.579222222222143,
+          "range_percent_of_median": 0.7239640763498919
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15157916261284432,
+          "median_mAh": 1189.3455333333334,
+          "range_mAh": 3.0182444444442353,
+          "range_percent_of_median": 0.2537735552749853
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2285
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2285,
+      "first_cycle_key": 1,
+      "member": "our_data/1-8.pkl",
+      "payload_cell_key": "1-8",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2285
+      ],
+      "rul_label_count": 2285
+    },
+    {
+      "cycle_frame_count": 1702,
+      "cycle_key_bounds": [
+        1,
+        1702
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1174.74,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2068233743396034,
+          "median_mAh": 1172.315377777778,
+          "range_mAh": 3.6538666666667723,
+          "range_percent_of_median": 0.31167949648438315
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.051152358910703945,
+          "median_mAh": 1174.1394,
+          "range_mAh": 1.2058888888889214,
+          "range_percent_of_median": 0.10270406468677581
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.41698370314717903,
+          "median_mAh": 1169.8618666666666,
+          "range_mAh": 7.3278444444445086,
+          "range_percent_of_median": 0.6263854437211483
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.10275703769251127,
+          "median_mAh": 1173.534111111111,
+          "range_mAh": 2.4248000000000047,
+          "range_percent_of_median": 0.20662373398794395
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1702
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1702,
+      "first_cycle_key": 1,
+      "member": "our_data/10-1.pkl",
+      "payload_cell_key": "10-1",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1702
+      ],
+      "rul_label_count": 1702
+    },
+    {
+      "cycle_frame_count": 1697,
+      "cycle_key_bounds": [
+        1,
+        1697
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1184.9954,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.5908227719877177,
+          "median_mAh": 1192.0382333333334,
+          "range_mAh": 12.226977777777847,
+          "range_percent_of_median": 1.0257202693563923
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": -0.15443776441386992,
+          "median_mAh": 1186.828311111111,
+          "range_mAh": 3.6732666666666773,
+          "range_percent_of_median": 0.3095027842087587
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.1728021528900736,
+          "median_mAh": 1199.057977777778,
+          "range_mAh": 15.895044444444466,
+          "range_percent_of_median": 1.3256276793139607
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.3090235967073536,
+          "median_mAh": 1188.6686666666667,
+          "range_mAh": 6.729844444444552,
+          "range_percent_of_median": 0.5661665553376426
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1697
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1697,
+      "first_cycle_key": 1,
+      "member": "our_data/10-2.pkl",
+      "payload_cell_key": "10-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1697
+      ],
+      "rul_label_count": 1697
+    },
+    {
+      "cycle_frame_count": 1848,
+      "cycle_key_bounds": [
+        1,
+        1848
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1181.9874,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.20451433779116732,
+          "median_mAh": 1179.5749999999998,
+          "range_mAh": 3.6477333333332354,
+          "range_percent_of_median": 0.30924132279280553
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.05080468114093828,
+          "median_mAh": 1181.3872000000001,
+          "range_mAh": 1.2059333333331779,
+          "range_percent_of_median": 0.10207773821598691
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.44037787398575245,
+          "median_mAh": 1176.805011111111,
+          "range_mAh": 7.944533333333311,
+          "range_percent_of_median": 0.6750934316495026
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.10213010344221565,
+          "median_mAh": 1180.7814666666668,
+          "range_mAh": 2.4138000000000375,
+          "range_percent_of_median": 0.20442394025832472
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1848
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1848,
+      "first_cycle_key": 1,
+      "member": "our_data/10-3.pkl",
+      "payload_cell_key": "10-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1848
+      ],
+      "rul_label_count": 1848
+    },
+    {
+      "cycle_frame_count": 1811,
+      "cycle_key_bounds": [
+        1,
+        1811
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1180.3584444444446,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.3096004692171453,
+          "median_mAh": 1184.024188888889,
+          "range_mAh": 10.993199999999888,
+          "range_percent_of_median": 0.9284607614575946
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1180.3584444444446,
+          "range_mAh": 1.834711111111119,
+          "range_percent_of_median": 0.15543677598499805
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.0755023605603722,
+          "median_mAh": 1193.1912444444442,
+          "range_mAh": 18.30882222222226,
+          "range_percent_of_median": 1.534441549707058
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.05230512980344101,
+          "median_mAh": 1180.9761555555556,
+          "range_mAh": 4.885444444444374,
+          "range_percent_of_median": 0.41367849989707545
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1811
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1811,
+      "first_cycle_key": 1,
+      "member": "our_data/10-4.pkl",
+      "payload_cell_key": "10-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1811
+      ],
+      "rul_label_count": 1811
+    },
+    {
+      "cycle_frame_count": 2030,
+      "cycle_key_bounds": [
+        1,
+        2030
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1181.7201777777777,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.2882266353947599,
+          "median_mAh": 1185.1360555555557,
+          "range_mAh": 11.60691111111123,
+          "range_percent_of_median": 0.9793737231013754
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.04921803529429585,
+          "median_mAh": 1181.1388444444444,
+          "range_mAh": 1.8165555555556239,
+          "range_percent_of_median": 0.15379695317785028
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.1506702745270743,
+          "median_mAh": 1195.4761666666668,
+          "range_mAh": 19.443244444444645,
+          "range_percent_of_median": 1.62640167881038
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1181.7201777777777,
+          "range_mAh": 4.327688888889043,
+          "range_percent_of_median": 0.366219429122997
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2030
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2030,
+      "first_cycle_key": 1,
+      "member": "our_data/10-5.pkl",
+      "payload_cell_key": "10-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2030
+      ],
+      "rul_label_count": 2030
+    },
+    {
+      "cycle_frame_count": 2285,
+      "cycle_key_bounds": [
+        1,
+        2285
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1232.2046,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.24604654762594916,
+          "median_mAh": 1229.1802444444443,
+          "range_mAh": 4.2730888888888785,
+          "range_percent_of_median": 0.34763728982808356
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.0987227617461018,
+          "median_mAh": 1230.9893333333334,
+          "range_mAh": 1.8109111111111815,
+          "range_percent_of_median": 0.14711021956685094
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4983657454260382,
+          "median_mAh": 1226.0941666666665,
+          "range_mAh": 8.641888888888843,
+          "range_percent_of_median": 0.7048307645393341
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.14718143692256183,
+          "median_mAh": 1230.3936888888888,
+          "range_mAh": 3.0165333333334274,
+          "range_percent_of_median": 0.24516814094336895
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2285
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2285,
+      "first_cycle_key": 1,
+      "member": "our_data/10-6.pkl",
+      "payload_cell_key": "10-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2285
+      ],
+      "rul_label_count": 2285
+    },
+    {
+      "cycle_frame_count": 1783,
+      "cycle_key_bounds": [
+        1,
+        1783
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1183.0792666666666,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.15691296069322613,
+          "median_mAh": 1184.9385888888887,
+          "range_mAh": 12.219444444444434,
+          "range_percent_of_median": 1.0312301885536996
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.15343038118323368,
+          "median_mAh": 1181.2668444444444,
+          "range_mAh": 3.646600000000035,
+          "range_percent_of_median": 0.30870247625675545
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.0232314897747947,
+          "median_mAh": 1195.3100555555557,
+          "range_mAh": 19.48971111111132,
+          "range_percent_of_median": 1.630515113675079
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1183.0792666666666,
+          "range_mAh": 4.898533333333262,
+          "range_percent_of_median": 0.41404946154917505
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1783
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1783,
+      "first_cycle_key": 1,
+      "member": "our_data/10-7.pkl",
+      "payload_cell_key": "10-7",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1783
+      ],
+      "rul_label_count": 1783
+    },
+    {
+      "cycle_frame_count": 1400,
+      "cycle_key_bounds": [
+        1,
+        1400
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1186.562711111111,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.28281668477392047,
+          "median_mAh": 1183.2163777777778,
+          "range_mAh": 4.874311111110956,
+          "range_percent_of_median": 0.41195433081018507
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10178281146801006,
+          "median_mAh": 1185.3562222222222,
+          "range_mAh": 1.8167555555553463,
+          "range_percent_of_median": 0.1532666317091938
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5167607134487696,
+          "median_mAh": 1180.4625444444443,
+          "range_mAh": 8.563733333333175,
+          "range_percent_of_median": 0.7254557439061724
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15334557987188285,
+          "median_mAh": 1184.7459555555556,
+          "range_mAh": 3.039199999999937,
+          "range_percent_of_median": 0.2565275691171095
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1400
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1400,
+      "first_cycle_key": 1,
+      "member": "our_data/10-8.pkl",
+      "payload_cell_key": "10-8",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1400
+      ],
+      "rul_label_count": 1400
+    },
+    {
+      "cycle_frame_count": 2651,
+      "cycle_key_bounds": [
+        1,
+        2651
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1221.4144444444444,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2675018039791412,
+          "median_mAh": 1218.1558555555557,
+          "range_mAh": 4.8781333333333805,
+          "range_percent_of_median": 0.4004523157760174
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.09908349858175675,
+          "median_mAh": 1220.2054222222223,
+          "range_mAh": 1.77800000000002,
+          "range_percent_of_median": 0.1457131698990445
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5536403731327634,
+          "median_mAh": 1214.6894333333335,
+          "range_mAh": 9.863311111110988,
+          "range_percent_of_median": 0.8120027095357395
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.14578114716881188,
+          "median_mAh": 1219.6364444444444,
+          "range_mAh": 2.943399999999883,
+          "range_percent_of_median": 0.24133421179789596
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2651
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2651,
+      "first_cycle_key": 1,
+      "member": "our_data/2-2.pkl",
+      "payload_cell_key": "2-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2651
+      ],
+      "rul_label_count": 2651
+    },
+    {
+      "cycle_frame_count": 1751,
+      "cycle_key_bounds": [
+        1,
+        1751
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1168.2453777777778,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.21220099286418134,
+          "median_mAh": 1170.7296777777779,
+          "range_mAh": 9.753288888888846,
+          "range_percent_of_median": 0.8330948701498766
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10176589001206877,
+          "median_mAh": 1167.057711111111,
+          "range_mAh": 1.7995555555555711,
+          "range_percent_of_median": 0.15419593550710384
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.1630399811361731,
+          "median_mAh": 1181.992422222222,
+          "range_mAh": 20.712777777777774,
+          "range_percent_of_median": 1.752361300154227
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1168.2453777777778,
+          "range_mAh": 3.6743111111111375,
+          "range_percent_of_median": 0.3145153561917247
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1751
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1751,
+      "first_cycle_key": 1,
+      "member": "our_data/2-3.pkl",
+      "payload_cell_key": "2-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1751
+      ],
+      "rul_label_count": 1751
+    },
+    {
+      "cycle_frame_count": 1499,
+      "cycle_key_bounds": [
+        1,
+        1499
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1184.2748888888889,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2550190652900253,
+          "median_mAh": 1181.2624444444446,
+          "range_mAh": 4.275488888888731,
+          "range_percent_of_median": 0.3619423362688485
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10234817380602144,
+          "median_mAh": 1183.0640444444443,
+          "range_mAh": 1.7986000000000786,
+          "range_percent_of_median": 0.15202896313569264
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4939134444948299,
+          "median_mAh": 1178.4543444444444,
+          "range_mAh": 8.585511111111146,
+          "range_percent_of_median": 0.728539985582436
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15210452986673662,
+          "median_mAh": 1182.4762888888888,
+          "range_mAh": 3.010333333333392,
+          "range_percent_of_median": 0.254578748142345
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1499
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1499,
+      "first_cycle_key": 1,
+      "member": "our_data/2-4.pkl",
+      "payload_cell_key": "2-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1499
+      ],
+      "rul_label_count": 1499
+    },
+    {
+      "cycle_frame_count": 1386,
+      "cycle_key_bounds": [
+        1,
+        1386
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1158.8558444444443,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.4026017339322604,
+          "median_mAh": 1163.5402777777779,
+          "range_mAh": 10.401800000000094,
+          "range_percent_of_median": 0.8939785066887656
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1158.8558444444443,
+          "range_mAh": 1.2472444444445046,
+          "range_percent_of_median": 0.10762722994614
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.3296413357906702,
+          "median_mAh": 1174.472111111111,
+          "range_mAh": 21.39988888888911,
+          "range_percent_of_median": 1.8220857427294475
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.05869012360247289,
+          "median_mAh": 1159.5363777777777,
+          "range_mAh": 4.329577777778013,
+          "range_percent_of_median": 0.37338869747886133
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1386
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1386,
+      "first_cycle_key": 1,
+      "member": "our_data/2-5.pkl",
+      "payload_cell_key": "2-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1386
+      ],
+      "rul_label_count": 1386
+    },
+    {
+      "cycle_frame_count": 1572,
+      "cycle_key_bounds": [
+        1,
+        1572
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1173.805822222222,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.39514012307715635,
+          "median_mAh": 1178.4624000000001,
+          "range_mAh": 10.420577777777908,
+          "range_percent_of_median": 0.8842520370423279
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": -0.0013573895063852342,
+          "median_mAh": 1173.8217555555557,
+          "range_mAh": 0.6582888888890466,
+          "range_percent_of_median": 0.056080821962401474
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.3602455693983817,
+          "median_mAh": 1189.9926444444443,
+          "range_mAh": 21.401711111111126,
+          "range_percent_of_median": 1.7984742352002228
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.05605014939675484,
+          "median_mAh": 1174.4641111111112,
+          "range_mAh": 3.736844444444614,
+          "range_percent_of_median": 0.31817442602902035
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1572
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1572,
+      "first_cycle_key": 1,
+      "member": "our_data/2-6.pkl",
+      "payload_cell_key": "2-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1572
+      ],
+      "rul_label_count": 1572
+    },
+    {
+      "cycle_frame_count": 2202,
+      "cycle_key_bounds": [
+        1,
+        2202
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1181.4363555555556,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.4445616601058375,
+          "median_mAh": 1186.7120222222222,
+          "range_mAh": 10.43995555555557,
+          "range_percent_of_median": 0.8797379111408882
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": -0.0031015896634448196,
+          "median_mAh": 1181.473,
+          "range_mAh": 0.6713111111112084,
+          "range_percent_of_median": 0.05681984362835278
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.2773496713366408,
+          "median_mAh": 1196.7226888888888,
+          "range_mAh": 19.598422222222098,
+          "range_percent_of_median": 1.6376744925274611
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.05678933738786978,
+          "median_mAh": 1182.1076666666668,
+          "range_mAh": 4.3543777777776995,
+          "range_percent_of_median": 0.36835712182260605
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2202
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2202,
+      "first_cycle_key": 1,
+      "member": "our_data/2-7.pkl",
+      "payload_cell_key": "2-7",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2202
+      ],
+      "rul_label_count": 2202
+    },
+    {
+      "cycle_frame_count": 1481,
+      "cycle_key_bounds": [
+        1,
+        1481
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1178.8179333333333,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2554361774173489,
+          "median_mAh": 1175.814477777778,
+          "range_mAh": 4.275577777777698,
+          "range_percent_of_median": 0.3636269036130849
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10365928543461642,
+          "median_mAh": 1177.5972444444444,
+          "range_mAh": 1.8099777777777035,
+          "range_percent_of_median": 0.153700918231309
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.46930702829838744,
+          "median_mAh": 1173.3115,
+          "range_mAh": 8.03308888888887,
+          "range_percent_of_median": 0.6846509975303975
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15377787118893194,
+          "median_mAh": 1177.0079555555556,
+          "range_mAh": 2.9993111111109556,
+          "range_percent_of_median": 0.2548250499883207
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1481
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1481,
+      "first_cycle_key": 1,
+      "member": "our_data/2-8.pkl",
+      "payload_cell_key": "2-8",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1481
+      ],
+      "rul_label_count": 1481
+    },
+    {
+      "cycle_frame_count": 1938,
+      "cycle_key_bounds": [
+        1,
+        1938
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1182.7274222222222,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.313798738466795,
+          "median_mAh": 1186.4504888888887,
+          "range_mAh": 10.382044444444318,
+          "range_percent_of_median": 0.875050795770425
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1182.7274222222222,
+          "range_mAh": 1.233044444444431,
+          "range_percent_of_median": 0.104254321095191
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.0973128013205085,
+          "median_mAh": 1195.8496333333333,
+          "range_mAh": 18.284311111111037,
+          "range_percent_of_median": 1.5289807849959374
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.0026078401067879315,
+          "median_mAh": 1182.7582666666667,
+          "range_mAh": 4.30668888888863,
+          "range_percent_of_median": 0.3641224931807956
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1938
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1938,
+      "first_cycle_key": 1,
+      "member": "our_data/3-1.pkl",
+      "payload_cell_key": "3-1",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1938
+      ],
+      "rul_label_count": 1938
+    },
+    {
+      "cycle_frame_count": 2283,
+      "cycle_key_bounds": [
+        1,
+        2283
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1186.6274,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.3116968081922581,
+          "median_mAh": 1190.3376444444443,
+          "range_mAh": 9.155422222222342,
+          "range_percent_of_median": 0.7691449787337752
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1186.6274,
+          "range_mAh": 1.2276888888889061,
+          "range_percent_of_median": 0.10346035233038661
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.9418827942674248,
+          "median_mAh": 1197.910311111111,
+          "range_mAh": 15.863333333333458,
+          "range_percent_of_median": 1.3242505040815256
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.0022153800333585692,
+          "median_mAh": 1186.6536888888888,
+          "range_mAh": 4.2922000000000935,
+          "range_percent_of_median": 0.3617062029292684
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2283
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2283,
+      "first_cycle_key": 1,
+      "member": "our_data/3-2.pkl",
+      "payload_cell_key": "3-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2283
+      ],
+      "rul_label_count": 2283
+    },
+    {
+      "cycle_frame_count": 1649,
+      "cycle_key_bounds": [
+        1,
+        1649
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1174.7114666666666,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.26407315349350663,
+          "median_mAh": 1177.8217777777777,
+          "range_mAh": 9.774733333333415,
+          "range_percent_of_median": 0.8298991848983825
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.049716339778121565,
+          "median_mAh": 1174.1277333333335,
+          "range_mAh": 1.197955555555609,
+          "range_percent_of_median": 0.10202940630272216
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.0032523854478446,
+          "median_mAh": 1186.6162222222222,
+          "range_mAh": 16.480133333333242,
+          "range_percent_of_median": 1.3888343193615083
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1174.7114666666666,
+          "range_mAh": 3.6858888888889396,
+          "range_percent_of_median": 0.31376972077644993
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1649
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1649,
+      "first_cycle_key": 1,
+      "member": "our_data/3-3.pkl",
+      "payload_cell_key": "3-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1649
+      ],
+      "rul_label_count": 1649
+    },
+    {
+      "cycle_frame_count": 1766,
+      "cycle_key_bounds": [
+        1,
+        1766
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1173.8780222222222,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2561076178095133,
+          "median_mAh": 1170.879311111111,
+          "range_mAh": 4.250533333333351,
+          "range_percent_of_median": 0.36302061988778234
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10249491268062819,
+          "median_mAh": 1172.676088888889,
+          "range_mAh": 1.8081333333332168,
+          "range_percent_of_median": 0.15418864172854618
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4972438482751253,
+          "median_mAh": 1168.0698666666667,
+          "range_mAh": 8.554466666666713,
+          "range_percent_of_median": 0.7323591602511487
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15426838881146498,
+          "median_mAh": 1172.069888888889,
+          "range_mAh": 3.008866666666563,
+          "range_percent_of_median": 0.25671392936465076
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1766
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1766,
+      "first_cycle_key": 1,
+      "member": "our_data/3-4.pkl",
+      "payload_cell_key": "3-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1766
+      ],
+      "rul_label_count": 1766
+    },
+    {
+      "cycle_frame_count": 2657,
+      "cycle_key_bounds": [
+        1,
+        2657
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1229.5847333333334,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.31967457381672765,
+          "median_mAh": 1225.6665888888888,
+          "range_mAh": 5.501066666666702,
+          "range_percent_of_median": 0.4488224380541872
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.14805560367563897,
+          "median_mAh": 1227.7669555555556,
+          "range_mAh": 2.4095111111112146,
+          "range_percent_of_median": 0.19625150361054705
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.551823417160731,
+          "median_mAh": 1222.8368333333333,
+          "range_mAh": 9.930644444444624,
+          "range_percent_of_median": 0.8120988977224919
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.19634613439700707,
+          "median_mAh": 1227.1752222222221,
+          "range_mAh": 3.608444444444558,
+          "range_percent_of_median": 0.29404476060967316
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2657
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2657,
+      "first_cycle_key": 1,
+      "member": "our_data/3-5.pkl",
+      "payload_cell_key": "3-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2657
+      ],
+      "rul_label_count": 2657
+    },
+    {
+      "cycle_frame_count": 2491,
+      "cycle_key_bounds": [
+        1,
+        2491
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1180.5542666666665,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.2137850378310473,
+          "median_mAh": 1183.0835222222222,
+          "range_mAh": 9.769155555555699,
+          "range_percent_of_median": 0.8257367609351868
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.049298698378377186,
+          "median_mAh": 1179.9725555555556,
+          "range_mAh": 1.8167111111110898,
+          "range_percent_of_median": 0.15396214959048302
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.9979003239063376,
+          "median_mAh": 1192.4537666666665,
+          "range_mAh": 17.093311111111234,
+          "range_percent_of_median": 1.433456926291837
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1180.5542666666665,
+          "range_mAh": 3.7249777777778945,
+          "range_percent_of_median": 0.3155278738939711
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2491
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2491,
+      "first_cycle_key": 1,
+      "member": "our_data/3-6.pkl",
+      "payload_cell_key": "3-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2491
+      ],
+      "rul_label_count": 2491
+    },
+    {
+      "cycle_frame_count": 2479,
+      "cycle_key_bounds": [
+        1,
+        2479
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1170.997311111111,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.20337938408142864,
+          "median_mAh": 1168.6205777777777,
+          "range_mAh": 3.6428666666663503,
+          "range_percent_of_median": 0.3117236454618609
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.050829621599465254,
+          "median_mAh": 1170.4024,
+          "range_mAh": 1.1885333333332255,
+          "range_percent_of_median": 0.10154911963041306
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.36704481133613265,
+          "median_mAh": 1166.7149444444444,
+          "range_mAh": 6.723755555555499,
+          "range_percent_of_median": 0.576298056999446
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.10160065097058152,
+          "median_mAh": 1169.8087777777778,
+          "range_mAh": 2.3845111111108963,
+          "range_percent_of_median": 0.20383768325286655
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2479
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2479,
+      "first_cycle_key": 1,
+      "member": "our_data/3-7.pkl",
+      "payload_cell_key": "3-7",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2479
+      ],
+      "rul_label_count": 2479
+    },
+    {
+      "cycle_frame_count": 2342,
+      "cycle_key_bounds": [
+        1,
+        2342
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1199.6241111111112,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.2817452346223187,
+          "median_mAh": 1203.0135444444445,
+          "range_mAh": 8.54871111111106,
+          "range_percent_of_median": 0.7106080518036796
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.049849703985772646,
+          "median_mAh": 1199.0264,
+          "range_mAh": 1.2146222222222605,
+          "range_percent_of_median": 0.10130070715892998
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.9318307996585928,
+          "median_mAh": 1210.9077222222222,
+          "range_mAh": 15.868622222222257,
+          "range_percent_of_median": 1.310473286362451
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1199.6241111111112,
+          "range_mAh": 3.6819555555555326,
+          "range_percent_of_median": 0.3069257712855776
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2342
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2342,
+      "first_cycle_key": 1,
+      "member": "our_data/3-8.pkl",
+      "payload_cell_key": "3-8",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2342
+      ],
+      "rul_label_count": 2342
+    },
+    {
+      "cycle_frame_count": 2217,
+      "cycle_key_bounds": [
+        1,
+        2217
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1182.0331333333334,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.22840280257064513,
+          "median_mAh": 1179.3394888888888,
+          "range_mAh": 3.626288888888894,
+          "range_percent_of_median": 0.30748473387467007
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.050296483096480445,
+          "median_mAh": 1181.438911111111,
+          "range_mAh": 1.1797333333333881,
+          "range_percent_of_median": 0.09985563555071003
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4142751456376672,
+          "median_mAh": 1177.1564666666668,
+          "range_mAh": 7.915377777777849,
+          "range_percent_of_median": 0.6724150953519106
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0999051476951659,
+          "median_mAh": 1180.8534,
+          "range_mAh": 2.4081111111111113,
+          "range_percent_of_median": 0.20392972667996817
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2217
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2217,
+      "first_cycle_key": 1,
+      "member": "our_data/4-1.pkl",
+      "payload_cell_key": "4-1",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2217
+      ],
+      "rul_label_count": 2217
+    },
+    {
+      "cycle_frame_count": 1782,
+      "cycle_key_bounds": [
+        1,
+        1782
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1180.1634888888889,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.21356318488273873,
+          "median_mAh": 1182.6892777777778,
+          "range_mAh": 9.801555555555524,
+          "range_percent_of_median": 0.8287515359885755
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": -0.003076691854312934,
+          "median_mAh": 1180.1998,
+          "range_mAh": 0.6579999999999018,
+          "range_percent_of_median": 0.05575327160705346
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.1021126811381243,
+          "median_mAh": 1193.3151666666668,
+          "range_mAh": 17.038777777777796,
+          "range_percent_of_median": 1.4278522768945332
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.00479195009624285,
+          "median_mAh": 1180.2200444444445,
+          "range_mAh": 1.918311111111052,
+          "range_percent_of_median": 0.1625384283330015
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1782
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1782,
+      "first_cycle_key": 1,
+      "member": "our_data/4-2.pkl",
+      "payload_cell_key": "4-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1782
+      ],
+      "rul_label_count": 1782
+    },
+    {
+      "cycle_frame_count": 1142,
+      "cycle_key_bounds": [
+        1,
+        1142
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1175.8114222222223,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.25850929223033053,
+          "median_mAh": 1172.7796777777778,
+          "range_mAh": 4.2437111111112245,
+          "range_percent_of_median": 0.3618506691002994
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10333940936217083,
+          "median_mAh": 1174.5976,
+          "range_mAh": 1.833333333333485,
+          "range_percent_of_median": 0.15608182183698358
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4712061579206946,
+          "median_mAh": 1170.296911111111,
+          "range_mAh": 8.00697777777782,
+          "range_percent_of_median": 0.6841834496662716
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15616418659641618,
+          "median_mAh": 1173.9780888888888,
+          "range_mAh": 3.0334000000000287,
+          "range_percent_of_median": 0.2583864237935641
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1142
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1142,
+      "first_cycle_key": 1,
+      "member": "our_data/4-3.pkl",
+      "payload_cell_key": "4-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1142
+      ],
+      "rul_label_count": 1142
+    },
+    {
+      "cycle_frame_count": 1491,
+      "cycle_key_bounds": [
+        1,
+        1491
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1171.704,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2292148672723219,
+          "median_mAh": 1169.0244222222223,
+          "range_mAh": 4.225911111110918,
+          "range_percent_of_median": 0.3614904043730581
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.1018319769722025,
+          "median_mAh": 1170.5120444444444,
+          "range_mAh": 1.7779777777775507,
+          "range_percent_of_median": 0.15189743550408535
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4433425016276175,
+          "median_mAh": 1166.5322666666666,
+          "range_mAh": 7.414177777777695,
+          "range_percent_of_median": 0.6355741705253899
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15197352174459383,
+          "median_mAh": 1169.9260222222224,
+          "range_mAh": 2.3752444444444336,
+          "range_percent_of_median": 0.20302518273187586
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1491
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1491,
+      "first_cycle_key": 1,
+      "member": "our_data/4-4.pkl",
+      "payload_cell_key": "4-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1491
+      ],
+      "rul_label_count": 1491
+    },
+    {
+      "cycle_frame_count": 1561,
+      "cycle_key_bounds": [
+        1,
+        1561
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1194.7938444444444,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.25491424744608626,
+          "median_mAh": 1191.7558888888889,
+          "range_mAh": 4.277866666666569,
+          "range_percent_of_median": 0.3589549425809808
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10352425204039731,
+          "median_mAh": 1193.5582222222222,
+          "range_mAh": 1.8371999999999389,
+          "range_percent_of_median": 0.15392629917787792
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5146847240821698,
+          "median_mAh": 1188.675911111111,
+          "range_mAh": 8.587177777777697,
+          "range_percent_of_median": 0.7224153949372845
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15400392030638432,
+          "median_mAh": 1192.9566444444445,
+          "range_mAh": 3.0307555555555155,
+          "range_percent_of_median": 0.25405412423574936
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1561
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1561,
+      "first_cycle_key": 1,
+      "member": "our_data/4-5.pkl",
+      "payload_cell_key": "4-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1561
+      ],
+      "rul_label_count": 1561
+    },
+    {
+      "cycle_frame_count": 1380,
+      "cycle_key_bounds": [
+        1,
+        1380
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1170.702711111111,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.23188469106698703,
+          "median_mAh": 1167.994311111111,
+          "range_mAh": 4.23644444444426,
+          "range_percent_of_median": 0.36271105125624603
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10322209391743901,
+          "median_mAh": 1169.4955333333335,
+          "range_mAh": 1.7987111111110607,
+          "range_percent_of_median": 0.15380230704980266
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.47119980555567814,
+          "median_mAh": 1165.2122333333334,
+          "range_mAh": 7.961244444444219,
+          "range_percent_of_median": 0.6832441521549609
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15388013995255903,
+          "median_mAh": 1168.904,
+          "range_mAh": 2.4116222222221495,
+          "range_percent_of_median": 0.20631482330646053
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1380
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1380,
+      "first_cycle_key": 1,
+      "member": "our_data/4-6.pkl",
+      "payload_cell_key": "4-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1380
+      ],
+      "rul_label_count": 1380
+    },
+    {
+      "cycle_frame_count": 2216,
+      "cycle_key_bounds": [
+        1,
+        2216
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1228.5322222222221,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.29523752394302943,
+          "median_mAh": 1224.915811111111,
+          "range_mAh": 4.856111111110977,
+          "range_percent_of_median": 0.3964444794541462
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.14791776052212408,
+          "median_mAh": 1226.717688888889,
+          "range_mAh": 2.395599999999831,
+          "range_percent_of_median": 0.1952853555221551
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5250184038738462,
+          "median_mAh": 1222.115888888889,
+          "range_mAh": 9.328288888888892,
+          "range_percent_of_median": 0.7632900425973426
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.1953779013351791,
+          "median_mAh": 1226.1366222222223,
+          "range_mAh": 3.6089333333334253,
+          "range_percent_of_median": 0.2943337037591028
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2216
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2216,
+      "first_cycle_key": 1,
+      "member": "our_data/4-7.pkl",
+      "payload_cell_key": "4-7",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2216
+      ],
+      "rul_label_count": 2216
+    },
+    {
+      "cycle_frame_count": 1706,
+      "cycle_key_bounds": [
+        1,
+        1706
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1182.334488888889,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.28678601798520476,
+          "median_mAh": 1185.735011111111,
+          "range_mAh": 10.403533333333371,
+          "range_percent_of_median": 0.8773910895643187
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10032788022725438,
+          "median_mAh": 1181.1494666666667,
+          "range_mAh": 1.8220000000001164,
+          "range_percent_of_median": 0.15425651464263876
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.1503722180443254,
+          "median_mAh": 1196.0940222222223,
+          "range_mAh": 20.735666666666702,
+          "range_percent_of_median": 1.7336151072924786
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1182.334488888889,
+          "range_mAh": 4.906866666666701,
+          "range_percent_of_median": 0.41501510044572754
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1706
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1706,
+      "first_cycle_key": 1,
+      "member": "our_data/4-8.pkl",
+      "payload_cell_key": "4-8",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1706
+      ],
+      "rul_label_count": 1706
+    },
+    {
+      "cycle_frame_count": 2507,
+      "cycle_key_bounds": [
+        1,
+        2507
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1205.8810666666668,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.33113371634691574,
+          "median_mAh": 1201.9011666666665,
+          "range_mAh": 5.507844444444572,
+          "range_percent_of_median": 0.45826101157052207
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.1016813889558612,
+          "median_mAh": 1204.6561555555556,
+          "range_mAh": 2.4519333333335,
+          "range_percent_of_median": 0.20353802386065364
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5618062170226781,
+          "median_mAh": 1199.1442,
+          "range_mAh": 9.180311111111223,
+          "range_percent_of_median": 0.765571906290438
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.20374555222391713,
+          "median_mAh": 1203.4291333333333,
+          "range_mAh": 3.674955555555698,
+          "range_percent_of_median": 0.3053736571406225
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2507
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2507,
+      "first_cycle_key": 1,
+      "member": "our_data/5-1.pkl",
+      "payload_cell_key": "5-1",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2507
+      ],
+      "rul_label_count": 2507
+    },
+    {
+      "cycle_frame_count": 1926,
+      "cycle_key_bounds": [
+        1,
+        1926
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1172.2388,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.026242976990267675,
+          "median_mAh": 1172.5465111111112,
+          "range_mAh": 12.222177777777688,
+          "range_percent_of_median": 1.0423618732357054
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.36623549497710906,
+          "median_mAh": 1167.9613111111112,
+          "range_mAh": 4.8877111111110025,
+          "range_percent_of_median": 0.418482278874563
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.0571746020003663,
+          "median_mAh": 1184.7638222222222,
+          "range_mAh": 22.61217777777756,
+          "range_percent_of_median": 1.9085810482771706
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.20872564969528623,
+          "median_mAh": 1169.7971333333332,
+          "range_mAh": 4.8877111111110025,
+          "range_percent_of_median": 0.4178255333199086
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1926
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1926,
+      "first_cycle_key": 1,
+      "member": "our_data/5-2.pkl",
+      "payload_cell_key": "5-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1926
+      ],
+      "rul_label_count": 1926
+    },
+    {
+      "cycle_frame_count": 2689,
+      "cycle_key_bounds": [
+        1,
+        2689
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1202.0387777777778,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.30468721532925835,
+          "median_mAh": 1198.3874444444446,
+          "range_mAh": 4.882666666666864,
+          "range_percent_of_median": 0.407436400414759
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10165662434607103,
+          "median_mAh": 1200.8180666666667,
+          "range_mAh": 2.4371555555555915,
+          "range_percent_of_median": 0.20295793536158696
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5369604525560001,
+          "median_mAh": 1195.6187777777777,
+          "range_mAh": 9.180133333333288,
+          "range_percent_of_median": 0.7678144157618393
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.20316374289664946,
+          "median_mAh": 1199.6016222222222,
+          "range_mAh": 3.6509555555555835,
+          "range_percent_of_median": 0.30434733397511665
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2689
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2689,
+      "first_cycle_key": 1,
+      "member": "our_data/5-3.pkl",
+      "payload_cell_key": "5-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2689
+      ],
+      "rul_label_count": 2689
+    },
+    {
+      "cycle_frame_count": 1962,
+      "cycle_key_bounds": [
+        1,
+        1962
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1180.3056222222224,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2871699855799586,
+          "median_mAh": 1176.9258444444445,
+          "range_mAh": 4.287866666666787,
+          "range_percent_of_median": 0.3643276835925741
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.1035530217046509,
+          "median_mAh": 1179.0846444444446,
+          "range_mAh": 2.44675555555591,
+          "range_percent_of_median": 0.20751313886449269
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.49521093080561945,
+          "median_mAh": 1174.4894222222222,
+          "range_mAh": 7.928688888888928,
+          "range_percent_of_median": 0.6750753764888962
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.2077290942742753,
+          "median_mAh": 1177.8588666666665,
+          "range_mAh": 3.0788888888889687,
+          "range_percent_of_median": 0.26139709739607475
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1962
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1962,
+      "first_cycle_key": 1,
+      "member": "our_data/5-4.pkl",
+      "payload_cell_key": "5-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1962
+      ],
+      "rul_label_count": 1962
+    },
+    {
+      "cycle_frame_count": 1583,
+      "cycle_key_bounds": [
+        1,
+        1583
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1173.5256666666667,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.06677208398919336,
+          "median_mAh": 1174.3097777777778,
+          "range_mAh": 9.776088888889035,
+          "range_percent_of_median": 0.8324965927975972
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.2588475607887685,
+          "median_mAh": 1170.4958666666666,
+          "range_mAh": 3.034422222222247,
+          "range_percent_of_median": 0.25924245515395644
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.9031795276855108,
+          "median_mAh": 1184.2213111111112,
+          "range_mAh": 18.316555555555624,
+          "range_percent_of_median": 1.546717271822264
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.1276437186818315,
+          "median_mAh": 1172.0296444444443,
+          "range_mAh": 3.034422222222247,
+          "range_percent_of_median": 0.2589031972532229
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1583
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1583,
+      "first_cycle_key": 1,
+      "member": "our_data/5-5.pkl",
+      "payload_cell_key": "5-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1583
+      ],
+      "rul_label_count": 1583
+    },
+    {
+      "cycle_frame_count": 2460,
+      "cycle_key_bounds": [
+        1,
+        2460
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1203.5311333333334,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.27594125373262923,
+          "median_mAh": 1200.2192333333332,
+          "range_mAh": 4.887933333333422,
+          "range_percent_of_median": 0.40725337484871904
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10052026157150858,
+          "median_mAh": 1202.3225555555557,
+          "range_mAh": 2.4244444444443616,
+          "range_percent_of_median": 0.20164675720685465
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5122619699639632,
+          "median_mAh": 1197.397322222222,
+          "range_mAh": 8.617866666666714,
+          "range_percent_of_median": 0.7197165474424992
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.20185088193015965,
+          "median_mAh": 1201.106688888889,
+          "range_mAh": 3.008600000000115,
+          "range_percent_of_median": 0.25048565858735566
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2460
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2460,
+      "first_cycle_key": 1,
+      "member": "our_data/5-6.pkl",
+      "payload_cell_key": "5-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2460
+      ],
+      "rul_label_count": 2460
+    },
+    {
+      "cycle_frame_count": 1448,
+      "cycle_key_bounds": [
+        1,
+        1448
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1177.2106222222221,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2325095480092547,
+          "median_mAh": 1174.4798444444446,
+          "range_mAh": 4.261666666666542,
+          "range_percent_of_median": 0.3628556664318413
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10269626883577157,
+          "median_mAh": 1176.002911111111,
+          "range_mAh": 1.816844444444314,
+          "range_percent_of_median": 0.15449319277005216
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.46833784283676017,
+          "median_mAh": 1171.723,
+          "range_mAh": 7.9486666666664405,
+          "range_percent_of_median": 0.6783742118799785
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15457325696238372,
+          "median_mAh": 1175.3937777777778,
+          "range_mAh": 2.429022222222102,
+          "range_percent_of_median": 0.20665603886507364
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1448
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1448,
+      "first_cycle_key": 1,
+      "member": "our_data/5-7.pkl",
+      "payload_cell_key": "5-7",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1448
+      ],
+      "rul_label_count": 1448
+    },
+    {
+      "cycle_frame_count": 1609,
+      "cycle_key_bounds": [
+        1,
+        1609
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1174.1699777777776,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.23518375450012505,
+          "median_mAh": 1171.415,
+          "range_mAh": 3.6744444444443616,
+          "range_percent_of_median": 0.31367572076884465
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.051594002257358024,
+          "median_mAh": 1173.5644888888887,
+          "range_mAh": 1.835377777777694,
+          "range_percent_of_median": 0.1563934317333851
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4450270075883821,
+          "median_mAh": 1168.9677555555556,
+          "range_mAh": 7.341399999999794,
+          "range_percent_of_median": 0.6280241662021525
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15655750310343944,
+          "median_mAh": 1172.3346,
+          "range_mAh": 2.448799999999892,
+          "range_percent_of_median": 0.20888234468213188
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1609
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1609,
+      "first_cycle_key": 1,
+      "member": "our_data/6-1.pkl",
+      "payload_cell_key": "6-1",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1609
+      ],
+      "rul_label_count": 1609
+    },
+    {
+      "cycle_frame_count": 1908,
+      "cycle_key_bounds": [
+        1,
+        1908
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1183.4989555555558,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.10754895088448106,
+          "median_mAh": 1184.7731666666666,
+          "range_mAh": 10.995355555555307,
+          "range_percent_of_median": 0.9280557548826412
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.2043110460460717,
+          "median_mAh": 1181.0858666666668,
+          "range_mAh": 2.4236000000000786,
+          "range_percent_of_median": 0.20520099921609525
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.0715810597555082,
+          "median_mAh": 1196.3184777777778,
+          "range_mAh": 21.320822222221977,
+          "range_percent_of_median": 1.7822028680712585
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.04815352922371013,
+          "median_mAh": 1182.9293333333333,
+          "range_mAh": 3.085177777777517,
+          "range_percent_of_median": 0.26080829098082364
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1908
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1908,
+      "first_cycle_key": 1,
+      "member": "our_data/6-2.pkl",
+      "payload_cell_key": "6-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1908
+      ],
+      "rul_label_count": 1908
+    },
+    {
+      "cycle_frame_count": 1804,
+      "cycle_key_bounds": [
+        1,
+        1804
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1181.3591111111111,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.1576370585428925,
+          "median_mAh": 1183.224311111111,
+          "range_mAh": 9.169822222222137,
+          "range_percent_of_median": 0.7749859545745119
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.2584465285148347,
+          "median_mAh": 1178.3138,
+          "range_mAh": 3.046888888888816,
+          "range_percent_of_median": 0.25858042983870816
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.8711401796565136,
+          "median_mAh": 1191.7408444444445,
+          "range_mAh": 18.008977777777773,
+          "range_percent_of_median": 1.5111488258315962
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.049848805882350425,
+          "median_mAh": 1180.7705111111113,
+          "range_mAh": 4.2978444444443085,
+          "range_percent_of_median": 0.36398643123294244
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1804
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1804,
+      "first_cycle_key": 1,
+      "member": "our_data/6-3.pkl",
+      "payload_cell_key": "6-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1804
+      ],
+      "rul_label_count": 1804
+    },
+    {
+      "cycle_frame_count": 1717,
+      "cycle_key_bounds": [
+        1,
+        1717
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1178.0440444444444,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2564595222681254,
+          "median_mAh": 1175.0305666666666,
+          "range_mAh": 4.246422222222009,
+          "range_percent_of_median": 0.3613882347136112
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10156501746329824,
+          "median_mAh": 1176.8487777777777,
+          "range_mAh": 1.804688888888677,
+          "range_percent_of_median": 0.153349259732116
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4933820681790134,
+          "median_mAh": 1172.2603222222224,
+          "range_mAh": 8.561799999999948,
+          "range_percent_of_median": 0.7303667826758458
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.1534287116278553,
+          "median_mAh": 1176.2393555555557,
+          "range_mAh": 3.0172222222222445,
+          "range_percent_of_median": 0.2565143062057437
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1717
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1717,
+      "first_cycle_key": 1,
+      "member": "our_data/6-4.pkl",
+      "payload_cell_key": "6-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1717
+      ],
+      "rul_label_count": 1717
+    },
+    {
+      "cycle_frame_count": 2178,
+      "cycle_key_bounds": [
+        1,
+        2178
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1185.589,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2570199897180721,
+          "median_mAh": 1182.549611111111,
+          "range_mAh": 4.267488888888693,
+          "range_percent_of_median": 0.36087186945831434
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10189278427182798,
+          "median_mAh": 1184.3822,
+          "range_mAh": 1.8169111111110396,
+          "range_percent_of_median": 0.15340581031283987
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.49159818817347106,
+          "median_mAh": 1179.7891777777777,
+          "range_mAh": 8.551555555555296,
+          "range_percent_of_median": 0.72483759951611
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15348487501647612,
+          "median_mAh": 1183.772088888889,
+          "range_mAh": 3.040488888888831,
+          "range_percent_of_median": 0.2568474892614415
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2178
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2178,
+      "first_cycle_key": 1,
+      "member": "our_data/6-5.pkl",
+      "payload_cell_key": "6-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2178
+      ],
+      "rul_label_count": 2178
+    },
+    {
+      "cycle_frame_count": 2468,
+      "cycle_key_bounds": [
+        1,
+        2468
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1174.1553333333334,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.0747212857781036,
+          "median_mAh": 1173.2786444444446,
+          "range_mAh": 8.836577777777848,
+          "range_percent_of_median": 0.7531525285676727
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.4669163600641234,
+          "median_mAh": 1168.698488888889,
+          "range_mAh": 5.468244444444508,
+          "range_percent_of_median": 0.4678918041250576
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.6717586569733396,
+          "median_mAh": 1182.0961666666667,
+          "range_mAh": 19.17131111111121,
+          "range_percent_of_median": 1.621806385276709
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.3088622024186869,
+          "median_mAh": 1170.5399777777777,
+          "range_mAh": 5.468244444444508,
+          "range_percent_of_median": 0.4671557185791934
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2468
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2468,
+      "first_cycle_key": 1,
+      "member": "our_data/6-6.pkl",
+      "payload_cell_key": "6-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2468
+      ],
+      "rul_label_count": 2468
+    },
+    {
+      "cycle_frame_count": 2450,
+      "cycle_key_bounds": [
+        1,
+        2450
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1206.6120666666668,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.24729801228585735,
+          "median_mAh": 1203.6354999999999,
+          "range_mAh": 4.249666666666826,
+          "range_percent_of_median": 0.35306923621535147
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.09825004855814695,
+          "median_mAh": 1205.4277333333334,
+          "range_mAh": 1.7809111111112088,
+          "range_percent_of_median": 0.14774101025421973
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5079751133954339,
+          "median_mAh": 1200.5137555555557,
+          "range_mAh": 9.212155555555682,
+          "range_percent_of_median": 0.7673511038857377
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.14781416490595473,
+          "median_mAh": 1204.8311555555556,
+          "range_mAh": 2.9771777777780244,
+          "range_percent_of_median": 0.24710331933649476
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2450
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2450,
+      "first_cycle_key": 1,
+      "member": "our_data/6-8.pkl",
+      "payload_cell_key": "6-8",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2450
+      ],
+      "rul_label_count": 2450
+    },
+    {
+      "cycle_frame_count": 1690,
+      "cycle_key_bounds": [
+        1,
+        1690
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1182.5856888888889,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.20430122428590755,
+          "median_mAh": 1180.1745777777778,
+          "range_mAh": 3.6604444444444653,
+          "range_percent_of_median": 0.31016126879609096
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.05044226188441459,
+          "median_mAh": 1181.9894666666667,
+          "range_mAh": 1.2076222222221986,
+          "range_percent_of_median": 0.10216861116603848
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.41428540645038237,
+          "median_mAh": 1177.7066222222224,
+          "range_mAh": 7.931355555555456,
+          "range_percent_of_median": 0.6734576681406214
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.10222148660924284,
+          "median_mAh": 1181.3780666666667,
+          "range_mAh": 2.4114222222221997,
+          "range_percent_of_median": 0.20411943392737777
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1690
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1690,
+      "first_cycle_key": 1,
+      "member": "our_data/7-1.pkl",
+      "payload_cell_key": "7-1",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1690
+      ],
+      "rul_label_count": 1690
+    },
+    {
+      "cycle_frame_count": 2030,
+      "cycle_key_bounds": [
+        1,
+        2030
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1191.85,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.23416578192557422,
+          "median_mAh": 1194.6474555555556,
+          "range_mAh": 7.974511111111042,
+          "range_percent_of_median": 0.6675200348041254
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1191.85,
+          "range_mAh": 1.8669777777779473,
+          "range_percent_of_median": 0.15664536458261924
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.6615975664362835,
+          "median_mAh": 1199.7877666666668,
+          "range_mAh": 9.801844444444441,
+          "range_percent_of_median": 0.8169648596831923
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.05355001210728428,
+          "median_mAh": 1192.488577777778,
+          "range_mAh": 3.1036000000001422,
+          "range_percent_of_median": 0.2602624509648346
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2030
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2030,
+      "first_cycle_key": 1,
+      "member": "our_data/7-2.pkl",
+      "payload_cell_key": "7-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2030
+      ],
+      "rul_label_count": 2030
+    },
+    {
+      "cycle_frame_count": 1295,
+      "cycle_key_bounds": [
+        1,
+        1295
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1170.9292666666665,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.20673558879905124,
+          "median_mAh": 1168.5135333333333,
+          "range_mAh": 3.617288888888652,
+          "range_percent_of_median": 0.3095632858072149
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10256121685561072,
+          "median_mAh": 1169.7295777777776,
+          "range_mAh": 1.7853555555552703,
+          "range_percent_of_median": 0.15262976926231472
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.3898311941945608,
+          "median_mAh": 1166.3823444444442,
+          "range_mAh": 6.118866666666463,
+          "range_percent_of_median": 0.5246021337523692
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15270622705963838,
+          "median_mAh": 1169.1439111111113,
+          "range_mAh": 2.4304444444442197,
+          "range_percent_of_median": 0.2078824019306926
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1295
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1295,
+      "first_cycle_key": 1,
+      "member": "our_data/7-3.pkl",
+      "payload_cell_key": "7-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1295
+      ],
+      "rul_label_count": 1295
+    },
+    {
+      "cycle_frame_count": 1393,
+      "cycle_key_bounds": [
+        1,
+        1393
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1172.8757333333333,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.23368878773152396,
+          "median_mAh": 1170.1412444444445,
+          "range_mAh": 3.6497555555556573,
+          "range_percent_of_median": 0.3119072652881726
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10495205861655976,
+          "median_mAh": 1171.6460666666667,
+          "range_mAh": 1.8057333333333645,
+          "range_percent_of_median": 0.1541193526532015
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.418124030845057,
+          "median_mAh": 1167.992077777778,
+          "range_mAh": 6.509822222222283,
+          "range_percent_of_median": 0.5573515733606578
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15419516624397897,
+          "median_mAh": 1171.07,
+          "range_mAh": 2.4361333333333732,
+          "range_percent_of_median": 0.2080262779623228
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1393
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1393,
+      "first_cycle_key": 1,
+      "member": "our_data/7-4.pkl",
+      "payload_cell_key": "7-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1393
+      ],
+      "rul_label_count": 1393
+    },
+    {
+      "cycle_frame_count": 1875,
+      "cycle_key_bounds": [
+        1,
+        1875
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1177.297377777778,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.8533441618212413,
+          "median_mAh": 1187.4302444444443,
+          "range_mAh": 15.306977777777547,
+          "range_percent_of_median": 1.2890843777471013
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": -0.31370717850913615,
+          "median_mAh": 1181.0022666666669,
+          "range_mAh": 5.549244444444184,
+          "range_percent_of_median": 0.46987585045934854
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.5330177095711095,
+          "median_mAh": 1195.6265444444443,
+          "range_mAh": 20.772866666666687,
+          "range_percent_of_median": 1.7374042725288383
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.46914319576098384,
+          "median_mAh": 1182.846622222222,
+          "range_mAh": 9.822244444444323,
+          "range_percent_of_median": 0.8303903701387086
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1875
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1875,
+      "first_cycle_key": 1,
+      "member": "our_data/7-5.pkl",
+      "payload_cell_key": "7-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1875
+      ],
+      "rul_label_count": 1875
+    },
+    {
+      "cycle_frame_count": 1419,
+      "cycle_key_bounds": [
+        1,
+        1419
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1174.7327777777778,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.23271034227126827,
+          "median_mAh": 1172.0054,
+          "range_mAh": 3.6580222222221437,
+          "range_percent_of_median": 0.31211649897023885
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10016648905851408,
+          "median_mAh": 1173.5572666666667,
+          "range_mAh": 1.7905777777777985,
+          "range_percent_of_median": 0.15257694095011626
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.4431896571453658,
+          "median_mAh": 1169.5494555555556,
+          "range_mAh": 7.482266666666419,
+          "range_percent_of_median": 0.6397563293389946
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15265694914700814,
+          "median_mAh": 1172.9422,
+          "range_mAh": 2.4208666666665977,
+          "range_percent_of_median": 0.2063926651003432
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1419
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1419,
+      "first_cycle_key": 1,
+      "member": "our_data/7-6.pkl",
+      "payload_cell_key": "7-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1419
+      ],
+      "rul_label_count": 1419
+    },
+    {
+      "cycle_frame_count": 1685,
+      "cycle_key_bounds": [
+        1,
+        1685
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1174.5885555555556,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.20694223405077336,
+          "median_mAh": 1172.1628555555556,
+          "range_mAh": 3.674088888888946,
+          "range_percent_of_median": 0.31344525818023666
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10276082115857245,
+          "median_mAh": 1173.3827777777778,
+          "range_mAh": 1.810244444444379,
+          "range_percent_of_median": 0.1542756957684966
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.41781700382947795,
+          "median_mAh": 1169.7013444444447,
+          "range_mAh": 6.808577777777828,
+          "range_percent_of_median": 0.5820783065793256
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.15435521166223828,
+          "median_mAh": 1172.7783111111112,
+          "range_mAh": 2.4244888888888454,
+          "range_percent_of_median": 0.20673036548500298
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1685
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1685,
+      "first_cycle_key": 1,
+      "member": "our_data/7-7.pkl",
+      "payload_cell_key": "7-7",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1685
+      ],
+      "rul_label_count": 1685
+    },
+    {
+      "cycle_frame_count": 1938,
+      "cycle_key_bounds": [
+        1,
+        1938
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1181.6384,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.38898866515719815,
+          "median_mAh": 1186.252788888889,
+          "range_mAh": 10.401044444444551,
+          "range_percent_of_median": 0.8767983132993731
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1181.6384,
+          "range_mAh": 0.6331111111110204,
+          "range_percent_of_median": 0.053579090787081764
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.1501848479992136,
+          "median_mAh": 1195.3875666666665,
+          "range_mAh": 18.864733333333334,
+          "range_percent_of_median": 1.5781269488972156
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.0021570337494782755,
+          "median_mAh": 1181.6638888888888,
+          "range_mAh": 4.918022222222362,
+          "range_percent_of_median": 0.41619467840781255
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1938
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1938,
+      "first_cycle_key": 1,
+      "member": "our_data/7-8.pkl",
+      "payload_cell_key": "7-8",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1938
+      ],
+      "rul_label_count": 1938
+    },
+    {
+      "cycle_frame_count": 1308,
+      "cycle_key_bounds": [
+        1,
+        1308
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1175.8913777777777,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.18061344048398553,
+          "median_mAh": 1173.7713888888889,
+          "range_mAh": 3.07597777777778,
+          "range_percent_of_median": 0.26205935899405
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.05046662293056251,
+          "median_mAh": 1175.2982444444444,
+          "range_mAh": 1.1990222222220837,
+          "range_percent_of_median": 0.10201854958005603
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.36602747940715613,
+          "median_mAh": 1171.6029888888888,
+          "range_mAh": 6.72564444444447,
+          "range_percent_of_median": 0.574054906673024
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.10207116923435,
+          "median_mAh": 1174.6923555555557,
+          "range_mAh": 1.8188888888889778,
+          "range_percent_of_median": 0.15483959525971017
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1308
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1308,
+      "first_cycle_key": 1,
+      "member": "our_data/8-1.pkl",
+      "payload_cell_key": "8-1",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1308
+      ],
+      "rul_label_count": 1308
+    },
+    {
+      "cycle_frame_count": 2041,
+      "cycle_key_bounds": [
+        1,
+        2041
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1200.7829555555556,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.22625978263710475,
+          "median_mAh": 1198.0722,
+          "range_mAh": 3.670355555555716,
+          "range_percent_of_median": 0.3063551224672199
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10118447524854664,
+          "median_mAh": 1199.569177777778,
+          "range_mAh": 1.509666666666817,
+          "range_percent_of_median": 0.12585073830118743
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.43489133413541947,
+          "median_mAh": 1195.5834666666665,
+          "range_mAh": 7.9439777777779454,
+          "range_percent_of_median": 0.6644435958892997
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.12588178863430732,
+          "median_mAh": 1199.2732888888888,
+          "range_mAh": 2.4005111111112,
+          "range_percent_of_median": 0.20016381031343095
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2041
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2041,
+      "first_cycle_key": 1,
+      "member": "our_data/8-2.pkl",
+      "payload_cell_key": "8-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2041
+      ],
+      "rul_label_count": 2041
+    },
+    {
+      "cycle_frame_count": 2290,
+      "cycle_key_bounds": [
+        1,
+        2290
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1188.8718,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.17779379730069053,
+          "median_mAh": 1186.761811111111,
+          "range_mAh": 10.99531111111105,
+          "range_percent_of_median": 0.9264968764723429
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.6185023610235852,
+          "median_mAh": 1181.5638,
+          "range_mAh": 8.549333333333152,
+          "range_percent_of_median": 0.723560871899863
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.4599301084702932,
+          "median_mAh": 1194.3650444444445,
+          "range_mAh": 17.749422222222165,
+          "range_percent_of_median": 1.486096926964089
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.462094721869116,
+          "median_mAh": 1183.4033555555557,
+          "range_mAh": 8.549333333333152,
+          "range_percent_of_median": 0.7224361240145054
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2290
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2290,
+      "first_cycle_key": 1,
+      "member": "our_data/8-3.pkl",
+      "payload_cell_key": "8-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2290
+      ],
+      "rul_label_count": 2290
+    },
+    {
+      "cycle_frame_count": 1885,
+      "cycle_key_bounds": [
+        1,
+        1885
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1179.3196666666668,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.23015334739587132,
+          "median_mAh": 1176.6116555555557,
+          "range_mAh": 3.6700666666667985,
+          "range_percent_of_median": 0.3119182654139117
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10131721241442834,
+          "median_mAh": 1178.1260222222222,
+          "range_mAh": 1.8164888888888981,
+          "range_percent_of_median": 0.15418459949323365
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.41670197548924137,
+          "median_mAh": 1174.4258111111112,
+          "range_mAh": 6.735555555555493,
+          "range_percent_of_median": 0.5735190330313891
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.1542661559790467,
+          "median_mAh": 1177.5031777777779,
+          "range_mAh": 2.4278888888889014,
+          "range_percent_of_median": 0.2061895827296952
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1885
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1885,
+      "first_cycle_key": 1,
+      "member": "our_data/8-4.pkl",
+      "payload_cell_key": "8-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1885
+      ],
+      "rul_label_count": 1885
+    },
+    {
+      "cycle_frame_count": 1348,
+      "cycle_key_bounds": [
+        1,
+        1348
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1172.209822222222,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.2015116455475996,
+          "median_mAh": 1169.8524333333335,
+          "range_mAh": 3.6592666666665536,
+          "range_percent_of_median": 0.3127972864269707
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.10242816521578627,
+          "median_mAh": 1171.0103777777779,
+          "range_mAh": 1.784555555555471,
+          "range_percent_of_median": 0.15239451241602278
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.39165721468422376,
+          "median_mAh": 1167.6366888888888,
+          "range_mAh": 6.785355555555498,
+          "range_percent_of_median": 0.5811187349733223
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.1498732601813077,
+          "median_mAh": 1170.4556222222222,
+          "range_mAh": 2.3673999999998614,
+          "range_percent_of_median": 0.20226311489752388
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1348
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1348,
+      "first_cycle_key": 1,
+      "member": "our_data/8-5.pkl",
+      "payload_cell_key": "8-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1348
+      ],
+      "rul_label_count": 1348
+    },
+    {
+      "cycle_frame_count": 2365,
+      "cycle_key_bounds": [
+        1,
+        2365
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1221.0394000000001,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.27066457514779196,
+          "median_mAh": 1217.7433999999998,
+          "range_mAh": 4.884422222222383,
+          "range_percent_of_median": 0.40110438884106325
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.09804901908080707,
+          "median_mAh": 1219.8433555555555,
+          "range_mAh": 2.4352666666668483,
+          "range_percent_of_median": 0.1996376547509865
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.5034503424991098,
+          "median_mAh": 1214.9228666666668,
+          "range_mAh": 8.626733333333505,
+          "range_percent_of_median": 0.7100642822702246
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.1962521300932049,
+          "median_mAh": 1218.6477777777777,
+          "range_mAh": 2.9832222222223663,
+          "range_percent_of_median": 0.24479774030050883
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2365
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2365,
+      "first_cycle_key": 1,
+      "member": "our_data/8-6.pkl",
+      "payload_cell_key": "8-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2365
+      ],
+      "rul_label_count": 2365
+    },
+    {
+      "cycle_frame_count": 2047,
+      "cycle_key_bounds": [
+        1,
+        2047
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1180.8878888888887,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.20257379787213656,
+          "median_mAh": 1178.5005555555556,
+          "range_mAh": 3.0649777777775853,
+          "range_percent_of_median": 0.26007436002715567
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.05126831658514041,
+          "median_mAh": 1180.2827777777777,
+          "range_mAh": 1.193222222221948,
+          "range_percent_of_median": 0.10109630036867373
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": 0.3635196579372555,
+          "median_mAh": 1176.6106777777777,
+          "range_mAh": 6.164111111110969,
+          "range_percent_of_median": 0.5238870620104268
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.10114669972981268,
+          "median_mAh": 1179.6946666666668,
+          "range_mAh": 2.3817999999998847,
+          "range_percent_of_median": 0.20189970060048457
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2047
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2047,
+      "first_cycle_key": 1,
+      "member": "our_data/8-7.pkl",
+      "payload_cell_key": "8-7",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2047
+      ],
+      "rul_label_count": 2047
+    },
+    {
+      "cycle_frame_count": 1679,
+      "cycle_key_bounds": [
+        1,
+        1679
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1190.9838,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": 0.010528352945929683,
+          "median_mAh": 1190.858422222222,
+          "range_mAh": 10.96877777777786,
+          "range_percent_of_median": 0.921081597366493
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.5146808006415077,
+          "median_mAh": 1184.8854222222221,
+          "range_mAh": 6.702355555555641,
+          "range_percent_of_median": 0.5656543181184174
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.6883404302125812,
+          "median_mAh": 1199.2386444444444,
+          "range_mAh": 18.323955555555585,
+          "range_percent_of_median": 1.527965733963175
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.3094202616854679,
+          "median_mAh": 1187.3100222222222,
+          "range_mAh": 6.702355555555641,
+          "range_percent_of_median": 0.56449919819688
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1679
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1679,
+      "first_cycle_key": 1,
+      "member": "our_data/8-8.pkl",
+      "payload_cell_key": "8-8",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1679
+      ],
+      "rul_label_count": 1679
+    },
+    {
+      "cycle_frame_count": 2057,
+      "cycle_key_bounds": [
+        1,
+        2057
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1199.2256888888887,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.26780968007654626,
+          "median_mAh": 1202.4459555555554,
+          "range_mAh": 9.438777777777887,
+          "range_percent_of_median": 0.7849648239215019
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.1252429303368598,
+          "median_mAh": 1197.7256222222222,
+          "range_mAh": 2.0904222222220596,
+          "range_percent_of_median": 0.17453264616177755
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.8589250004390974,
+          "median_mAh": 1209.615377777778,
+          "range_mAh": 14.315755555555597,
+          "range_percent_of_median": 1.1834964914099817
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1199.2256888888887,
+          "range_mAh": 4.2491777777777315,
+          "range_percent_of_median": 0.3543267807842489
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2057
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2057,
+      "first_cycle_key": 1,
+      "member": "our_data/9-1.pkl",
+      "payload_cell_key": "9-1",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2057
+      ],
+      "rul_label_count": 2057
+    },
+    {
+      "cycle_frame_count": 2143,
+      "cycle_key_bounds": [
+        1,
+        2143
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1190.443711111111,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.21015489807682952,
+          "median_mAh": 1192.9507555555556,
+          "range_mAh": 8.576555555555842,
+          "range_percent_of_median": 0.7189362608318021
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": -0.004948423465146498,
+          "median_mAh": 1190.5026222222223,
+          "range_mAh": 0.6634444444446217,
+          "range_percent_of_median": 0.0557280960210083
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.9911993930167344,
+          "median_mAh": 1202.3615111111112,
+          "range_mAh": 14.651111111111277,
+          "range_percent_of_median": 1.2185279531754203
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.05569981183894225,
+          "median_mAh": 1191.1071555555557,
+          "range_mAh": 1.8929111111112888,
+          "range_percent_of_median": 0.15892030387714345
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2143
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2143,
+      "first_cycle_key": 1,
+      "member": "our_data/9-2.pkl",
+      "payload_cell_key": "9-2",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2143
+      ],
+      "rul_label_count": 2143
+    },
+    {
+      "cycle_frame_count": 1905,
+      "cycle_key_bounds": [
+        1,
+        1905
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1191.901311111111,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.4360765295268287,
+          "median_mAh": 1197.1216777777777,
+          "range_mAh": 10.349622222222251,
+          "range_percent_of_median": 0.8645422110669904
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1191.901311111111,
+          "range_mAh": 1.198111111111075,
+          "range_percent_of_median": 0.10052099951078794
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.014844259779888,
+          "median_mAh": 1204.1212666666665,
+          "range_mAh": 15.204288888888868,
+          "range_percent_of_median": 1.2626875141054898
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.052765477707313324,
+          "median_mAh": 1192.5305555555556,
+          "range_mAh": 4.871222222222286,
+          "range_percent_of_median": 0.40847777019457293
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1905
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1905,
+      "first_cycle_key": 1,
+      "member": "our_data/9-3.pkl",
+      "payload_cell_key": "9-3",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1905
+      ],
+      "rul_label_count": 1905
+    },
+    {
+      "cycle_frame_count": 1975,
+      "cycle_key_bounds": [
+        1,
+        1975
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1193.5524,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.4220514327860402,
+          "median_mAh": 1198.6111555555556,
+          "range_mAh": 10.090799999999945,
+          "range_percent_of_median": 0.8418743604403436
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1193.5524,
+          "range_mAh": 1.230911111111027,
+          "range_percent_of_median": 0.1031300436504528
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.9892757055106386,
+          "median_mAh": 1205.4778999999999,
+          "range_mAh": 14.964733333333243,
+          "range_percent_of_median": 1.2413942498102408
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.05316307453508879,
+          "median_mAh": 1194.1872666666666,
+          "range_mAh": 4.8957777777777665,
+          "range_percent_of_median": 0.40996734050291334
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1975
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1975,
+      "first_cycle_key": 1,
+      "member": "our_data/9-4.pkl",
+      "payload_cell_key": "9-4",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1975
+      ],
+      "rul_label_count": 1975
+    },
+    {
+      "cycle_frame_count": 2168,
+      "cycle_key_bounds": [
+        1,
+        2168
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1188.7780666666667,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.10487071968404907,
+          "median_mAh": 1190.0260555555556,
+          "range_mAh": 8.509022222222256,
+          "range_percent_of_median": 0.7150282283735273
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.2545202933409656,
+          "median_mAh": 1185.7600666666667,
+          "range_mAh": 3.616622222222304,
+          "range_percent_of_median": 0.3050045556340181
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.6627397122452985,
+          "median_mAh": 1196.7091333333333,
+          "range_mAh": 13.394288888888696,
+          "range_percent_of_median": 1.1192601874425427
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.10192635954316348,
+          "median_mAh": 1187.5676222222223,
+          "range_mAh": 4.264311111111056,
+          "range_percent_of_median": 0.35907943525199115
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2168
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2168,
+      "first_cycle_key": 1,
+      "member": "our_data/9-5.pkl",
+      "payload_cell_key": "9-5",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2168
+      ],
+      "rul_label_count": 2168
+    },
+    {
+      "cycle_frame_count": 1742,
+      "cycle_key_bounds": [
+        1,
+        1742
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1193.0154222222222,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.33645132551639734,
+          "median_mAh": 1197.0428888888887,
+          "range_mAh": 9.773355555555554,
+          "range_percent_of_median": 0.816458261126075
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": 0.046835141234634656,
+          "median_mAh": 1192.4569333333334,
+          "range_mAh": 1.8007555555554973,
+          "range_percent_of_median": 0.15101220892915243
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -0.8640431312379057,
+          "median_mAh": 1203.4134333333332,
+          "range_mAh": 14.037133333333259,
+          "range_percent_of_median": 1.1664431312231427
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1193.0154222222222,
+          "range_mAh": 4.925044444444211,
+          "range_percent_of_median": 0.41282320016201984
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        1742
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 1742,
+      "first_cycle_key": 1,
+      "member": "our_data/9-6.pkl",
+      "payload_cell_key": "9-6",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        1742
+      ],
+      "rul_label_count": 1742
+    },
+    {
+      "cycle_frame_count": 2012,
+      "cycle_key_bounds": [
+        1,
+        2012
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1185.1578666666667,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.31109450006435185,
+          "median_mAh": 1188.8563333333334,
+          "range_mAh": 10.395311111111141,
+          "range_percent_of_median": 0.8743959063551952
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": -0.10595880317236758,
+          "median_mAh": 1186.4149777777777,
+          "range_mAh": 1.2740888888888549,
+          "range_percent_of_median": 0.10738981829741355
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.094871627394923,
+          "median_mAh": 1198.2774666666667,
+          "range_mAh": 15.80693333333329,
+          "range_percent_of_median": 1.3191379937490235
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.10738828155486198,
+          "median_mAh": 1186.4319555555555,
+          "range_mAh": 3.0911777777778298,
+          "range_percent_of_median": 0.26054404243776147
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2012
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2012,
+      "first_cycle_key": 1,
+      "member": "our_data/9-7.pkl",
+      "payload_cell_key": "9-7",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2012
+      ],
+      "rul_label_count": 2012
+    },
+    {
+      "cycle_frame_count": 2308,
+      "cycle_key_bounds": [
+        1,
+        2308
+      ],
+      "data_dq_key_order_matches": true,
+      "data_dq_key_sets_match": true,
+      "data_rul_key_order_matches": true,
+      "data_rul_key_sets_match": true,
+      "dq_first_windows": {
+        "1": {
+          "count": 1,
+          "first_vs_median_percent": 0.0,
+          "median_mAh": 1173.1017555555557,
+          "range_mAh": 0.0,
+          "range_percent_of_median": 0.0
+        },
+        "10": {
+          "count": 10,
+          "first_vs_median_percent": -0.6509372766762923,
+          "median_mAh": 1180.7879444444443,
+          "range_mAh": 12.879288888888823,
+          "range_percent_of_median": 1.0907368210765798
+        },
+        "3": {
+          "count": 3,
+          "first_vs_median_percent": -0.10723372452097753,
+          "median_mAh": 1174.3610666666666,
+          "range_mAh": 2.4886222222221477,
+          "range_percent_of_median": 0.2119128684405308
+        },
+        "30": {
+          "count": 30,
+          "first_vs_median_percent": -1.363583196809506,
+          "median_mAh": 1189.319111111111,
+          "range_mAh": 19.560688888888762,
+          "range_percent_of_median": 1.6446964238735187
+        },
+        "5": {
+          "count": 5,
+          "first_vs_median_percent": -0.21169127182942737,
+          "median_mAh": 1175.5903777777778,
+          "range_mAh": 6.772444444444318,
+          "range_percent_of_median": 0.5760887952525003
+        }
+      },
+      "dq_key_bounds": [
+        1,
+        2308
+      ],
+      "dq_keys_monotonic_insertion_order": true,
+      "dq_label_count": 2308,
+      "first_cycle_key": 1,
+      "member": "our_data/9-8.pkl",
+      "payload_cell_key": "9-8",
+      "payload_key_matches_filename": true,
+      "rul_key_bounds": [
+        1,
+        2308
+      ],
+      "rul_label_count": 2308
+    }
+  ]
+}
